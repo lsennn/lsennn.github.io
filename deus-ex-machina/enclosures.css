@@ -1,0 +1,893 @@
+/* The enclosures: practical sheets clipped behind Phi's letter.
+   Reference sheets, built for scanning and finding things again.
+   Each <section class="enc" data-stone="…"> wears its stone through the
+   shell's --stone / --stone-ink (folio.css). Chosen is solid, the rest dashed. */
+
+.enc {
+  --hair: color-mix(in srgb, var(--stone) 50%, var(--rule));
+  --wash: color-mix(in srgb, var(--stone) 12%, var(--folio));
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  margin: 48px 0 0;   /* edges in line with the letter's (letter.css sizes the column) */
+  padding: 30px 36px 40px;
+  position: relative;
+  background: var(--folio);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-page);
+  color: var(--ink);
+  scroll-margin-top: 16px;
+  container-type: inline-size;
+}
+/* each sheet is clipped on with a paper clip in its stone (the letter's clip,
+   drawn as a mask so the stone can colour it); the stone also rules the title */
+.enc::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 30px;
+  width: 22px;
+  height: 40px;
+  background: color-mix(in srgb, var(--stone) 70%, var(--edge));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -2 36 62'%3E%3Cpath d='M12 20V40a4 4 0 0 0 8 0V10a7 7 0 0 0-14 0v34a10 10 0 0 0 20 0V16' fill='none' stroke='%23000' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -2 36 62'%3E%3Cpath d='M12 20V40a4 4 0 0 0 8 0V10a7 7 0 0 0-14 0v34a10 10 0 0 0 20 0V16' fill='none' stroke='%23000' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  transform: rotate(-4deg);
+}
+
+.enc [id] { scroll-margin-top: 20px; }
+.enc p + p { margin-top: .7em; }
+.enc b, .enc strong { font-weight: 650; color: var(--ink); }
+.enc ul, .enc ol { margin: 0; padding: 0; }
+
+.num { font-variant-numeric: lining-nums tabular-nums; }
+
+.enc code {
+  font: 400 .88em/1.45 var(--mono);
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--stone) 10%, var(--slipcase));
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Head ---------- */
+
+.enc__head {
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+.enc__title {
+  margin: 0 0 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid color-mix(in srgb, var(--stone) 75%, var(--rule));
+  font: 900 clamp(40px, 5.2vw, 76px)/.9 var(--face-title);
+  letter-spacing: .005em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: var(--ink);
+}
+.enc__head > p { color: var(--vellum); font-size: 16.5px; }
+.enc__head > p .num, .enc__head > p strong { color: var(--ink); }
+
+.enc__body { margin-top: 32px; }
+
+.enc h3 {
+  font: 900 28px/1.05 var(--face-title);
+  letter-spacing: .01em;
+  color: var(--ink);
+}
+.enc h4 {
+  margin: 0 0 6px;
+  font: 600 14px/1.3 var(--face-text);
+  color: var(--ash);
+}
+
+.plain { list-style: none; }
+.plain li + li { margin-top: .45em; }
+
+/* a list of entries, one hairline apart */
+.ledger { list-style: none; }
+.ledger li { padding: 10px 0; text-wrap: pretty; }
+.ledger li + li { border-top: 1px solid var(--rule-faint); }
+
+/* bullets for "You need" lists */
+.shelf__needs ul { list-style: none; }
+.shelf__needs li { position: relative; padding-left: 20px; }
+.shelf__needs li + li { margin-top: .45em; }
+.shelf__needs li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: .62em;
+  width: 7px;
+  height: 7px;
+  background: var(--stone-ink);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+/* numbered steps: lining numerals in the stone's ink, hung in the margin */
+.steps { list-style: none; counter-reset: step; }
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 34px;
+  text-wrap: pretty;
+}
+.steps li + li { margin-top: .55em; }
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -.08em;
+  width: 22px;
+  text-align: right;
+  font: 900 21px/1.3 var(--face-title);
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--stone-ink);
+}
+
+/* ---------- Actions ---------- */
+
+.shelf__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin-top: 14px;
+}
+.copy-link,
+.quiet-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font: 600 15px/1 var(--face-text);
+  color: var(--amethyst);
+}
+.copy-link { padding: 0 4px; }
+.copy-link[data-copied] { color: var(--ink); text-decoration-style: dotted; }
+.quiet-action {
+  padding: 10px 14px;
+  border: 1px solid var(--amethyst);
+  border-radius: var(--radius-control);
+  text-decoration: none;
+  transition: background-color 150ms ease-out;
+}
+.quiet-action:hover { background: var(--amethyst-soft); }
+.quiet-action svg { width: 16px; height: 16px; }
+
+/* ---------- The preset: the heads-up, then the shelf ---------- */
+
+/* model setup comes before the files: a note in Your model's stone */
+.heads-up {
+  max-width: 68ch;
+  margin: 18px 0 8px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--stone) 12%, var(--folio));
+}
+.heads-up p { margin: 0; }
+.heads-up p + p { margin-top: 8px; }
+.heads-up__title { font-weight: 700; color: var(--ink); }
+.heads-up a { color: var(--stone-ink); font-weight: 600; }
+
+/* the hosts sit close: the page is about the three buttons */
+.shelf__host {
+  display: grid;
+  gap: 12px 40px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule-faint);
+}
+.shelf__host:first-child { padding-top: 0; border-top: 0; }
+.shelf__host:last-child { padding-bottom: 0; }
+
+.shelf__file {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  column-gap: 16px;
+  align-content: start;
+}
+.shelf__file > :not(.shelf__drawn) { grid-column: 2; }
+.shelf__drawn { grid-row: 1 / span 2; width: 64px; height: 64px; }
+.shelf__file h3 { align-self: end; font-size: 34px; text-transform: uppercase; }
+.shelf__file h3 + p { margin-top: 4px; }
+.shelf__file .shelf__actions { grid-column: 1 / -1; }
+
+.shelf__extra {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--rule);
+  color: var(--vellum);
+}
+
+/* the way to older releases, small, under the hosts */
+.shelf__older {
+  margin: 22px 0 0;
+  font-size: 14.5px;
+  color: var(--vellum);
+}
+.shelf__older a { color: var(--stone-ink); }
+
+.shelf__host:target .shelf__file h3,
+.shelf__extra:target > p:first-child { color: var(--stone-ink); }
+
+@container (min-width: 760px) {
+  .shelf__host { grid-template-columns: minmax(300px, 5fr) 7fr; }
+}
+/* beside the drawing a long file name breaks mid-word: on narrow sheets it
+   takes the whole row under the name */
+@container (max-width: 459px) {
+  .shelf__file > h3 + p:not(.shelf__actions) { grid-column: 1 / -1; margin-top: 10px; }
+}
+
+/* ---------- Chosen solid, the rest dashed ---------- */
+
+.opt, .chip { display: block; cursor: pointer; position: relative; }
+.chip { display: inline-block; }
+.opt > input,
+.chip > input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.opts { display: grid; gap: 8px; margin-top: 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+.opt__body,
+.chip__body {
+  border: 1.5px dashed var(--edge);
+  color: var(--vellum);
+  transition: background-color 150ms ease-out, border-color 150ms ease-out;
+}
+.opt__body {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: var(--radius-control);
+  text-wrap: pretty;
+}
+.chip__body {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 7px 14px 7px 11px;
+  border-radius: 999px;
+  line-height: 1.3;
+}
+.opt__body b, .chip__body b { color: inherit; }
+.chip__text { min-width: 0; }
+.chip__text .badge--chip { margin-right: 6px; vertical-align: middle; }
+
+.opt:hover .opt__body,
+.chip:hover .chip__body { background: var(--lamplit); }
+
+input:checked + .opt__body,
+input:checked + .chip__body {
+  border-style: solid;
+  border-color: var(--stone-ink);
+  background: var(--wash);
+  color: var(--ink);
+}
+input:focus-visible + .opt__body,
+input:focus-visible + .chip__body {
+  outline: 2px solid var(--amethyst);
+  outline-offset: 2px;
+}
+
+/* the mark: a ring for one-of, a square for any-of */
+.opt__mark {
+  position: relative;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin-top: .2em;
+  border: 1.5px dashed var(--edge);
+  border-radius: 50%;
+}
+.chip__body .opt__mark { margin-top: 0; }
+input[type="checkbox"] + * .opt__mark { border-radius: 4px; }
+input:checked + * .opt__mark {
+  border-style: solid;
+  border-color: var(--stone-ink);
+}
+input[type="radio"]:checked + * .opt__mark::after {
+  content: "";
+  position: absolute;
+  inset: 2.5px;
+  border-radius: 50%;
+  background: var(--stone-ink);
+}
+input[type="checkbox"]:checked + * .opt__mark { background: var(--stone-ink); }
+input[type="checkbox"]:checked + * .opt__mark::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--folio);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.opt__cost {
+  font: 600 13.5px/1.6 var(--face-text);
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ash);
+  white-space: nowrap;
+}
+.opt__cost:empty { display: none; }
+input:checked + * .opt__cost { color: var(--stone-ink); }
+
+/* badges: DEM's drawn module marks */
+.badge { display: inline-block; flex: none; overflow: visible; }
+.enc h3 .badge { width: 36px; height: 36px; margin: -6px 10px -6px 0; vertical-align: middle; }
+.badge--inline { width: 26px; height: 26px; margin: -5px 7px -5px 0; vertical-align: middle; }
+.badge--chip { width: 22px; height: 22px; margin: -4px 0; }
+
+/* ---------- Every module ---------- */
+
+.modules { display: flex; flex-direction: column; gap: 24px; }
+.modules__rail { display: contents; }
+
+.modules__nav { order: 0; }
+.modules__list { order: 1; min-width: 0; }
+.count { order: 2; }
+
+.modules__nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  font-size: 14.5px;
+}
+.modules__nav a {
+  display: inline-block;
+  padding: 5px 0;
+  color: var(--vellum);
+  text-decoration-color: var(--hair);
+}
+.modules__nav a:hover { color: var(--amethyst); }
+
+/* the count: sticky at the foot on a phone, in the rail on a wide sheet */
+.count {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 12px;
+  margin: 0 -14px;
+  padding: 10px 14px 12px;
+  background: var(--folio);
+  border-top: 1px solid var(--hair);
+}
+.count__line {
+  font: 400 16px/1.1 var(--face-text);
+  color: var(--vellum);
+}
+.count__n {
+  font: 900 34px/1 var(--face-title);
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink);
+  letter-spacing: .01em;
+}
+.count__what { font-size: 14px; color: var(--ash); }
+.count[data-state="yours"] .count__what { color: var(--stone-ink); font-weight: 600; }
+.count__reset {
+  margin-left: auto;
+  min-height: 40px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  font: 600 14px/1 var(--face-text);
+  color: var(--amethyst);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+  cursor: pointer;
+}
+.count__reset:hover { text-decoration-thickness: 2px; }
+
+@container (min-width: 820px) {
+  .modules {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 0 44px;
+    align-items: start;
+  }
+  .modules__rail {
+    display: block;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    padding-right: 6px;
+  }
+  .count {
+    position: static;
+    display: block;
+    margin: 0 0 22px;
+    padding: 0 0 16px;
+    border-top: 0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .count__n { font-size: 52px; display: block; margin-bottom: 2px; }
+  .count__line { font-size: 15px; }
+  .count__what { margin-top: 4px; }
+  .count__reset { margin: 8px 0 0; min-height: 32px; padding: 0; }
+  .modules__nav ul { display: block; font-size: 14.5px; }
+  .modules__nav a { padding: 3px 0; }
+}
+
+.modules__list { max-width: 58ch; }   /* Sofia Sans runs narrow: 58ch holds about 75 real characters */
+
+.grp {
+  margin: 0;
+  padding: 26px 0 0;
+  border: 0;
+  border-top: 1px solid var(--rule-faint);
+  min-width: 0;
+}
+.modules__list > .grp + .grp { margin-top: 28px; }
+.modules__list > .grp:first-child { padding-top: 0; border-top: 0; }
+.grp > legend,
+.row > legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+.grp > legend + *,
+.row > legend + * { clear: both; }
+.grp > h3,
+.grp > legend { margin-bottom: 10px; }
+.grp p { text-wrap: pretty; }
+.grp > p,
+.grp > ul { margin-top: 10px; }
+.grp > .opts + p,
+.grp > .chips + p,
+.grp > .chips + .plain { margin-top: 14px; }
+.pick {
+  font: 400 15px/1 var(--face-text);
+  letter-spacing: 0;
+  color: var(--ash);
+  white-space: nowrap;
+}
+.grp__sub { margin-top: 20px !important; }
+
+.grp--note {
+  padding: 18px 20px !important;
+  border: 0 !important;
+  border-radius: var(--radius-control);
+  background: var(--wash);
+}
+.grp--note h3 { font-size: 24px; }
+
+.row { margin: 18px 0 0; padding: 0; border: 0; min-width: 0; }
+.row > legend { color: var(--vellum); text-wrap: pretty; }
+.row > .chips { margin-top: 8px; }
+
+/* ---------- Sample replies ---------- */
+
+.scene { margin: 32px 0 0; padding: 0; border: 0; min-width: 0; }
+
+.scene__tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.scene__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 8px 18px 8px 14px;
+  border: 1.5px dashed var(--edge);
+  border-radius: var(--radius-control);
+  font: 600 16px/1.2 var(--face-text);
+  color: var(--vellum);
+  cursor: pointer;
+  transition: background-color 150ms ease-out;
+}
+.scene__tab:hover { background: var(--lamplit); }
+
+#scene-default:checked ~ .scene__tabs [for="scene-default"],
+#scene-literary:checked ~ .scene__tabs [for="scene-literary"],
+#scene-wanderlust:checked ~ .scene__tabs [for="scene-wanderlust"] {
+  border-style: solid;
+  border-color: var(--stone-ink);
+  background: var(--wash);
+  color: var(--ink);
+}
+/* the last radio sits right before the tabs, so the general
+   "input:checked + *" marks would fill every tab: keep them off */
+.scene__radio:checked + .scene__tabs .opt__mark { border-style: dashed; border-color: var(--edge); }
+.scene__radio:checked + .scene__tabs .opt__mark::after { content: none; }
+#scene-default:checked ~ .scene__tabs [for="scene-default"] .opt__mark,
+#scene-literary:checked ~ .scene__tabs [for="scene-literary"] .opt__mark,
+#scene-wanderlust:checked ~ .scene__tabs [for="scene-wanderlust"] .opt__mark {
+  border-style: solid;
+  border-color: var(--stone-ink);
+}
+#scene-default:checked ~ .scene__tabs [for="scene-default"] .opt__mark::after,
+#scene-literary:checked ~ .scene__tabs [for="scene-literary"] .opt__mark::after,
+#scene-wanderlust:checked ~ .scene__tabs [for="scene-wanderlust"] .opt__mark::after {
+  content: "";
+  position: absolute;
+  inset: 2.5px;
+  border-radius: 50%;
+  background: var(--stone-ink);
+}
+#scene-default:focus-visible ~ .scene__tabs [for="scene-default"],
+#scene-literary:focus-visible ~ .scene__tabs [for="scene-literary"],
+#scene-wanderlust:focus-visible ~ .scene__tabs [for="scene-wanderlust"] {
+  outline: 2px solid var(--amethyst);
+  outline-offset: 2px;
+}
+.scene__tab .opt__mark { margin-top: 0; }
+
+.scene__panel { display: none; margin-top: 22px; }
+#scene-default:checked ~ .scene__panels [data-setting="default"],
+#scene-literary:checked ~ .scene__panels [data-setting="literary"],
+#scene-wanderlust:checked ~ .scene__panels [data-setting="wanderlust"] { display: block; }
+
+.scene__spec {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 36px;
+  margin: 0;
+}
+.scene__spec dt { font: 600 13.5px/1.4 var(--face-text); color: var(--ash); }
+.scene__spec dd { margin: 0; color: var(--ink); }
+
+/* the chat sample: a dark Lumiverse screen set into the letter, the same
+   by day and by night. Its page (scene/<setting>.html) fits the frame's
+   height itself; the frame loads only when its setting is shown. */
+.scene__screen {
+  max-width: 860px;
+  min-height: 240px;
+  margin: 20px 0 0;
+  padding: 7px;
+  border-radius: calc(var(--radius-page) + 7px);
+  background: #17121f;
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / .06) inset,
+    0 1px 2px rgb(20 12 30 / .25),
+    0 10px 28px -12px rgb(20 12 30 / .45);
+}
+.scene__screen iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: var(--radius-page);
+  background: #0a0812;  /* Lumiverse's chat ground, before the page paints */
+  color-scheme: dark;
+}
+
+/* an empty slot: ruled lines on a dashed frame, waiting for real words */
+.slot--lines:empty {
+  --line: 1.6em;
+  border: 1.5px dashed var(--edge);
+  background:
+    repeating-linear-gradient(to bottom,
+      transparent 0 calc(var(--line) - 1px),
+      var(--rule-faint) calc(var(--line) - 1px) var(--line))
+    content-box,
+    color-mix(in srgb, var(--stone) 4%, var(--folio));
+}
+.slot--lines:empty {
+  display: block;
+  max-width: 68ch;
+  height: calc(2 * 1.6em + 20px);
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: var(--radius-control);
+}
+.slot--inline:empty {
+  display: inline-block;
+  width: 9ch;
+  height: 1.05em;
+  vertical-align: -.2em;
+  border-bottom: 1.5px dashed var(--edge);
+}
+
+.scene__credit {
+  max-width: 68ch;
+  margin-top: 14px;
+  font-size: 14.5px;
+  color: var(--vellum);
+}
+
+.scene__note {
+  max-width: 68ch;
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+/* Prelude's disclosure: its stroked chevron, turned down while open */
+.scene__note > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  color: var(--vellum);
+  transition: color 150ms ease-out;
+}
+.scene__note > summary::-webkit-details-marker { display: none; }
+.scene__note > summary:hover,
+.scene__note[open] > summary { color: var(--ink); }
+.chev {
+  flex: none;
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: rotate 200ms ease-out;
+}
+details[open] > summary > .chev { rotate: 90deg; }
+.scene__note > summary:focus-visible { outline: 2px solid var(--stone); outline-offset: 3px; border-radius: 3px; }
+.scene__note > p { margin: 10px 0 0; color: var(--vellum); }
+.scene__note pre {
+  margin: 10px 0 0;
+  padding: 10px 14px;
+  border: 1px solid var(--hair);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--stone) 5%, var(--folio));
+  font-size: 13.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.scene__note pre code {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: ui-monospace, "DejaVu Sans Mono", monospace;
+}
+
+/* ---------- Your model ---------- */
+/* Four parts in reading order: choose, the default sheet, reasoning off
+   where you play, then the models that change the sheet. Each part opens
+   with a numeral in the stone's ink, so the flow reads at a glance. */
+
+.enc__jump ol,
+.enc__jump ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 18px;
+  margin-top: 16px;
+  font-size: 14.5px;
+}
+.enc__jump ol { counter-reset: jump; }
+.enc__jump ol li { counter-increment: jump; }
+.enc__jump ol li::before {
+  content: counter(jump);
+  margin-right: 7px;
+  font: 900 16px/1 var(--face-title);
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--stone-ink);
+}
+.enc__jump a { display: inline-block; padding: 5px 0; }
+
+.setup__part + .setup__part {
+  margin-top: 44px;
+  padding-top: 36px;
+  border-top: 1px solid var(--hair);
+}
+.setup__title {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 18px;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.setup__num {
+  flex: none;
+  min-width: .7em;
+  font: 900 52px/.8 var(--face-title);
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--stone-ink);
+}
+.setup__lead { max-width: 62ch; color: var(--vellum); text-wrap: pretty; }
+.setup__lead strong { color: var(--ink); }
+.setup__aside {
+  max-width: 62ch;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule-faint);
+  color: var(--vellum);
+  text-wrap: pretty;
+}
+
+/* 1 · the picks: the model's name carries the row */
+.picks { list-style: none; }
+.picks li {
+  display: grid;
+  gap: 2px 24px;
+  padding: 11px 0;
+  border-top: 1px solid var(--rule-faint);
+}
+.picks li:last-child { border-bottom: 1px solid var(--rule-faint); }
+.picks b { font: 900 23px/1.1 var(--face-title); letter-spacing: .01em; }
+.picks span { color: var(--vellum); text-wrap: pretty; }
+@container (min-width: 620px) {
+  .picks li { grid-template-columns: minmax(11em, 15em) minmax(0, 1fr); align-items: baseline; }
+}
+
+/* 2 · the default sheet, on a wash so it reads as the one to copy */
+.setup__split { display: grid; gap: 16px 40px; }
+@container (min-width: 900px) {
+  .setup__split { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); align-items: start; }
+}
+.settings--sheet {
+  padding: 6px 18px;
+  border-radius: 8px;
+  background: var(--wash);
+}
+
+/* 3 · reasoning off, one column per place you set it */
+.hosts { display: grid; gap: 30px 40px; }
+@container (min-width: 720px) {
+  .hosts { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .hosts #model-provider { grid-row: span 2; }
+}
+.host h4,
+.model h4 {
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--hair);
+  font: 900 22px/1.1 var(--face-title);
+  letter-spacing: .01em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+/* 4 · the models that change the sheet: only what differs */
+.enc__jump--models ul { margin: 14px 0 22px; }
+.models { column-width: 22em; column-gap: 28px; }
+.model {
+  break-inside: avoid;
+  margin-bottom: 28px;
+  padding: 16px 18px 10px;
+  border-radius: 8px;
+  background: var(--wash);
+}
+.model__note {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--stone) var(--pill-mix), transparent);
+  font: 600 12.5px/1.2 var(--face-text);
+  letter-spacing: 0;
+  color: var(--ink);
+  vertical-align: .2em;
+  white-space: nowrap;
+}
+
+.settings { margin: 0; }
+.settings > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 18px;
+  padding: 7px 0;
+}
+.settings > div + div { border-top: 1px solid var(--rule-faint); }
+.settings dt { font: 600 14px/1.5 var(--face-text); color: var(--ash); }
+.settings dd { margin: 0; text-wrap: pretty; }
+@container (min-width: 440px) {
+  .settings--sheet > div { grid-template-columns: minmax(7.5em, 11em) minmax(0, 1fr); }
+  .settings--sheet dt { padding-top: .1em; }
+}
+
+/* ---------- Installing ---------- */
+
+.installs { display: grid; gap: 34px 44px; }
+@container (min-width: 980px) {
+  .installs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.install > h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--hair);
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.install__drawn { width: 48px; height: 48px; }
+.install > p { margin-top: 14px; color: var(--vellum); }
+.install > p + .steps { margin-top: 10px; }
+
+/* one mark for "next": the Antique Gold cut gem */
+.next-gem {
+  display: inline-flex;
+  margin-left: 14px;
+  color: var(--gold);
+  vertical-align: .08em;
+}
+.next-gem .gem { width: 13px; height: 18px; }
+.next-gem.is-moved { animation: gem-set 420ms cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes gem-set {
+  from { opacity: 0; transform: translateY(-6px) scale(.7); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Summaryception ---------- */
+
+.summ { display: grid; gap: 22px 44px; }
+@container (min-width: 760px) {
+  .summ { grid-template-columns: minmax(280px, 5fr) 7fr; }
+}
+.summ__file .shelf__actions { margin-top: 10px; }
+
+/* ---------- What changed ---------- */
+
+/* the current version, large: readers come here to learn which one is out */
+.changes__current {
+  margin-top: 14px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--stone) 12%, var(--folio));
+  font: 600 20px/1.4 var(--face-text);
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink);
+}
+
+/* the release's cover, under the version line */
+.cover { margin: 26px 0 0; max-width: 900px; }
+.cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--slipcase);
+}
+
+.changes { display: grid; gap: 30px 48px; }
+@container (min-width: 900px) {
+  .changes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.changes h3 {
+  margin-bottom: 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hair);
+}
+
+/* ---------- Credits ---------- */
+
+.credits { display: grid; gap: 22px 48px; }
+@container (min-width: 820px) {
+  .credits { grid-template-columns: 6fr 5fr; }
+}
+.credits .ledger li:first-child { padding-top: 0; }
+.credits__legal { color: var(--vellum); font-size: 14.5px; }
+.credits__legal p { text-wrap: pretty; }
+
+/* ---------- Narrow sheets ---------- */
+
+@media (max-width: 700px) {
+  .enc { margin-top: 32px; padding: 22px 18px 28px; }
+  .enc__title { margin-bottom: 14px; padding-bottom: 12px; }
+  .enc__body { margin-top: 24px; }
+  .enc h3 { font-size: 25px; }
+  .shelf__file h3, .install > h3 { font-size: 28px; }
+  .opt__body { padding: 10px 12px; gap: 10px; }
+  /* the screen runs to the sheet's edges: every pixel goes to the chat */
+  .scene__screen { margin-inline: -18px; padding: 3px 0; border-radius: 0; }
+  .scene__screen iframe { border-radius: 0; }
+  .count { margin: 0 -18px; padding-inline: 18px; }
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Page not found · DEUS EX MACHINA</title>
+<meta name="description" content="The letter is where you left it.">
+<meta name="robots" content="noindex">
+<script>
+// The folio before the first paint: ?theme=night|day, then the reader's choice, then the OS.
+(function(){var d=document.documentElement,t=null,m=/[?&]theme=(night|day)(?:&|$)/.exec(location.search);if(m)t=m[1];else{try{t=localStorage.getItem("folio.theme")}catch(e){}}if(t!=="night"&&t!=="day")t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"night":"day";d.dataset.theme=t})();
+</script>
+<link rel="preload" href="/shared/fonts/sofia-sans-extra-condensed-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/shared/fonts/vollkorn-var-400-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/shared/fonts/sofia-sans-var-400-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/shared/folio.css">
+<link rel="stylesheet" href="/shared/pages.css">
+<link rel="icon" href="/shared/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/shared/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/shared/icons/apple-touch-icon.png">
+<script src="/shared/folio.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to the page</a>
+
+<header class="season-bar">
+  <nav class="season-bar__inner" aria-label="Seasons">
+    <ul class="season-bar__seasons">
+      <li>
+        <a class="season-tab" href="/deus-ex-machina/">
+          <span class="drawn drawn--mark"><img src="/shared/icons/dem-mark.svg" alt="" width="32" height="32"></span>
+          <span class="season-tab__name">DEUS EX MACHINA</span>
+        </a>
+      </li>
+      <li>
+        <span class="season-tab season-tab--soon" aria-disabled="true" title="Prelude has no page yet.">
+          <span class="drawn"><img src="/shared/icons/prelude-mark.svg" alt="" width="24" height="24"></span>
+          <span class="season-tab__label"><span class="season-tab__name">Prelude</span><span class="season-tab__when">next season</span></span>
+        </span>
+      </li>
+    </ul>
+    <ul class="season-bar__links">
+      <li><a class="season-link" href="/deus-ex-machina/changes.html">What changed</a></li>
+      <li><a class="season-link" href="https://github.com/lsennn/Deus-ex-machina">GitHub</a></li>
+      <li>
+        <button class="theme-switch" type="button" aria-label="Switch the page between day and night" hidden>
+          <span class="drawn drawn--sun">
+            <img class="for-day" src="/shared/icons/sun.day.svg" alt="" width="24" height="24">
+            <img class="for-night" src="/shared/icons/sun.night.svg" alt="" width="24" height="24">
+          </span>
+          <span class="drawn drawn--moon">
+            <img class="for-day" src="/shared/icons/moon.day.svg" alt="" width="24" height="24">
+            <img class="for-night" src="/shared/icons/moon.night.svg" alt="" width="24" height="24">
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" class="folio-page">
+  <h1 class="page-title">Page not found</h1>
+  <div class="gem-rule" aria-hidden="true">
+    <svg class="gem" viewBox="0 0 12 16"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg>
+  </div>
+
+  <article class="phi-page lost">
+    <p>I have read a great many stories, and not one of them has a page here. Perhaps it was torn out. Perhaps nobody ever wrote it.</p>
+    <p>The letter is where you left it.</p>
+    <div class="lost__sign">
+      <a class="action" href="/deus-ex-machina/">Back to the letter</a>
+      <svg class="signature" viewBox="0 0 190 96" role="img" aria-label="Phi">
+        <path pathLength="1" style="--i:0" d="M38 76C40 60 43 36 47 14C60 3 84 8 79 25C75 40 55 45 42 38"></path>
+        <path pathLength="1" style="--i:1" d="M66 71C74 63 85 41 91 23C95 11 88 6 84 15C80 29 80 52 80 73C84 61 92 51 99 51C106 51 107 58 105 64C103 70 106 74 113 71C119 67 121 59 123 52C122 60 120 68 125 71C133 75 148 67 160 60"></path>
+        <path pathLength="1" style="--i:2" d="M124 39C125.5 37.8 127 37.8 127.8 39"></path>
+        <path pathLength="1" style="--i:3" d="M30 86C72 81 122 83 172 77"></path>
+      </svg>
+    </div>
+  </article>
+</main>
+</body>
+</html>

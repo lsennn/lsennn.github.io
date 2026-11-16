@@ -1,0 +1,622 @@
+/* The shared shell of the DEUS EX MACHINA and Prelude pages.
+   Day Folio on :root, Night Folio under data-theme="night" (set before the
+   first paint by the inline script in each page's <head>) and, with scripts
+   off, under the OS's dark setting. Values are Prelude's (apps/web/src/index.css):
+   DEM's Night Folio by night, Prelude's Day Folio by day. */
+
+/* ---------- Fonts: OFL, subset to Latin, self-hosted ---------- */
+
+@font-face {
+  font-family: "Sofia Sans Extra Condensed";
+  src: url("fonts/sofia-sans-extra-condensed-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vollkorn";
+  src: url("fonts/vollkorn-var-400-600.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vollkorn";
+  src: url("fonts/vollkorn-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("fonts/sofia-sans-var-400-700.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("fonts/sofia-sans-italic-var-400-700.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- Tokens: Day Folio ---------- */
+
+:root {
+  color-scheme: light;
+
+  /* neutral ramp */
+  --ground: #dfd2ec;        /* the page behind everything: lilac vellum */
+  --slipcase: #e9dff3;      /* the season bar, wells */
+  --folio: #fcfafd;         /* pages and slips */
+  --lamplit: #f1e8f8;       /* hover, the picked row */
+  --rule: #c2add9;          /* Binding Rule: edges of pages */
+  --rule-faint: #e3d6ef;    /* separators inside a page */
+  --edge: #7a6898;          /* Control Edge, 3:1 */
+  --ink: #2a2140;           /* Plum Ink, body text */
+  --vellum: #4c4062;        /* secondary text */
+  --ash: #5d5076;           /* tertiary text, labels */
+
+  /* Phi's page: Phi Dawn by day. Kyanite and this page are hers alone. */
+  --phi-page: #e0e8f8;
+  --phi-rule: #aebcdc;
+
+  /* the ornament: the Antique Gold cut gem and its hairlines */
+  --gold: #b8873b;
+
+  /* the stones (Catppuccin Latte by day, Amethyst Prelude's own) */
+  --stone-amethyst: #762fac;
+  --stone-rose-quartz: #ea76cb;
+  --stone-sapphire-wash: #1e66f5;
+  --stone-peridot: #40a02b;
+  --stone-aquamarine: #04a5e5;
+  --stone-kunzite: #b04fd0;
+  --stone-peach-topaz: #fe640b;
+  --stone-moonstone: #7287fd;
+  --stone-chrysoprase: #179299;
+  --stone-rubellite: #e64553;
+  --stone-larimar: #209fb5;
+  --stone-rhodolite: #d6337f;
+  --stone-morganite: #dd7878;
+  --stone-kyanite: #4f74b0;
+  --stone-garnet-rose: #d20f39;
+  --stone-citrine: #df8e1d;
+
+  /* Accent-Ink Rule: text in a stone's color is the stone mixed to ink */
+  --ink-base: #140f1a;
+  --ink-mix: 54%;
+  --pill-mix: 28%;
+
+  --on-amethyst: #ffffff;
+  --icon-rest: rgb(58 45 85 / .4);
+}
+
+/* ---------- Tokens: Night Folio ---------- */
+/* Written twice: once for the switch, once for the OS with scripts off.
+   Keep the two blocks identical. */
+
+:root[data-theme="night"] {
+  color-scheme: dark;
+  --ground: #1c1529;
+  --slipcase: #251d38;
+  --folio: #33284e;
+  --lamplit: #3e3159;
+  --rule: #5a4a76;
+  --rule-faint: #46395f;
+  --edge: #8f80ad;
+  --ink: #ece5da;
+  --vellum: #cbc1d6;
+  --ash: #a89cb8;
+  --phi-page: #2b3152;
+  --phi-rule: #4a5578;
+  --stone-amethyst: #bd97e4;
+  --stone-rose-quartz: #f5c2e7;
+  --stone-sapphire-wash: #89b4fa;
+  --stone-peridot: #a6e3a1;
+  --stone-aquamarine: #89dceb;
+  --stone-kunzite: #e2a6ef;
+  --stone-peach-topaz: #fab387;
+  --stone-moonstone: #b4befe;
+  --stone-chrysoprase: #94e2d5;
+  --stone-rubellite: #eba0ac;
+  --stone-larimar: #74c7ec;
+  --stone-rhodolite: #ee8fc0;
+  --stone-morganite: #f2cdcd;
+  --stone-kyanite: #a6c2e8;
+  --stone-garnet-rose: #f38ba8;
+  --stone-citrine: #f9e2af;
+  --ink-base: var(--ink);
+  --ink-mix: 82%;
+  --pill-mix: 36%;
+  --on-amethyst: #1c1529;
+  --icon-rest: rgb(20 14 32 / .45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --ground: #1c1529;
+    --slipcase: #251d38;
+    --folio: #33284e;
+    --lamplit: #3e3159;
+    --rule: #5a4a76;
+    --rule-faint: #46395f;
+    --edge: #8f80ad;
+    --ink: #ece5da;
+    --vellum: #cbc1d6;
+    --ash: #a89cb8;
+    --phi-page: #2b3152;
+    --phi-rule: #4a5578;
+    --stone-amethyst: #bd97e4;
+    --stone-rose-quartz: #f5c2e7;
+    --stone-sapphire-wash: #89b4fa;
+    --stone-peridot: #a6e3a1;
+    --stone-aquamarine: #89dceb;
+    --stone-kunzite: #e2a6ef;
+    --stone-peach-topaz: #fab387;
+    --stone-moonstone: #b4befe;
+    --stone-chrysoprase: #94e2d5;
+    --stone-rubellite: #eba0ac;
+    --stone-larimar: #74c7ec;
+    --stone-rhodolite: #ee8fc0;
+    --stone-morganite: #f2cdcd;
+    --stone-kyanite: #a6c2e8;
+    --stone-garnet-rose: #f38ba8;
+    --stone-citrine: #f9e2af;
+    --ink-base: var(--ink);
+    --ink-mix: 82%;
+    --pill-mix: 36%;
+    --on-amethyst: #1c1529;
+    --icon-rest: rgb(20 14 32 / .45);
+  }
+}
+
+/* ---------- Derived tokens (both folios) ---------- */
+
+:root,
+:root[data-theme] {
+  --ink-amethyst: color-mix(in srgb, var(--stone-amethyst) var(--ink-mix), var(--ink-base));
+  --ink-rose-quartz: color-mix(in srgb, var(--stone-rose-quartz) var(--ink-mix), var(--ink-base));
+  --ink-sapphire-wash: color-mix(in srgb, var(--stone-sapphire-wash) var(--ink-mix), var(--ink-base));
+  --ink-peridot: color-mix(in srgb, var(--stone-peridot) var(--ink-mix), var(--ink-base));
+  --ink-aquamarine: color-mix(in srgb, var(--stone-aquamarine) var(--ink-mix), var(--ink-base));
+  --ink-kunzite: color-mix(in srgb, var(--stone-kunzite) var(--ink-mix), var(--ink-base));
+  --ink-peach-topaz: color-mix(in srgb, var(--stone-peach-topaz) var(--ink-mix), var(--ink-base));
+  --ink-moonstone: color-mix(in srgb, var(--stone-moonstone) var(--ink-mix), var(--ink-base));
+  --ink-chrysoprase: color-mix(in srgb, var(--stone-chrysoprase) var(--ink-mix), var(--ink-base));
+  --ink-rubellite: color-mix(in srgb, var(--stone-rubellite) var(--ink-mix), var(--ink-base));
+  --ink-larimar: color-mix(in srgb, var(--stone-larimar) var(--ink-mix), var(--ink-base));
+  --ink-rhodolite: color-mix(in srgb, var(--stone-rhodolite) var(--ink-mix), var(--ink-base));
+  --ink-morganite: color-mix(in srgb, var(--stone-morganite) var(--ink-mix), var(--ink-base));
+  --ink-kyanite: color-mix(in srgb, var(--stone-kyanite) var(--ink-mix), var(--ink-base));
+  --ink-garnet-rose: color-mix(in srgb, var(--stone-garnet-rose) var(--ink-mix), var(--ink-base));
+  --ink-citrine: color-mix(in srgb, var(--stone-citrine) var(--ink-mix), var(--ink-base));
+
+  /* Deep Amethyst: the one action color (buttons, links, focus, caret) */
+  --amethyst: var(--ink-amethyst);
+  --amethyst-hover: var(--stone-amethyst);
+  --amethyst-soft: color-mix(in srgb, var(--stone-amethyst) 12%, var(--slipcase));
+
+  /* Phi's accent ink and her secondary text: Kyanite, never grey */
+  --phi-ink: var(--ink-kyanite);
+
+  /* A part's stone. A section sets data-stone (or both properties) to wear another. */
+  --stone: var(--stone-amethyst);
+  --stone-ink: var(--ink-amethyst);
+
+  /* type */
+  --face-title: "Sofia Sans Extra Condensed", "Arial Narrow", sans-serif;
+  --face-letter: "Vollkorn", Georgia, serif;
+  --face-text: "Sofia Sans", system-ui, sans-serif;
+  --mast-fit: 0.396;          /* em per character of the masthead (specimen type-2) */
+  --size-letter: 21px;
+  --size-text: 15.5px;
+  --size-bar: 15px;
+  --size-title-2: 44px;
+
+  /* space and shape */
+  --gutter: 48px;
+  --radius-page: 10px;
+  --radius-control: 8px;
+  --page-max: 1440px;
+}
+
+[data-stone="amethyst"] { --stone: var(--stone-amethyst); --stone-ink: var(--ink-amethyst); }
+[data-stone="rose-quartz"] { --stone: var(--stone-rose-quartz); --stone-ink: var(--ink-rose-quartz); }
+[data-stone="sapphire-wash"] { --stone: var(--stone-sapphire-wash); --stone-ink: var(--ink-sapphire-wash); }
+[data-stone="peridot"] { --stone: var(--stone-peridot); --stone-ink: var(--ink-peridot); }
+[data-stone="aquamarine"] { --stone: var(--stone-aquamarine); --stone-ink: var(--ink-aquamarine); }
+[data-stone="kunzite"] { --stone: var(--stone-kunzite); --stone-ink: var(--ink-kunzite); }
+[data-stone="peach-topaz"] { --stone: var(--stone-peach-topaz); --stone-ink: var(--ink-peach-topaz); }
+[data-stone="moonstone"] { --stone: var(--stone-moonstone); --stone-ink: var(--ink-moonstone); }
+[data-stone="chrysoprase"] { --stone: var(--stone-chrysoprase); --stone-ink: var(--ink-chrysoprase); }
+[data-stone="rubellite"] { --stone: var(--stone-rubellite); --stone-ink: var(--ink-rubellite); }
+[data-stone="larimar"] { --stone: var(--stone-larimar); --stone-ink: var(--ink-larimar); }
+[data-stone="rhodolite"] { --stone: var(--stone-rhodolite); --stone-ink: var(--ink-rhodolite); }
+[data-stone="morganite"] { --stone: var(--stone-morganite); --stone-ink: var(--ink-morganite); }
+[data-stone="citrine"] { --stone: var(--stone-citrine); --stone-ink: var(--ink-citrine); }
+/* Kyanite is Phi's: her page (.phi-page) and her letter's index tab. */
+[data-stone="kyanite"] { --stone: var(--stone-kyanite); --stone-ink: var(--ink-kyanite); }
+
+@media (max-width: 700px) {
+  :root,
+  :root[data-theme] {
+    --gutter: 20px;
+    --size-letter: 18px;
+    --size-title-2: 34px;
+  }
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  color: var(--ink);
+  font: 400 var(--size-text)/1.6 var(--face-text);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-variant-numeric: lining-nums;
+  scrollbar-color: var(--edge) color-mix(in srgb, var(--rule) 35%, transparent);
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+/* The sky behind the folio, from Phi's portrait: by day the blue sky and
+   clouds of her daytime picture, by night the Milky Way of her night one.
+   Softened, held back under a wash of the ground and fading out down the
+   window, so it reads as background; by night the brighter stars come
+   through. The day wash is heavier, so the vellum stays lilac. */
+:root {
+  --sky: image-set(url("sky/day-sky.avif") type("image/avif"), url("sky/day-sky.webp") type("image/webp"));
+  --sky-wash: 58%;
+}
+:root[data-theme="night"] {
+  --sky: image-set(url("sky/night-sky.avif") type("image/avif"), url("sky/night-sky.webp") type("image/webp"));
+  --sky-wash: 38%;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --sky: image-set(url("sky/night-sky.avif") type("image/avif"), url("sky/night-sky.webp") type("image/webp"));
+    --sky-wash: 38%;
+  }
+}
+html {
+  background:
+    linear-gradient(to bottom,
+      color-mix(in srgb, var(--ground) var(--sky-wash), transparent) 0%,
+      color-mix(in srgb, var(--ground) calc(var(--sky-wash) + 24%), transparent) 45%,
+      var(--ground) 92%) top center / 100% 100vh no-repeat fixed,
+    var(--sky) top center / cover no-repeat fixed,
+    var(--ground);
+}
+body { background: transparent; }
+
+h1, h2, h3, p, ul, ol, figure { margin: 0; }
+img, svg { display: block; max-width: 100%; }
+
+::selection { background: color-mix(in srgb, var(--stone-amethyst) 30%, transparent); color: inherit; }
+input, textarea, [contenteditable] { caret-color: var(--amethyst); }
+
+a { color: var(--amethyst); text-underline-offset: .2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--amethyst);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute; left: 12px; top: -48px; z-index: 10;
+  padding: 8px 12px; border-radius: var(--radius-control);
+  background: var(--folio); color: var(--ink); border: 1px solid var(--edge);
+  font-weight: 600; text-decoration: none;
+}
+.skip-link:focus-visible { top: 8px; }
+
+/* ---------- Season bar ---------- */
+
+.season-bar {
+  background: var(--slipcase);
+  border-top: 2px solid var(--stone);
+  border-bottom: 1px solid var(--rule);
+  color: var(--vellum);
+  font: 600 var(--size-bar)/1 var(--face-text);
+}
+:root:not([data-theme="night"]) .season-bar { border-top-width: 3px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) .season-bar { border-top-width: 2px; } }
+
+.season-bar__inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 8px calc(var(--gutter) - 12px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+}
+
+.season-bar__seasons,
+.season-bar__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.season-bar__links { margin-left: auto; }
+
+.season-tab,
+.season-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 6px 12px;
+  border-radius: var(--radius-control);
+  color: var(--vellum);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.season-link { font-weight: 400; }
+a.season-tab:hover,
+.season-link:hover { background: var(--lamplit); color: var(--ink); }
+
+.season-tab[aria-current="page"] {
+  background: color-mix(in srgb, var(--stone) var(--pill-mix), transparent);
+  color: var(--ink);
+}
+/* A season-bar link of the page you are on wears the same pill. */
+.season-link[aria-current="page"] {
+  background: color-mix(in srgb, var(--stone) var(--pill-mix), transparent);
+  color: var(--ink);
+  font-weight: 600;
+}
+.season-tab__name {
+  font-family: var(--face-title);
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: .02em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.season-tab--soon .drawn { opacity: .5; filter: saturate(.6); }
+/* Prelude's tab: its name set like DEM's, dimmed, in a dashed outline (not
+   chosen, the site's rule), with when it comes beneath it, in the bar's word */
+.season-tab--soon {
+  padding-block: 4px;
+  border: 1px dashed color-mix(in srgb, var(--stone-amethyst) 45%, var(--rule));
+}
+.season-tab__label { display: grid; gap: 3px; }
+.season-tab--soon .season-tab__name { color: var(--ash); }
+.season-tab__when {
+  font: 400 11.5px/1 var(--face-text);
+  letter-spacing: .02em;
+  color: var(--ash);
+}
+
+.season-bar .drawn { width: 24px; height: 24px; }
+/* The full DEM mark: quill and drop need room to read, so it sits larger
+   than the other tab marks and overlaps the tab's padding a little. */
+.season-bar .drawn--mark { width: 32px; height: 32px; margin-block: -4px; }
+
+@media (max-width: 560px) {
+  .season-bar__inner { padding: 6px 8px; }
+  .season-bar__links { margin-left: 0; width: 100%; justify-content: flex-end; }
+  .season-tab, .season-link { padding: 6px 8px; min-height: 44px; }
+  .season-link { font-size: 14px; }
+}
+
+/* ---------- Drawn images with a text-free placeholder ---------- */
+/* .drawn wraps one <img> per folio (.for-night, .for-day) or a single <img>.
+   folio.js marks an image that failed to load; the placeholder shape shows
+   in its place until the drawing exists. */
+
+.drawn { position: relative; display: inline-grid; place-items: center; flex: none; }
+.drawn > img { grid-area: 1 / 1; width: 100%; height: 100%; }
+.drawn > img.is-missing { display: none; }
+
+.for-night { display: none; }
+:root[data-theme="night"] .for-night { display: block; }
+:root[data-theme="night"] .for-day { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .for-night { display: block; }
+  :root:not([data-theme]) .for-day { display: none; }
+}
+
+.drawn.is-placeholder::before {
+  content: "";
+  grid-area: 1 / 1;
+  width: 62%;
+  height: 62%;
+  border-radius: 50%;
+  border: 1.5px solid var(--ash);
+}
+.drawn--sun.is-placeholder::before { background: var(--stone-citrine); border-color: var(--ink-citrine); }
+.drawn--moon.is-placeholder::before {
+  background: linear-gradient(90deg, var(--vellum) 50%, transparent 50%);
+  border-color: var(--vellum);
+}
+
+/* ---------- Theme switch ---------- */
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 40px;
+  margin-left: 4px;
+  padding: 3px;
+  border: 1px solid var(--edge);
+  border-radius: 999px;
+  background: var(--folio);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+}
+.theme-switch[hidden] { display: none; }
+.theme-switch:hover { background: var(--lamplit); }
+.theme-switch .drawn {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 200ms ease-out, opacity 200ms ease-out;
+  opacity: .55;
+}
+/* the folio in use sits on its own disc, so state never rests on color alone */
+:root[data-theme="day"] .theme-switch .drawn--sun,
+:root[data-theme="night"] .theme-switch .drawn--moon {
+  background: color-mix(in srgb, var(--stone-amethyst) var(--pill-mix), transparent);
+  opacity: 1;
+}
+@media (max-width: 560px) {
+  .theme-switch { min-height: 44px; }
+  .theme-switch .drawn { width: 36px; height: 36px; }
+}
+
+/* ---------- Page frame ---------- */
+
+.folio-page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 0 64px;
+  container-type: inline-size;
+}
+
+/* the masthead: huge condensed capitals across the measure (specimen type-2) */
+.masthead {
+  --mast-chars: 15;
+  margin: 36px var(--gutter) 0;
+  font-family: var(--face-title);
+  font-weight: 900;
+  font-size: calc((100vw - 2 * var(--gutter)) / (var(--mast-chars) * var(--mast-fit)));
+  font-size: calc((100cqw - 2 * var(--gutter)) / (var(--mast-chars) * var(--mast-fit)));
+  line-height: .92;
+  letter-spacing: -.005em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ink);
+  font-kerning: normal;
+}
+
+/* the gem rule: Antique Gold hairlines around the cut gem, the only ornament */
+.gem-rule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 22px var(--gutter) 0;
+  color: var(--gold);
+}
+.gem-rule::before,
+.gem-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+  opacity: .7;
+}
+.gem { width: 11px; height: 15px; flex: none; }
+
+/* a Folio Plum page (slips, enclosures) */
+.folio-sheet {
+  background: var(--folio);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-page);
+  padding: 22px 26px 26px;
+}
+
+/* ---------- Phi's page ---------- */
+
+.phi-page {
+  --stone: var(--stone-kyanite);
+  --stone-ink: var(--ink-kyanite);
+  background: var(--phi-page);
+  border: 1px solid var(--phi-rule);
+  border-radius: var(--radius-page);
+  padding: 28px 32px;
+  color: var(--ink);
+  font: 400 var(--size-letter)/1.6 var(--face-letter);
+  text-wrap: pretty;
+}
+.phi-page p + p { margin-top: .75em; }
+.phi-page .phi-note { color: var(--phi-ink); }
+@media (max-width: 700px) { .phi-page { padding: 22px; } }
+
+/* her cameo: round, a 1.5px Kyanite outline 2px out */
+.phi-cameo {
+  display: block;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  outline: 1.5px solid var(--stone-kyanite);
+  outline-offset: 2px;
+  object-fit: cover;
+}
+.phi-cameo img { width: 100%; height: 100%; border-radius: 50%; }
+@media (max-width: 700px) { .phi-cameo { width: 96px; height: 96px; } }
+
+/* ---------- Actions ---------- */
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 16px;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: var(--amethyst);
+  color: var(--on-amethyst);
+  font: 600 15px/1 var(--face-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 150ms ease-out;
+}
+.action:hover { background: var(--amethyst-hover); text-decoration: none; }
+.action svg { width: 16px; height: 16px; }
+
+/* ---------- Motion ---------- */
+
+/* ---------- The theme switch, as Prelude does it ---------- */
+/* The page cross-fades between folios (a view transition, folio.js), and
+   the sun or moon that becomes current turns in. */
+@keyframes glyph-turn {
+  from { opacity: 0; rotate: -60deg; scale: .6; }
+}
+.theme-switch .drawn.motion-turn > img { animation: glyph-turn 220ms ease-out; }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

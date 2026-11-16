@@ -1,0 +1,13 @@
+{
+  "version": "3.0",
+  "tag": "v3.0",
+  "date": "2026-10-26",
+  "repo": "lsennn/Deus-ex-machina",
+  "files": {
+    "st": "DEUS.EX.MACHINA.V3.ST.json",
+    "tavo": "DEUS.EX.MACHINA.V3.Tavo.json",
+    "lumiverse": "DEUS.EX.MACHINA.V3.Lumiverse.json",
+    "regex": "DEUS.EX.MACHINA.V3.ST.-.Regex.json",
+    "summaryception": "DEM.Summaryception.custom.prompt.txt"
+  }
+}

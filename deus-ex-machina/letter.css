@@ -1,0 +1,400 @@
+/* The letter and the first screen of the DEUS EX MACHINA page:
+   the desk (letter, index tabs, enclosures), Phi's letter with its margin
+   notes, the clipped cameo, the Enclosed tag, the signature.
+   Tokens come from ../shared/folio.css. */
+
+:root {
+  --tabs-w: 196px;
+  --desk-gap: 40px;
+  --margin: 138px;         /* the letter's margin, where the badges sit */
+  --overhang: 40px;        /* room past the letter's edge for the cameo and the tag */
+}
+
+html { scroll-padding-top: 16px; }
+
+/* ---------- The desk ---------- */
+
+.desk {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--tabs-w);
+  column-gap: var(--desk-gap);
+  align-items: start;
+  margin: 26px var(--gutter) 0;
+}
+.letter { grid-column: 1; grid-row: 1; }
+.index-tabs { grid-column: 2; grid-row: 1 / span 2; }
+.enclosures { grid-column: 1; grid-row: 2; min-width: 0; width: calc(100% - var(--overhang)); }
+
+/* ---------- The letter ---------- */
+
+.letter {
+  position: relative;
+  width: calc(100% - var(--overhang));
+  padding: 28px 44px 44px calc(22px + var(--margin));
+  line-height: 1.58;
+}
+.letter > p,
+.letter > .para { max-width: 33em; }   /* about 70 characters of Vollkorn */
+.letter .para + p,
+.letter p + .para,
+.letter .para + .para,
+.letter .tag + .para { margin-top: .75em; }
+/* Vollkorn ships 400-600 upright and a 400 italic: keep emphasis on real faces. */
+.letter strong { font-weight: 600; }
+.letter em { font-weight: 400; }
+
+/* the masthead sits a little closer to the bar than the shell's default */
+.folio-page > .masthead { margin-top: 26px; line-height: .8; }
+
+/* the letterhead line: her seal and the dateline, between masthead and gem rule */
+.letterhead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px var(--gutter) 0;
+  color: var(--phi-ink);
+  font: 600 14.5px/1.3 var(--face-text);
+  letter-spacing: .01em;
+}
+.letterhead__seal { width: 40px; height: 40px; flex: none; }
+.letterhead + .gem-rule { margin-top: 10px; }
+.greeting { margin-bottom: .5em; }
+
+/* her cameo: a square print, paper-clipped over the letter's top-right corner */
+.cameo {
+  position: relative;
+  float: right;
+  width: 172px;
+  margin: -50px -66px 18px 30px;
+  padding: 6px;
+  background: var(--folio);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+.cameo img { width: 160px; height: 160px; border-radius: 1px; object-fit: cover; }
+
+/* a paper clip, drawn: steel wire with a lit edge */
+.clip {
+  position: absolute;
+  z-index: 2;
+  width: 22px;
+  height: 40px;
+  overflow: visible;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(1px 1.5px 1px rgb(20 14 32 / .28));
+}
+.clip path { stroke: var(--edge); stroke-width: 2.6; }
+.clip .clip__shine { stroke: color-mix(in srgb, var(--folio) 70%, var(--ink) 0%); stroke-width: .9; transform: translate(-.5px, -.4px); opacity: .8; }
+.clip--cameo { top: -16px; left: 22px; transform: rotate(-4deg); }
+
+/* ---------- Margin notes: a badge beside its sentence, unfolding the real card ---------- */
+/* Closed, a note floats into the margin: zero net width, so the text never moves,
+   and clear: left stacks close neighbours. Open, it becomes a block in the
+   paragraph with the card beneath the sentence. Plain <details>: works with
+   scripts off. */
+
+.para { display: block; }
+
+.note {
+  float: left;
+  clear: left;
+  width: var(--margin);
+  margin: .1em 0 1px calc(-1 * var(--margin));
+  font-size: 1rem;
+}
+/* one badge to a line of the letter: stacked neighbours keep pace with the text
+   and stay beside the sentences that name them */
+.note > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: calc(var(--margin) - 14px);
+  padding: 1px 6px 1px 2px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  color: var(--phi-ink);
+  font: 600 12px/1.12 var(--face-text);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 150ms ease-out, border-color 150ms ease-out;
+}
+.note > summary::-webkit-details-marker { display: none; }
+.note > summary:hover { background: color-mix(in srgb, var(--stone-kyanite) 14%, var(--phi-page)); }
+.note[open] > summary {
+  background: color-mix(in srgb, var(--stone-kyanite) var(--pill-mix), var(--phi-page));
+  border-color: var(--phi-rule);
+  color: var(--ink);
+}
+.note__badge {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  overflow: visible;
+  filter: drop-shadow(0 1px 1px rgb(20 14 32 / .18));
+}
+.note__name { display: block; min-width: 0; }
+
+.note[open] {
+  float: none;
+  clear: none;
+  position: relative;
+  display: block;
+  width: auto;
+  margin: .45em 0 .9em;
+}
+.note[open] > summary {
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--margin));
+}
+.note__card {
+  display: flow-root;   /* sits beside the cameo, never under it */
+  min-height: 64px;
+}
+.note__card iframe {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--phi-rule);
+  border-radius: var(--radius-page);
+  background: #1c1529;  /* the cards' own Night Folio ground, before the frame paints */
+  color-scheme: dark;
+}
+.note[open] .note__card { animation: note-unfold 260ms cubic-bezier(.16, 1, .3, 1); }
+@keyframes note-unfold {
+  from { clip-path: inset(0 0 100% 0); opacity: .4; }
+  to { clip-path: inset(0); opacity: 1; }
+}
+
+/* ---------- The Enclosed tag ---------- */
+/* A small paper-clipped tag that points to the Downloads enclosure. It and the
+   cameo sit straight: a rotated box is resampled, and its text turns soft, in
+   Firefox most of all. The clips keep the tilt. */
+
+.tag {
+  position: relative;
+  z-index: 1;
+  float: right;
+  clear: right;
+  display: grid;
+  gap: 3px;
+  margin: .5em -66px .9em 28px;   /* right edge in line with the cameo */
+  padding: 14px 20px 12px 18px;
+  background: var(--folio);
+  border: 1px solid color-mix(in srgb, var(--stone) 45%, var(--rule));
+  border-radius: 4px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 160ms ease-out;
+}
+.clip--tag { top: -17px; right: 18px; width: 18px; height: 33px; transform: rotate(5deg); }
+.tag__label {
+  font: 900 22px/1 var(--face-title);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.tag__what {
+  font: 400 15px/1.3 var(--face-text);
+  color: var(--vellum);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--stone) 60%, transparent);
+  text-underline-offset: 3px;
+}
+.tag:hover { border-color: var(--stone); }
+.tag:hover .tag__what { color: var(--ink); text-decoration-color: var(--stone); }
+.tag:focus-visible { outline: 2px solid var(--stone); outline-offset: 3px; }
+
+/* ---------- Sign-off and the drawn signature ---------- */
+
+.signoff { margin-top: 1.6em; }
+.signature {
+  width: 190px;
+  height: 96px;
+  margin: 4px 0 0 -18px;
+  overflow: visible;
+  fill: none;
+  stroke: var(--phi-ink);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.signature path:last-child { stroke-width: 1.6; }
+/* letter.js holds the strokes back until the signature is in view, then writes them once */
+.signature.is-waiting path { stroke-dasharray: 1 1; stroke-dashoffset: 1; }
+.signature.is-writing path {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: sign 900ms cubic-bezier(.45, .05, .35, 1) forwards;
+  animation-delay: calc(var(--i) * 820ms + 200ms);
+}
+.signature.is-writing path:nth-child(3) { animation-duration: 160ms; }
+.signature.is-writing path:nth-child(4) { animation-duration: 600ms; animation-delay: 2800ms; }
+@keyframes sign { to { stroke-dashoffset: 0; } }
+
+/* ---------- Index tabs ---------- */
+
+.index-tabs {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  font: 600 15px/1.15 var(--face-text);
+}
+.index-tabs ol {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 10px 0;
+  list-style: none;
+  border-left: 1px solid var(--stone);
+  transition: border-color 300ms ease-out;
+}
+.index-tabs a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 12px 8px 14px;
+  /* plain paper: the stone lives on the gem, and only the current tab wears it */
+  background: var(--folio);
+  border: 1px solid var(--rule);
+  border-left: 0;
+  border-radius: 0 var(--radius-control) var(--radius-control) 0;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 240ms cubic-bezier(.16, 1, .3, 1), background-color 200ms ease-out;
+}
+.index-tabs a:hover { background: color-mix(in srgb, var(--stone) 12%, var(--folio)); }
+.index-tabs a[aria-current] {
+  background: color-mix(in srgb, var(--stone) var(--pill-mix), var(--folio));
+  border-color: color-mix(in srgb, var(--stone) 45%, var(--rule));
+  transform: translateX(10px);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--stone-ink) 70%, transparent);
+  text-underline-offset: .28em;
+}
+.index-tabs__stone {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  /* a small cut gem in the tab's stone: the facets (specimens/build-gems.py) over the stone's
+     color, cut to the gem's outline */
+  background: var(--gem-facets) center / 100% 100% no-repeat, var(--stone);
+  -webkit-mask: var(--gem-mask) center / 100% 100% no-repeat;
+  mask: var(--gem-mask) center / 100% 100% no-repeat;
+}
+/* one cut per stone; a stone without its own cut takes the round brilliant.
+   The masks are shared/icons/gems/<cut>.mask.svg written inline: Chrome loads
+   a mask-image file under CORS, which fails for a page opened from disk, and
+   the stones vanished there. The facets are a background and load as files. */
+.index-tabs li { --gem-facets: url("../shared/icons/gems/round-brilliant.svg"); --gem-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8.00 0.80L10.76 1.35L13.09 2.91L14.65 5.24L15.20 8.00L14.65 10.76L13.09 13.09L10.76 14.65L8.00 15.20L5.24 14.65L2.91 13.09L1.35 10.76L0.80 8.00L1.35 5.24L2.91 2.91L5.24 1.35Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E"); }
+.index-tabs [data-stone="kyanite"] { --gem-facets: url("../shared/icons/gems/pear.svg"); --gem-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8.00 0.60L12.85 6.80L13.60 9.60L12.85 12.40L10.80 14.45L8.00 15.20L5.20 14.45L3.15 12.40L2.40 9.60L3.15 6.80Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E"); }
+.index-tabs [data-stone="citrine"] { --gem-facets: url("../shared/icons/gems/cushion.svg"); --gem-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8.00 0.80L12.45 1.08L14.05 1.95L14.92 3.55L15.20 8.00L14.92 12.45L14.05 14.05L12.45 14.92L8.00 15.20L3.55 14.92L1.95 14.05L1.08 12.45L0.80 8.00L1.08 3.55L1.95 1.95L3.55 1.08Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E"); }
+.index-tabs [data-stone="peach-topaz"] { --gem-facets: url("../shared/icons/gems/oval.svg"); --gem-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8.00 0.60L10.70 1.59L12.68 4.30L13.40 8.00L12.68 11.70L10.70 14.41L8.00 15.40L5.30 14.41L3.32 11.70L2.60 8.00L3.32 4.30L5.30 1.59Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E"); }
+.index-tabs [data-stone="larimar"] { --gem-facets: url("../shared/icons/gems/round-brilliant.svg"); --gem-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8.00 0.80L10.76 1.35L13.09 2.91L14.65 5.24L15.20 8.00L14.65 10.76L13.09 13.09L10.76 14.65L8.00 15.20L5.24 14.65L2.91 13.09L1.35 10.76L0.80 8.00L1.35 5.24L2.91 2.91L5.24 1.35Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E"); }
+.index-tabs [data-stone="peridot"] { --gem-facets: url("../shared/icons/gems/emerald.svg"); --gem-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.40 0.60L11.60 0.60L13.60 2.60L13.60 13.40L11.60 15.40L4.40 15.40L2.40 13.40L2.40 2.60Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E"); }
+.index-tabs [data-stone="rose-quartz"] { --gem-facets: url("../shared/icons/gems/heart.svg"); --gem-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8.00 5.20L8.39 4.01L10.49 2.29L13.55 2.84L15.04 5.64L13.55 8.85L10.49 11.63L8.39 13.90L8.00 14.88L7.61 13.90L5.51 11.63L2.45 8.85L0.96 5.64L2.45 2.84L5.51 2.29L7.61 4.01Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E"); }
+.index-tabs [data-stone="chrysoprase"] { --gem-facets: url("../shared/icons/gems/trillion.svg"); --gem-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8.00 1.40L12.01 6.68L14.58 12.80L8.00 13.64L1.42 12.80L3.99 6.68Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E"); }
+.index-tabs [data-stone="morganite"] { --gem-facets: url("../shared/icons/gems/marquise.svg"); --gem-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M14.28 2.73L14.85 5.12L13.59 8.28L10.83 11.37L7.31 13.55L3.97 14.25L1.72 13.27L1.15 10.88L2.41 7.72L5.17 4.63L8.69 2.45L12.03 1.75Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E"); }
+.index-tabs [data-stone="moonstone"] { --gem-facets: url("../shared/icons/gems/rose.svg"); --gem-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8.00 0.60L14.41 4.30L14.41 11.70L8.00 15.40L1.59 11.70L1.59 4.30Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E"); }
+.index-tabs__label { flex: 1; min-width: 0; }
+/* the one "you are here" mark: the Antique Gold cut gem, on the current tab */
+.index-tabs__gem {
+  width: 9px;
+  height: 12px;
+  flex: none;
+  color: var(--gold);
+  visibility: hidden;
+}
+.index-tabs .is-current .index-tabs__gem { visibility: visible; }
+
+/* ---------- Narrower desks ---------- */
+
+@media (max-width: 1239px) {
+  :root { --tabs-w: 168px; --desk-gap: 28px; }
+  .letter, .enclosures { width: 100%; }
+}
+
+@media (max-width: 900px) {
+  :root { --margin: 64px; }
+  .note > summary { flex-direction: column; gap: 3px; width: calc(var(--margin) - 10px); padding: 4px; text-align: center; }
+  .note__name { font-size: 11px; }
+}
+
+/* ---------- Phone: one column, the tabs become a strip that sticks to the top ---------- */
+
+@media (max-width: 760px) {
+  :root { --margin: 44px; }
+  html { scroll-padding-top: 68px; }
+  .desk { grid-template-columns: minmax(0, 1fr); margin-top: 22px; }
+  .letter, .index-tabs, .enclosures { grid-column: 1; grid-row: auto; }
+  .letter { padding: 22px 18px 32px calc(14px + var(--margin)); }
+
+  .cameo { width: 108px; margin: -44px -26px 12px 16px; padding: 4px; }
+  /* the greeting sits beside her portrait, the letter proper starts under it */
+  .greeting + p { clear: right; }
+  .cameo img { width: 98px; height: 98px; }
+  .clip--cameo { width: 16px; height: 29px; top: -12px; left: 14px; }
+
+  .letterhead { gap: 10px; margin-top: 10px; font-size: 13.5px; }
+  .letterhead__seal { width: 32px; height: 32px; }
+
+  .note > summary { width: 36px; padding: 3px; }
+  .note__badge { width: 30px; height: 30px; }
+  .note__badge--tracker { width: 13px; height: 18px; margin: 6px 8px; }
+  .note__name {
+    position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+  }
+  .note[open] .note__card { margin-top: 44px; margin-left: calc(-1 * var(--margin)); }
+
+  /* too narrow to float beside the text: the tag stands on its own line, at the right */
+  .tag { float: none; width: fit-content; margin: 1.2em -10px 1.2em auto; padding: 12px 16px 10px 14px; }
+  .tag__label { font-size: 19px; }
+  .tag__what { font-size: 14px; }
+
+  .signature { width: 160px; height: 81px; margin-left: -14px; }
+
+  .index-tabs {
+    top: 0;
+    z-index: 5;
+    margin: 28px calc(-1 * var(--gutter)) 0;
+    background: var(--ground);
+    border-bottom: 1px solid var(--stone);
+    transition: border-color 300ms ease-out;
+  }
+  .index-tabs ol {
+    flex-direction: row;
+    gap: 4px;
+    padding: 8px var(--gutter) 0;
+    border-left: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .index-tabs ol::-webkit-scrollbar { display: none; }
+  .index-tabs a {
+    min-height: 40px;
+    padding: 8px 12px;
+    border-left: 1px solid var(--rule);
+    border-bottom: 0;
+    border-radius: var(--radius-control) var(--radius-control) 0 0;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+  .index-tabs a[aria-current] { transform: translateY(-3px); }
+}
+
+@media (max-width: 380px) {
+  .letter { padding-right: 14px; }
+}
+
+/* ---------- Motion off ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .note[open] .note__card { animation: none; }
+  .signature.is-waiting path,
+  .signature.is-writing path { stroke-dashoffset: 0; animation: none; }
+}

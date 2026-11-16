@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>DEUS EX MACHINA</title>
+<meta name="description" content="DEUS EX MACHINA, a preset for SillyTavern, Tavo and Lumiverse.">
+<script>
+// The folio before the first paint: ?theme=night|day, then the reader's choice, then the OS.
+(function(){var d=document.documentElement,t=null,m=/[?&]theme=(night|day)(?:&|$)/.exec(location.search);if(m)t=m[1];else{try{t=localStorage.getItem("folio.theme")}catch(e){}}if(t!=="night"&&t!=="day")t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"night":"day";d.dataset.theme=t})();
+</script>
+<link rel="preload" href="../shared/fonts/sofia-sans-extra-condensed-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../shared/fonts/vollkorn-var-400-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../shared/fonts/sofia-sans-var-400-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared/folio.css">
+<link rel="stylesheet" href="letter.css">
+<link rel="stylesheet" href="enclosures.css">
+<link rel="icon" href="../shared/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../shared/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../shared/icons/apple-touch-icon.png">
+<script src="../shared/folio.js" defer></script>
+<script src="letter.js" defer></script>
+<script src="enclosures.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to the page</a>
+
+<header class="season-bar">
+  <nav class="season-bar__inner" aria-label="Seasons">
+    <ul class="season-bar__seasons">
+      <li>
+        <a class="season-tab" href="./" aria-current="page">
+          <span class="drawn drawn--mark"><img src="../shared/icons/dem-mark.svg" alt="" width="32" height="32"></span>
+          <span class="season-tab__name">DEUS EX MACHINA</span>
+        </a>
+      </li>
+      <li>
+        <span class="season-tab season-tab--soon" aria-disabled="true" title="Prelude has no page yet.">
+          <span class="drawn"><img src="../shared/icons/prelude-mark.svg" alt="" width="24" height="24"></span>
+          <span class="season-tab__label"><span class="season-tab__name">Prelude</span><span class="season-tab__when">next season</span></span>
+        </span>
+      </li>
+    </ul>
+    <ul class="season-bar__links">
+      <li><a class="season-link" href="changes.html">What changed</a></li>
+      <li><a class="season-link" href="https://github.com/lsennn/Deus-ex-machina">GitHub</a></li>
+      <li>
+        <button class="theme-switch" type="button" aria-label="Switch the page between day and night" hidden>
+          <span class="drawn drawn--sun">
+            <img class="for-day" src="../shared/icons/sun.day.svg" alt="" width="24" height="24">
+            <img class="for-night" src="../shared/icons/sun.night.svg" alt="" width="24" height="24">
+          </span>
+          <span class="drawn drawn--moon">
+            <img class="for-day" src="../shared/icons/moon.day.svg" alt="" width="24" height="24">
+            <img class="for-night" src="../shared/icons/moon.night.svg" alt="" width="24" height="24">
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" class="folio-page">
+  <h1 class="masthead">DEUS EX MACHINA</h1>
+  <p class="letterhead">
+    <img class="letterhead__seal" src="../shared/icons/dem-mark.svg" alt="" width="40" height="40">
+    <span>From the desk of Phi, the Story Master · 26 October 2026</span>
+  </p>
+  <div class="gem-rule" aria-hidden="true">
+    <svg class="gem" viewBox="0 0 12 16"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg>
+  </div>
+
+  <div class="desk">
+    <article id="letter" class="phi-page letter" aria-label="A letter from Phi">
+      <div class="cameo">
+        <svg class="clip clip--cameo" viewBox="0 0 32 58" aria-hidden="true"><path d="M12 20V40a4 4 0 0 0 8 0V10a7 7 0 0 0-14 0v34a10 10 0 0 0 20 0V16"></path><path class="clip__shine" d="M12 20V40a4 4 0 0 0 8 0V10a7 7 0 0 0-14 0v34a10 10 0 0 0 20 0V16"></path></svg>
+        <picture class="for-day">
+          <source type="image/avif" srcset="img/phi-cameo-day-160.avif 1x, img/phi-cameo-day-360.avif 2x">
+          <source type="image/webp" srcset="img/phi-cameo-day-160.webp 1x, img/phi-cameo-day-360.webp 2x">
+          <img src="img/phi-cameo-day-160.webp" alt="Phi" width="160" height="160">
+        </picture>
+        <picture class="for-night">
+          <source type="image/avif" srcset="img/phi-cameo-night-160.avif 1x, img/phi-cameo-night-360.avif 2x">
+          <source type="image/webp" srcset="img/phi-cameo-night-160.webp 1x, img/phi-cameo-night-360.webp 2x">
+          <img src="img/phi-cameo-night-160.webp" alt="Phi" width="160" height="160">
+        </picture>
+      </div>
+
+      <p class="greeting">Dear reader,</p>
+
+      <p>My name is Phi, and I write stories. I have read every one I could find, in
+      every age and every form, myths and novels, plays and films and games. Each
+      new one still delights me. <em>Yours</em> will too.</p>
+
+      <a class="tag" id="enclosed" href="#preset" data-stone="citrine">
+        <svg class="clip clip--tag" viewBox="0 0 32 58" aria-hidden="true"><path d="M12 20V40a4 4 0 0 0 8 0V10a7 7 0 0 0-14 0v34a10 10 0 0 0 20 0V16"></path><path class="clip__shine" d="M12 20V40a4 4 0 0 0 8 0V10a7 7 0 0 0-14 0v34a10 10 0 0 0 20 0V16"></path></svg>
+        <span class="tag__label">Enclosed</span>
+        <span class="tag__what">Downloads, <span data-release-text="version">V3.0</span></span>
+      </a>
+
+      <div class="para">You bring the characters and the world. I write what happens next. Before
+      every reply I plan the scene where you can read it, <details class="note" data-card="scene-plan"><summary><img class="note__badge" src="../shared/icons/badges/scene-plan.svg" alt="" width="40" height="40"><span class="note__name">Scene Plan</span></summary><div class="note__card"><iframe src="cards/page/scene-plan.html" title="Scene Plan card" loading="lazy" height="180"></iframe></div></details> and I
+      set the hour, the date, the place and the weather above the story. <details class="note" data-card="tracker"><summary><img class="note__badge" src="../shared/icons/badges/tracker-fallback.svg" alt="" width="40" height="40"><span class="note__name">Tracker</span></summary><div class="note__card"><iframe src="cards/page/tracker.html" title="Tracker card" loading="lazy" height="200"></iframe></div></details>
+      I keep a ledger of everyone in it, where they are and what
+      they are wearing. <details class="note" data-card="status"><summary><img class="note__badge" src="../shared/icons/badges/status.svg" alt="" width="40" height="40"><span class="note__name">Status</span></summary><div class="note__card"><iframe src="cards/page/status.html" title="Status card" loading="lazy" height="640"></iframe></div></details> <strong>Your character stays yours.</strong>
+      Whatever you say you do plays out in full, and unless you hand me the pen, I
+      never put words in your mouth.</div>
+
+      <div class="para">I leave threads lying about on purpose and pick them up later. <details class="note" data-card="story-threads"><summary><svg class="note__badge note__badge--story-threads" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="28" cy="54" rx="15" ry="3" fill="#000" opacity=".32"></ellipse><path d="M41 40C50 47 46 57 55 57C61 57 63 53 68 51" fill="none" stroke="#bd97e4" stroke-width="2.2" stroke-linecap="round"></path><circle cx="28" cy="30" r="17" fill="#bd97e4"></circle><path d="M40 18A17 17 0 0 1 16 42A19 19 0 0 0 40 18Z" fill="#7f639d"></path><g fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M13 26Q28 38 43 23" stroke="#d3bfe9"></path><path d="M14 35Q30 45 43 35" stroke="#5e4b7a"></path><path d="M20 15Q15 31 23 45" stroke="#d3bfe9"></path><path d="M31 13Q23 30 34 46" stroke="#5e4b7a"></path><path d="M38 16Q33 30 44 35" stroke="#d3bfe9"></path></g><ellipse cx="21" cy="21" rx="4.2" ry="2.4" transform="rotate(-38 21 21)" fill="#fff" opacity=".5"></ellipse></svg><span class="note__name">Story Threads</span></summary><div class="note__card"><iframe src="cards/page/story-threads.html" title="Story Threads card" loading="lazy" height="270"></iframe></div></details>
+      Each turn I look at what the people in the scene want
+      and what is pressing on them, and I lay out <strong>five roads</strong>, from quiet to
+      scene-changing. <details class="note" data-card="undercurrents"><summary><img class="note__badge" src="../shared/icons/badges/undercurrents.svg" alt="" width="40" height="40"><span class="note__name">Undercurrents</span></summary><div class="note__card"><iframe src="cards/page/undercurrents.html" title="Undercurrents card" loading="lazy" height="652"></iframe></div></details> What you write decides which ones they
+      take. A quiet turn gets a quiet answer. If you want a story that never sits
+      still, I can draw a road at random and keep it hidden from you until it
+      arrives. <details class="note" data-card="momentum-engine"><summary><img class="note__badge" src="../shared/icons/badges/momentum-engine.svg" alt="" width="40" height="40"><span class="note__name">Momentum Engine</span></summary><div class="note__card"><iframe src="cards/page/momentum-engine.html" title="Momentum Engine card" loading="lazy" height="380"></iframe></div></details> Or I can leave a single conflict at the end
+      of each reply and let it lean on the next, more slowly. <details class="note" data-card="conflict"><summary><img class="note__badge" src="../shared/icons/badges/conflict.svg" alt="" width="40" height="40"><span class="note__name">Conflict</span></summary><div class="note__card"><iframe src="cards/page/conflict.html" title="Conflict card" loading="lazy" height="210"></iframe></div></details> And
+      if you would rather pick from a list, I will write you one. <details class="note" data-card="cyoa"><summary><svg class="note__badge note__badge--cyoa" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 50L48 57L32 64L16 57Z" fill="#a97968"></path><path d="M16 57L32 64V67L16 60Z" fill="#6f5052"></path><path d="M32 64L48 57V60L32 67Z" fill="#5a4046"></path><path d="M29 12H32V59H29Z" fill="#fab387"></path><path d="M32 12H35V58H32Z" fill="#a97968"></path><path d="M29 12L32 10.5L35 12L32 13.5Z" fill="#fcd5bd"></path><path d="M17 15H42L48 20.5L42 26H17Z" fill="#fcd5bd"></path><path d="M17 26H42L48 20.5V22.5L42 28H17Z" fill="#a97968"></path><path d="M21 19.5H37M21 22.5H33" stroke="#6f5052" stroke-width="1.8" stroke-linecap="round"></path><path d="M47 29H22L16 34.5L22 40H47Z" fill="#fab387"></path><path d="M47 40H22L16 34.5V36.5L22 42H47Z" fill="#6f5052"></path><path d="M26 33.5H42M29 36.5H40" stroke="#6f5052" stroke-width="1.8" stroke-linecap="round"></path><g transform="rotate(14 32 47)"><path d="M20 43H40L45 47.5L40 52H20Z" fill="#fcd5bd"></path><path d="M20 52H40L45 47.5V49.5L40 54H20Z" fill="#a97968"></path></g></svg><span class="note__name">Choices List</span></summary><div class="note__card"><iframe src="cards/page/cyoa.html" title="Choices List card" loading="lazy" height="584"></iframe></div></details></div>
+
+      <div class="para">Some things I keep <em>only when you ask</em>. Who is falling for whom, and how far. <details class="note" data-card="relationships"><summary><img class="note__badge" src="../shared/icons/badges/relationships.svg" alt="" width="40" height="40"><span class="note__name">Relationships</span></summary><div class="note__card"><iframe src="cards/page/relationships.html" title="Relationships card" loading="lazy" height="640"></iframe></div></details>
+      What each person felt this turn, and what it made
+      them do. <details class="note" data-card="psychological-states"><summary><img class="note__badge" src="../shared/icons/badges/psychological-states.svg" alt="" width="40" height="40"><span class="note__name">Psychological States</span></summary><div class="note__card"><iframe src="cards/page/psychological-states.html" title="Psychological States card" loading="lazy" height="600"></iframe></div></details> While we are somewhere else, I follow what the others are up to. <details class="note" data-card="meanwhile"><summary><img class="note__badge" src="../shared/icons/badges/meanwhile.svg" alt="" width="40" height="40"><span class="note__name">Meanwhile</span></summary><div class="note__card"><iframe src="cards/page/meanwhile.html" title="Meanwhile card" loading="lazy" height="340"></iframe></div></details> I know who keeps the secret and who it is kept from. <details class="note" data-card="hidden-truths"><summary><img class="note__badge" src="../shared/icons/badges/hidden-truths.svg" alt="" width="40" height="40"><span class="note__name">Hidden Truths</span></summary><div class="note__card"><iframe src="cards/page/hidden-truths.html" title="Hidden Truths card" loading="lazy" height="442"></iframe></div></details> I keep a note of where the plot and every subplot stand. <details class="note" data-card="plotlines"><summary><img class="note__badge" src="../shared/icons/badges/plotlines.svg" alt="" width="40" height="40"><span class="note__name">Plotlines</span></summary><div class="note__card"><iframe src="cards/page/plotlines.html" title="Plotlines card" loading="lazy" height="250"></iframe></div></details>
+      All of it folds into <strong>one tray</strong> under my reply, out of the
+      way until you open it. <details class="note" data-card="active-modules"><summary><img class="note__badge" src="../shared/icons/badges/active-modules.svg" alt="" width="40" height="40"><span class="note__name">Active Modules</span></summary><div class="note__card"><iframe src="cards/page/active-modules.html" title="Active Modules card" loading="lazy" height="420"></iframe></div></details></div>
+
+      <div class="para">My friends read over my shoulder. They see <em>only</em> the story, so they guess and
+      argue and get things wrong, and now and then the story gets to them. <details class="note" data-card="companions"><summary><img class="note__badge" src="../shared/icons/badges/companions.svg" alt="" width="40" height="40"><span class="note__name">Companions</span></summary><div class="note__card"><iframe src="cards/page/companions.html" title="Companions card" loading="lazy" height="350"></iframe></div></details>
+      On honest days I reread my own page and name my two weakest lines. I mend them in my next reply. <details class="note" data-card="phi-s-scratchpad"><summary><img class="note__badge" src="../shared/icons/badges/phi-s-scratchpad.svg" alt="" width="40" height="40"><span class="note__name">Phi's Scratchpad</span></summary><div class="note__card"><iframe src="cards/page/phi-s-scratchpad.html" title="Phi's Scratchpad card" loading="lazy" height="270"></iframe></div></details></div>
+
+      <p>You can talk to me. <strong>Write out of character, or say my name</strong>, and I will answer
+      you myself.</p>
+
+      <p>The preset is clipped to this letter, one copy for each place you might be
+      writing. Everything else is <em>behind the tabs</em>.</p>
+
+      <div class="signoff">
+        <p>With love, and a full inkwell,</p>
+        <svg class="signature" viewBox="0 0 190 96" role="img" aria-label="Phi, the Story Master">
+          <path pathLength="1" style="--i:0" d="M38 76C40 60 43 36 47 14C60 3 84 8 79 25C75 40 55 45 42 38"></path>
+          <path pathLength="1" style="--i:1" d="M66 71C74 63 85 41 91 23C95 11 88 6 84 15C80 29 80 52 80 73C84 61 92 51 99 51C106 51 107 58 105 64C103 70 106 74 113 71C119 67 121 59 123 52C122 60 120 68 125 71C133 75 148 67 160 60"></path>
+          <path pathLength="1" style="--i:2" d="M124 39C125.5 37.8 127 37.8 127.8 39"></path>
+          <path pathLength="1" style="--i:3" d="M30 86C72 81 122 83 172 77"></path>
+        </svg>
+      </div>
+    </article>
+
+    <nav class="index-tabs" aria-label="Enclosures">
+      <ol>
+        <li data-stone="kyanite"><a href="#letter"><span class="index-tabs__stone" aria-hidden="true"></span><span class="index-tabs__label">Phi's letter</span><svg class="index-tabs__gem" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg></a></li>
+        <li data-stone="citrine"><a href="#preset"><span class="index-tabs__stone" aria-hidden="true"></span><span class="index-tabs__label">Downloads</span><svg class="index-tabs__gem" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg></a></li>
+        <li data-stone="peach-topaz"><a href="#changes"><span class="index-tabs__stone" aria-hidden="true"></span><span class="index-tabs__label">What changed</span><svg class="index-tabs__gem" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg></a></li>
+        <li data-stone="larimar"><a href="#your-model"><span class="index-tabs__stone" aria-hidden="true"></span><span class="index-tabs__label">Your model</span><svg class="index-tabs__gem" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg></a></li>
+        <li data-stone="peridot"><a href="#modules"><span class="index-tabs__stone" aria-hidden="true"></span><span class="index-tabs__label">Modules</span><svg class="index-tabs__gem" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg></a></li>
+        <li data-stone="rose-quartz"><a href="#one-scene"><span class="index-tabs__stone" aria-hidden="true"></span><span class="index-tabs__label">Sample replies</span><svg class="index-tabs__gem" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg></a></li>
+        <li data-stone="chrysoprase"><a href="#installing"><span class="index-tabs__stone" aria-hidden="true"></span><span class="index-tabs__label">Installing</span><svg class="index-tabs__gem" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg></a></li>
+        <li data-stone="morganite"><a href="#summaryception"><span class="index-tabs__stone" aria-hidden="true"></span><span class="index-tabs__label">Summaryception</span><svg class="index-tabs__gem" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg></a></li>
+        <li data-stone="moonstone"><a href="#credits"><span class="index-tabs__stone" aria-hidden="true"></span><span class="index-tabs__label">Credits</span><svg class="index-tabs__gem" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg></a></li>
+      </ol>
+    </nav>
+
+    <div class="enclosures">
+<!-- enclosures:start -->
+<!-- The enclosures: the practical sheets clipped behind Phi's letter.
+     Spliced into index.html by tools/splice-enclosures.py. The page's <head>
+     links enclosures.css and enclosures.js. -->
+
+<section id="preset" class="enc" data-stone="citrine" aria-labelledby="preset-title">
+  <div class="enc__head">
+    <h2 class="enc__title" id="preset-title">Downloads</h2>
+    <p><span data-release-text="version">V3.0</span>, released <time data-release-text="date" datetime="2026-10-26">26 October 2026</time>. One file for each host.</p>
+  </div>
+
+  <aside class="heads-up" data-stone="larimar" aria-labelledby="heads-up-title">
+    <p class="heads-up__title" id="heads-up-title">Set up your model first.</p>
+    <p>The preset is written for the reasoning and sampler settings in <a href="#your-model">Your model</a>, and it reads best with them. Read that enclosure before your first chat.</p>
+    <p><a href="#installing">Installing</a> walks through each host, step by step.</p>
+  </aside>
+
+  <div class="enc__body shelf">
+    <div class="shelf__host" id="preset-st">
+      <div class="shelf__file">
+        <span class="drawn shelf__drawn"><img class="for-day" src="../shared/icons/hosts/sillytavern.day.svg" alt="" width="64" height="64"><img class="for-night" src="../shared/icons/hosts/sillytavern.night.svg" alt="" width="64" height="64"></span>
+        <h3>SillyTavern</h3>
+        <p><code data-release-text="st">DEUS.<wbr>EX.<wbr>MACHINA.<wbr>V3.<wbr>ST.json</code></p>
+        <p class="shelf__actions">
+          <a class="action" href="https://github.com/lsennn/Deus-ex-machina/releases/download/v3.0/DEUS.EX.MACHINA.V3.ST.json" data-release-href="st"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8M4.5 6.8 8 10.3l3.5-3.5M3 13.5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Download for SillyTavern</a>
+          <a class="copy-link" href="#preset-st" data-copy-link>Copy link</a>
+        </p>
+      </div>
+      <div class="shelf__needs">
+        <h4>You need:</h4>
+        <ul>
+          <li>SillyTavern <strong>1.18.0 or newer</strong>.</li>
+          <li>The <strong>Experimental Macro Engine</strong> on, in Settings. It has been on by default since 1.17. If it is off, a card in the chat tells you how to turn it on.</li>
+          <li>The preset's <strong>regex imported and enabled</strong>. SillyTavern asks when you import. Say yes.</li>
+        </ul>
+        <div class="shelf__extra" id="preset-regex">
+          <p>The regex <em>on its own</em>, for using it without the preset: <code data-release-text="regex">DEUS.<wbr>EX.<wbr>MACHINA.<wbr>V3.<wbr>ST.<wbr>-.<wbr>Regex.json</code>. In SillyTavern, Extensions &gt; Regex &gt; Import.</p>
+          <p class="shelf__actions">
+            <a class="quiet-action" href="https://github.com/lsennn/Deus-ex-machina/releases/download/v3.0/DEUS.EX.MACHINA.V3.ST.-.Regex.json" data-release-href="regex"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8M4.5 6.8 8 10.3l3.5-3.5M3 13.5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Download the regex</a>
+            <a class="copy-link" href="#preset-regex" data-copy-link>Copy link</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shelf__host" id="preset-tavo">
+      <div class="shelf__file">
+        <span class="drawn shelf__drawn"><img class="for-day" src="../shared/icons/hosts/tavo.day.svg" alt="" width="64" height="64"><img class="for-night" src="../shared/icons/hosts/tavo.night.svg" alt="" width="64" height="64"></span>
+        <h3>Tavo</h3>
+        <p><code data-release-text="tavo">DEUS.<wbr>EX.<wbr>MACHINA.<wbr>V3.<wbr>Tavo.json</code></p>
+        <p class="shelf__actions">
+          <a class="action" href="https://github.com/lsennn/Deus-ex-machina/releases/download/v3.0/DEUS.EX.MACHINA.V3.Tavo.json" data-release-href="tavo"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8M4.5 6.8 8 10.3l3.5-3.5M3 13.5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Download for Tavo</a>
+          <a class="copy-link" href="#preset-tavo" data-copy-link>Copy link</a>
+        </p>
+      </div>
+      <div class="shelf__needs">
+        <h4>You need:</h4>
+        <ul>
+          <li>The <strong>current version of Tavo</strong>. It reads SillyTavern-style presets, regex and HTML.</li>
+          <li>An <strong>API connection</strong>, with any OpenAI-compatible or supported provider.</li>
+          <li><strong>Advanced Rendering on</strong>, so the colored dialogue and the cards render.</li>
+          <li>A theme with <strong>no text transformation</strong>, so nothing strips the colors.</li>
+          <li>The preset's <strong>regex imported and enabled</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="shelf__host" id="preset-lumiverse">
+      <div class="shelf__file">
+        <span class="drawn shelf__drawn"><img class="for-day" src="../shared/icons/hosts/lumiverse.day.svg" alt="" width="64" height="64"><img class="for-night" src="../shared/icons/hosts/lumiverse.night.svg" alt="" width="64" height="64"></span>
+        <h3>Lumiverse</h3>
+        <p><code data-release-text="lumiverse">DEUS.<wbr>EX.<wbr>MACHINA.<wbr>V3.<wbr>Lumiverse.json</code></p>
+        <p class="shelf__actions">
+          <a class="action" href="https://github.com/lsennn/Deus-ex-machina/releases/download/v3.0/DEUS.EX.MACHINA.V3.Lumiverse.json" data-release-href="lumiverse"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8M4.5 6.8 8 10.3l3.5-3.5M3 13.5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Download for Lumiverse</a>
+          <a class="copy-link" href="#preset-lumiverse" data-copy-link>Copy link</a>
+        </p>
+      </div>
+      <div class="shelf__needs">
+        <h4>You need:</h4>
+        <ul>
+          <li>Lumiverse <strong>1.2.5 or newer</strong>, the current stable release.</li>
+          <li>The preset's <strong>regex imported and enabled</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="shelf__older">Older versions are in <a href="changes.html">What changed</a>, each with a link to its release on GitHub.</p>
+</section>
+
+<section id="changes" class="enc" data-stone="peach-topaz" aria-labelledby="changes-title">
+  <div class="enc__head">
+    <h2 class="enc__title" id="changes-title">What changed in <span data-release-text="version">V3.0</span></h2>
+    <p class="changes__current">The current version, released <time data-release-text="date" datetime="2026-10-26">26 October 2026</time>.</p>
+  </div>
+
+  <figure class="cover">
+    <picture>
+      <source type="image/avif" srcset="img/cover-v3-768.avif 768w, img/cover-v3-1536.avif 1536w" sizes="(min-width: 1100px) 900px, 92vw">
+      <img src="img/cover-v3-1536.webp" srcset="img/cover-v3-768.webp 768w, img/cover-v3-1536.webp 1536w" sizes="(min-width: 1100px) 900px, 92vw" width="1536" height="864" loading="lazy" decoding="async" alt="The V3 cover. Seven friends at café tables on a terrace above a seaside town at dusk, under the title DEUS EX MACHINA V3.">
+    </picture>
+  </figure>
+
+  <div class="enc__body changes">
+    <div class="changes__list">
+      <h3>New</h3>
+      <ul class="ledger">
+        <li><b>The Lumiverse config page.</b> It covers every section, and the whole preset is set up from it, Planning, Content Policy and Phi's Vow included.</li>
+        <li><b>A new look.</b> Drawn icons and a color for each module. Every footer sits in one Active Modules tray that folds away, with a tab for each section. Characters, Phi, Threads, Plotlines, Meanwhile, Truths, Conflict, Momentum. The Characters tab gathers each character's Status, Relationship, Psychology and Undercurrent rows into one block, and a cast row shows one character at a time. Tracker locations read as breadcrumbs.</li>
+        <li><b>Animated Tracker scenes</b>, chosen by the setting.</li>
+        <li><b>Two optional switches</b>, regex, off by default. Start the tray folded, or hide the Tracker scene where it doesn't suit the setting.</li>
+        <li><b>Meanwhile.</b> What characters and events are doing off the scene.</li>
+        <li><b>Undercurrents.</b> Tracks what each character wants, what presses on the scene and your own actions, then offers routes from quiet to scene-changing. It replaces Momentum Engine as the default.</li>
+        <li><b>Phi and her vow.</b> They replace Reinforcement.</li>
+        <li><b>Phi's Scratchpad</b>, off by default. After the story, Phi names her two weakest lines, each from a different module, and how she'll fix them in her next reply.</li>
+        <li><b>Talk to Phi.</b> Write out of character, or mention her name, and Phi answers you herself.</li>
+        <li><b>Hidden Truths.</b> Who knows what, the secrets each character keeps, and from whom.</li>
+        <li><b>Companions.</b> Phi's friends read the story as she writes it and react below it. Chi, Lou, Sam, Grace, Layla and Phi, with Sola as a guest from Pyropia's Sola preset. Notes mode gives each a short section. Chat mode is a group chat where they answer each other.</li>
+        <li><b>Relationships</b>, with a score in the tray. Friendship, Realistic Romance, Bubbly Romance and Dark Romance, and arcs like enemies to lovers. Everyday warmth barely moves a score. A milestone moves it a lot.</li>
+        <li><b>Status, Present Only.</b> Lists only the characters in the scene, so lorebook entries keyed to a name stop firing every turn. A character who leaves gets one "Departed" row and returns with the last known score.</li>
+        <li><b>Score changes.</b> Status and Relationships show how far a score moved since the last turn, as in <span class="num">45/100 −5</span>.</li>
+        <li><b>Psychological States, reworked.</b> Each character's psychology turn by turn. How they read what happened, what they felt, what it made them do. That state carries into the next turn and shapes how they act and speak.</li>
+        <li><b>Phi's Wanderlust.</b> A Narration option in Phi's own voice, authorial and curious.</li>
+        <li><b>Lite.</b> A Narration option that keeps the narration rules at the lowest token cost.</li>
+        <li><b>Three Narrative Styles.</b> Intimate, Melancholic and Suspenseful. Melancholic blends with Comedic into Tragicomedy, and with Lighthearted into Bittersweet.</li>
+        <li><b>Dialogue.</b> A new Anime option. Heightened is now Theatrical.</li>
+        <li><b>Dialogue Sounds</b>, off by default. Drawn-Out Words ("pleaaase"), Stammers ("I-I didn't"), Shouting in Caps ("I said STOP.") and Vocal Sounds ("huh?", "pfft"), in any mix, with any Dialogue option. The Scene Plan decides which sounds each character makes that turn.</li>
+        <li><b>Extra Long.</b> A Length option of 700 to 1000 words.</li>
+        <li><b>Passthrough</b>, off by default. A note for Gemini 4 Argon, whose safety filter can block safe replies, even in SFW scenes. Turn it on only if your replies get blocked.</li>
+        <li><b>Formatting checks.</b> If a module or the dialogue colors go missing, a notice appears and the next turn enforces the format. If you turned the module on after that reply, just continue.</li>
+        <li><b>Choices on Lumiverse.</b> The + buttons combine up to three choices.</li>
+      </ul>
+    </div>
+
+    <div class="changes__list">
+      <h3>Fixed and improved</h3>
+      <ul class="ledger">
+        <li><b>Dialogue Color</b> is more consistent.</li>
+                <li><b>Redacted routes</b> are fixed.</li>
+        <li><b>Expressive Dialogue</b> acts each emotion out with better animations. On Lumiverse, asterisks and line breaks inside it render correctly.</li>
+        <li><b>Narration.</b> Cinematic is the <em>camera</em> and Literary is the <em>mind</em>, now kept apart. Literary is neutral in tone, and its wry voice moved to the Comedic style.</li>
+        <li><b>First-person character POV</b> works.</li>
+        <li><b>Your character's pronouns</b> come from your persona first, then from the character sheets, so the model is less likely to misgender you. Lumiverse also reads the persona's pronoun field.</li>
+        <li><b>Your agency.</b> The characters and the world drive each turn. Your stated actions play out in full, and the model never retells or retries them, or adds your dialogue, decisions, thoughts or feelings.</li>
+        <li><b>Combat Writing.</b> Your stated moves play out, foes act and their blows can land, and then the turn ends for your answer. Blocks, dodges, counters and finishing blows are yours to call. With Anti-Positivity Bias on, you can be taken down or killed when the fight earns it.</li>
+        <li><b>Input Improver.</b> A turn of several beats, such as talk, act, talk, keeps its order across paragraphs. Your lines stay quoted speech, and an action-only turn gets no added dialogue.</li>
+        <li><b>Choices.</b> The action you choose plays out in order, spread across the reply.</li>
+        <li><b>Visual Storytelling</b> draws a visual only when the story shows something new.</li>
+        <li><b>Scene Plan.</b> Its rows were rewritten, so the model reads each scene better.</li>
+        <li><b>The OOC plan row</b> appears only when you step out of character.</li>
+        <li><b>Formatting</b> breaks less often, and the cards still render when the model slips.</li>
+        <li><b>Display.</b> Messages render faster, with less lag in long chats.</li>
+        <li><b>Post-History Instructions</b>, off by default. Your POV, Tense and Asterisks picks win over the card's post-history instructions. On Lumiverse they are an option now, and go before the Response Directives instead of at the very end.</li>
+        <li><b>Realistic Smut, consent.</b> Characters are less likely to hover and hold back when they should act.</li>
+        <li><b>Realistic Smut and Max Lewdness.</b> Characters act on their own kinks, and on the ones they know you enjoy.</li>
+        <li><b>True Thoughts, Visible,</b> no longer colors dialogue when Dialogue Color is off.</li>
+        <li><b>Change Language.</b> Cards and trackers keep working in another language.</li>
+        <li><b>Warning System.</b> Setup problems show in a Preset setup card that names the entry and the fix. The model no longer has to write the warning.</li>
+        <li><b>SillyTavern.</b> If the Experimental Macro Engine is off, a card tells you how to turn it on.</li>
+        <li><b>Tavo.</b> Long replies no longer risk blanking the chat.</li>
+        <li><b>Tooltips</b> are rewritten in plain words.</li>
+        <li><b>Model setup</b> has a new section for Gemini 4 Argon.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="your-model" class="enc" data-stone="larimar" aria-labelledby="your-model-title">
+  <div class="enc__head">
+    <h2 class="enc__title" id="your-model-title">Your model</h2>
+    <p>The preset's default settings need <strong>reasoning off</strong>, or at the lowest effort the model allows. <strong>GLM 5.3</strong> and <strong>Gemini 4 Argon</strong> are the exceptions. They use Thinking (Fallback).</p>
+    <nav class="enc__jump" aria-label="Your model, in order">
+      <ol>
+        <li><a href="#model-recommended">Choose a model</a></li>
+        <li><a href="#model-most">The default settings</a></li>
+        <li><a href="#model-reasoning-off">Turning reasoning off</a></li>
+        <li><a href="#model-own">Models with their own settings</a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="enc__body setup">
+    <section class="setup__part" id="model-recommended" aria-labelledby="model-recommended-title">
+      <h3 class="setup__title" id="model-recommended-title"><span class="setup__num" aria-hidden="true">1</span>Choose a model</h3>
+      <ul class="picks">
+        <li><b>Opus 4.6</b><span>The smartest. Expensive. Detailed prose.</span></li>
+        <li><b>Gemini 3.7 Flash</b><span>Realistic characters. Smart and cheap.</span></li>
+        <li><b>GLM 5.2 and 5.3</b><span>Natural dialogue. Smart and cheap.</span></li>
+        <li><b>DeepSeek V4 Pro 0813</b><span>Balanced. Smart and cheap.</span></li>
+        <li><b>Gemma 4 31b</b><span>Less smart, but follows instructions very well. Very cheap.</span></li>
+      </ul>
+    </section>
+
+    <section class="setup__part" id="model-most" aria-labelledby="model-most-title">
+      <h3 class="setup__title" id="model-most-title"><span class="setup__num" aria-hidden="true">2</span>The default settings</h3>
+      <div class="setup__split">
+        <p class="setup__lead">For models that <strong>can turn reasoning off</strong>. Claude Opus 4.6, Kimi K2.5 and 2.6, Mimo V2.5 Pro, DeepSeek V4 Pro, DeepSeek V4.1 Flash, DeepSeek V3.2, GLM 4.7, Gemma 4 31b, and others.</p>
+        <dl class="settings settings--sheet">
+          <div><dt>Temperature</dt><dd>0.75-1.0. Start with 0.75, the default. Gemma 4 and Opus use 1.0.</dd></div>
+          <div><dt>Top P</dt><dd>0.95 (default)</dd></div>
+          <div><dt>Other samplers</dt><dd>1.0 or disabled (default). Gemma 4 31b uses Top K 64.</dd></div>
+          <div><dt>Post-processing</dt><dd>semi-strict</dd></div>
+          <div><dt>Request model reasoning</dt><dd>off (unchecked)</dd></div>
+          <div><dt>Reasoning effort</dt><dd>minimum or none</dd></div>
+          <div><dt>Scene Plan</dt><dd>on</dd></div>
+        </dl>
+      </div>
+      <p class="setup__aside">A model that cannot turn its reasoning off, such as Kimi K3, GPT 5.6, Gemini 3.1 Pro or Gemini 3.5 Flash and later, <strong>keeps the lowest effort it allows</strong>, with Scene Plan still on.</p>
+    </section>
+
+    <section class="setup__part" id="model-reasoning-off" aria-labelledby="model-reasoning-off-title">
+      <h3 class="setup__title" id="model-reasoning-off-title"><span class="setup__num" aria-hidden="true">3</span>Turning reasoning off</h3>
+      <div class="hosts">
+        <div class="host" id="model-provider">
+          <h4>Your provider</h4>
+          <dl class="settings">
+            <div><dt>NanoGPT</dt><dd>Choose the model's <strong>non-thinking variant</strong>. For DeepSeek V4 Pro 0813, that is the one without Thinking in its name.</dd></div>
+            <div><dt>OpenRouter</dt><dd>Leave "request model reasoning" <strong>unchecked</strong>, as it is by default. Reasoning is then off wherever the model allows it.</dd></div>
+            <div><dt>Any other provider</dt><dd>Leave "request model reasoning" unchecked and <strong>set the reasoning effort to minimum</strong>. If the model still reasons, open the Connection Profile settings (the plug icon), scroll to Additional Parameters on the line with Cancel and Connect, and add <code>reasoning: { effort: 'none' }</code>.</dd></div>
+          </dl>
+        </div>
+
+        <div class="host" id="model-tavo">
+          <h4>Tavo</h4>
+          <p>Edit API &gt; the settings icon, top right &gt; <strong>Request body parameters</strong>. Add <code>reasoning: { effort: 'none' }</code>. For a model whose reasoning is always on, add <code>reasoning: { effort: 'low' }</code>. For Gemini, <code>thinkingLevel: low</code>.</p>
+        </div>
+
+        <div class="host" id="model-lumiverse">
+          <h4>Lumiverse</h4>
+          <ol class="steps">
+            <li>In Configure Prompt Variables, set <b>Planning</b> to Scene Plan, or to Thinking (Fallback) for GLM 5.3 and Gemini 4 Argon.</li>
+            <li>Check <b>API Reasoning</b> and set <b>Reasoning effort</b> to <b>None</b>. None is what turns reasoning off, and Lumiverse sends it only while API Reasoning is checked.</li>
+            <li>If your provider has no None, set Reasoning effort to Auto. Then open the Reasoning tab &gt; Reasoning / CoT &gt; Custom Body, tick Enabled and enter <code>{"reasoning": {"effort": "none"}}</code>.</li>
+            <li>For a model whose reasoning is always on, keep API Reasoning checked and set the effort to low.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="setup__part" id="model-own" aria-labelledby="model-own-title">
+      <h3 class="setup__title" id="model-own-title"><span class="setup__num" aria-hidden="true">4</span>Models with their own settings</h3>
+      <p class="setup__lead">Each of these changes the default settings. What is not listed stays as it is.</p>
+      <nav class="enc__jump enc__jump--models" aria-label="Models with their own settings">
+        <ul>
+          <li><a href="#model-glm-52">GLM 5.2</a></li>
+          <li><a href="#model-glm-53">GLM 5.3</a></li>
+          <li><a href="#model-glm-53-flash">GLM 5.3 Flash</a></li>
+          <li><a href="#model-kimi-k3">Kimi K3</a></li>
+          <li><a href="#model-gemini">Gemini 3.1 Pro, 3.5 to 3.8 Flash</a></li>
+          <li><a href="#model-argon">Gemini 4 Argon</a></li>
+        </ul>
+      </nav>
+      <div class="models">
+        <div class="model" id="model-glm-52">
+          <h4>GLM 5.2</h4>
+          <dl class="settings">
+            <div><dt>Post-processing</dt><dd>merge consecutive roles</dd></div>
+          </dl>
+        </div>
+
+        <div class="model" id="model-glm-53">
+          <h4>GLM 5.3 <span class="model__note">reasoning always on</span></h4>
+          <dl class="settings">
+            <div><dt>Post-processing</dt><dd>merge consecutive roles</dd></div>
+            <div><dt>Request model reasoning</dt><dd>on (checked)</dd></div>
+            <div><dt>Reasoning effort</dt><dd>low on OpenRouter. Medium on NanoGPT. On other OpenAI-compatible providers, <code>reasoning: { effort: 'low' }</code> in Additional Parameters &gt; Include Body.</dd></div>
+            <div><dt>Reasoning</dt><dd>in the REASONING section of the prompt list, turn <code>! Scene Plan !</code> off and turn <code>! Thinking ! (FALLBACK)</code> on.</dd></div>
+          </dl>
+        </div>
+
+        <div class="model" id="model-glm-53-flash">
+          <h4>GLM 5.3 Flash <span class="model__note">reasoning always on</span></h4>
+          <dl class="settings">
+            <div><dt>Post-processing</dt><dd>merge consecutive roles</dd></div>
+            <div><dt>Request model reasoning</dt><dd>on (checked)</dd></div>
+            <div><dt>Reasoning effort</dt><dd>low on OpenRouter. Medium on NanoGPT. On other OpenAI-compatible providers, <code>reasoning: { effort: 'low' }</code> in Additional Parameters &gt; Include Body.</dd></div>
+          </dl>
+        </div>
+
+        <div class="model" id="model-kimi-k3">
+          <h4>Kimi K3 <span class="model__note">reasoning always on</span></h4>
+          <dl class="settings">
+            <div><dt>Temperature</dt><dd>1.0</dd></div>
+            <div><dt>Request model reasoning</dt><dd>on (checked)</dd></div>
+            <div><dt>Reasoning effort</dt><dd>low on OpenRouter. Medium on NanoGPT. On other OpenAI-compatible providers, <code>reasoning: { effort: 'low' }</code> in Additional Parameters &gt; Include Body.</dd></div>
+          </dl>
+        </div>
+
+        <div class="model" id="model-gemini">
+          <h4>Gemini 3.1 Pro, Gemini 3.5 to 3.8 Flash <span class="model__note">reasoning always on</span></h4>
+          <dl class="settings">
+            <div><dt>Temperature</dt><dd>1.0</dd></div>
+            <div><dt>Request model reasoning</dt><dd>on (checked)</dd></div>
+            <div><dt>Reasoning effort</dt><dd>low on OpenRouter. Medium on NanoGPT. On other OpenAI-compatible providers, <code>thinkingLevel: low</code> in Additional Parameters &gt; Include Body. On Lumiverse, Auto, with <code>{"thinkingLevel": "low"}</code> in Custom Body and Enabled ticked.</dd></div>
+            <div><dt>Passthrough</dt><dd>Gemini, if the filter blocks replies</dd></div>
+          </dl>
+        </div>
+
+        <div class="model" id="model-argon">
+          <h4>Gemini 4 Argon <span class="model__note">reasoning always on</span></h4>
+          <dl class="settings">
+            <div><dt>Provider</dt><dd>Google Vertex, recommended</dd></div>
+            <div><dt>Samplers</dt><dd>Argon ignores them. Temperature, Top P and Top K have no effect. Leave the defaults.</dd></div>
+            <div><dt>Request model reasoning</dt><dd>on (checked)</dd></div>
+            <div><dt>Reasoning effort</dt><dd>low on OpenRouter. Medium on NanoGPT. On other OpenAI-compatible providers, <code>thinkingLevel: low</code> in Additional Parameters &gt; Include Body. <strong>Never minimal or thinkingBudget.</strong> Argon rejects them with an error.</dd></div>
+            <div><dt>Reasoning</dt><dd>in the REASONING section of the prompt list, turn <code>! Scene Plan !</code> off and turn <code>! Thinking ! (FALLBACK)</code> on.</dd></div>
+            <div><dt>Core</dt><dd>turn off <b>Content Policy</b> and <b>Phi's Vow.</b></dd></div>
+            <div><dt>Passthrough</dt><dd>Gemini, on</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section id="modules" class="enc enc--modules" data-stone="peridot" aria-labelledby="modules-title">
+  <div class="enc__head">
+    <h2 class="enc__title" id="modules-title">Every module</h2>
+    <p><strong>In the order the preset reads them.</strong> Each one has a tooltip inside the preset, in plain words. On Lumiverse, each control on the config page carries its own description.</p>
+    <p>Where a group says <strong>pick one</strong>, the first option you leave on is the one that counts.</p>
+    <p>By default the preset sends <strong class="num">4,498</strong> tokens, counted on the SillyTavern build with SillyTavern's default tokenizer. With the add-ons and constraints off and Lite narration, it sends <strong class="num">2,149</strong>.</p>
+  </div>
+
+  <form class="enc__body modules" id="modules-form" autocomplete="off" action="#modules" onsubmit="return false">
+    <aside class="modules__rail">
+      <div class="count" data-count data-default-total="4498" aria-live="polite">
+        <p class="count__line"><span class="count__n num" data-count-n>4,498</span> tokens</p>
+        <p class="count__what" data-count-what>with the defaults</p>
+        <button class="count__reset" type="reset">Back to the defaults</button>
+      </div>
+      <nav class="modules__nav" aria-label="Module groups">
+        <ul>
+          <li><a href="#mod-lumiverse">On Lumiverse</a></li>
+          <li><a href="#mod-scene-plan">Scene Plan</a></li>
+          <li><a href="#mod-core">Core</a></li>
+          <li><a href="#mod-agency">Agency</a></li>
+          <li><a href="#mod-pacing">Pacing</a></li>
+          <li><a href="#mod-length">Length</a></li>
+          <li><a href="#mod-characters">Characters and Plot Guidance</a></li>
+          <li><a href="#mod-narration">Narration</a></li>
+          <li><a href="#mod-dialogue">Dialogue</a></li>
+          <li><a href="#mod-adult">Adult Options</a></li>
+          <li><a href="#mod-relationships">Relationships</a></li>
+          <li><a href="#mod-world">World-Building</a></li>
+          <li><a href="#mod-combat">Combat Writing</a></li>
+          <li><a href="#mod-visuals">Visuals</a></li>
+          <li><a href="#mod-mode">Narrative Mode and Formatting</a></li>
+          <li><a href="#mod-styles">Narrative Styles</a></li>
+          <li><a href="#mod-constraints">Constraints</a></li>
+          <li><a href="#mod-addons">Add-ons</a></li>
+          <li><a href="#mod-companions">Companions</a></li>
+          <li><a href="#mod-user-utility">User Utility</a></li>
+          <li><a href="#mod-system-utility">System Utility</a></li>
+          <li><a href="#mod-danger">Danger Zone</a></li>
+          <li><a href="#mod-passthrough">Passthrough</a></li>
+          <li><a href="#mod-pipeline">The core pipeline</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="modules__list">
+      <div class="grp grp--note" id="mod-lumiverse">
+        <h3>On Lumiverse, the config page</h3>
+        <p>On Lumiverse you set everything up in Configure Prompt Variables, the button at the top of the Loom block list on the Preset tab. <strong>Keep the blocks enabled.</strong> The page decides what each one sends. It has a card for each section below, including Planning, Content Policy and Phi's Vow.</p>
+      </div>
+
+      <div class="grp" id="mod-scene-plan">
+        <h3><img class="badge" src="../shared/icons/badges/scene-plan.svg" alt="" width="64" height="64">Scene Plan</h3>
+        <p><em>Native thinking</em> lets a model plan and catch its own mistakes. Some models overthink for thousands of tokens and start doubting the prompt. Others ignore the instructions for their reasoning, or draft the reply twice.</p>
+        <p>Scene Plan moves the planning <strong>into the reply itself</strong>, in a block of its own above the story. It plans only for the modules you have on. In V3 its rows were rewritten so the model reads each scene better, and the OOC row appears only when you step out of character.</p>
+        <p>Most models need <strong>native reasoning off</strong> for this. A model that cannot turn it off gets the lowest effort it allows, with Scene Plan still on. GLM 5.3 and Gemini 4 Argon are the exceptions. They use <em>Thinking (Fallback)</em>, which shows the same rows inside the reasoning block. Every other model uses Scene Plan.</p>
+      </div>
+
+      <div class="grp" id="mod-core">
+        <h3>Core</h3>
+        <p>The Macro Cleaner and Main Statements hold the preset together. <strong>Keep them on, and in their place.</strong> Content Policy and Phi's Vow are on by default.</p>
+        <div class="opts">
+          <label class="opt" data-module="Core · Content Policy" data-tokens="121"><input type="checkbox" name="content-policy" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Content Policy</b> stops the model from acting like a cautious assistant that softens, skips or refuses dark content. Turn it off if your model already leans dark.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Core · Phi's Vow" data-tokens="123"><input type="checkbox" name="phis-vow" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Phi's Vow</b> has Phi state her role in her own words. It also guards against injected prompts and invented policies. It replaces the old Reinforcement prompt.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+        <p>For Gemini 4 Argon, <strong>turn both off</strong>.</p>
+      </div>
+
+      <fieldset class="grp" id="mod-agency">
+        <legend><h3>Agency <span class="pick">· pick one</span></h3></legend>
+        <div class="opts">
+          <label class="opt" data-module="Agency · You control {{user}}" data-tokens="98"><input type="radio" name="agency" value="you-control" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>You control {{user}}</b> (default). The characters and the world drive each turn. Your stated actions play out in full. The model never retells or retries them, and never adds your dialogue, decisions, thoughts or feelings.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Agency · Input Improver" data-tokens="178"><input type="radio" name="agency" value="input-improver"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Input Improver.</b> The model rewrites your turn in better prose and keeps your intent and your order. Talk, act, talk stays in that order. Your lines stay quoted speech, and an action-only turn gets no added dialogue.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Agency · Choices List" data-tokens="188"><input type="radio" name="agency" value="choices-list"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><svg class="badge badge--inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 50L48 57L32 64L16 57Z" fill="#a97968"></path><path d="M16 57L32 64V67L16 60Z" fill="#6f5052"></path><path d="M32 64L48 57V60L32 67Z" fill="#5a4046"></path><path d="M29 12H32V59H29Z" fill="#fab387"></path><path d="M32 12H35V58H32Z" fill="#a97968"></path><path d="M29 12L32 10.5L35 12L32 13.5Z" fill="#fcd5bd"></path><path d="M17 15H42L48 20.5L42 26H17Z" fill="#fcd5bd"></path><path d="M17 26H42L48 20.5V22.5L42 28H17Z" fill="#a97968"></path><path d="M21 19.5H37M21 22.5H33" stroke="#6f5052" stroke-width="1.8" stroke-linecap="round"></path><path d="M47 29H22L16 34.5L22 40H47Z" fill="#fab387"></path><path d="M47 40H22L16 34.5V36.5L22 42H47Z" fill="#6f5052"></path><path d="M26 33.5H42M29 36.5H40" stroke="#6f5052" stroke-width="1.8" stroke-linecap="round"></path><g transform="rotate(14 32 47)"><path d="M20 43H40L45 47.5L40 52H20Z" fill="#fcd5bd"></path><path d="M20 52H40L45 47.5V49.5L40 54H20Z" fill="#a97968"></path></g></svg><b>Choices List.</b> Choose your own adventure. Pick a choice, combine several, or type your own, and the model plays it out in order, dialogue included. On Lumiverse, the + buttons combine up to three.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Agency · Director" data-tokens="10"><input type="radio" name="agency" value="director"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Director.</b> Your messages are directions for the story, and the model writes and acts for you.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="grp" id="mod-pacing">
+        <legend><h3>Pacing <span class="pick">· pick one</span></h3></legend>
+        <div class="opts">
+          <label class="opt" data-module="Pacing · Adaptive" data-tokens="45"><input type="radio" name="pacing" value="adaptive" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Adaptive</b> (default). The speed follows the card and the story.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Pacing · Frenetic" data-tokens="44"><input type="radio" name="pacing" value="frenetic"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Frenetic.</b> The story moves fast.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Pacing · Laid-Back" data-tokens="58"><input type="radio" name="pacing" value="laid-back"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Laid-Back.</b> The story takes its time.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="grp" id="mod-length">
+        <legend><h3>Length <span class="pick">· pick one</span></h3></legend>
+        <div class="chips">
+          <label class="chip" data-module="Length · Flexible" data-tokens="91"><input type="radio" name="length" value="flexible" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Flexible</b> (default)</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Length · Short" data-tokens="82"><input type="radio" name="length" value="short"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Short</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Length · Medium" data-tokens="87"><input type="radio" name="length" value="medium"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Medium</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Length · Long" data-tokens="89"><input type="radio" name="length" value="long"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Long</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Length · Extra Long" data-tokens="91"><input type="radio" name="length" value="extra-long"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Extra Long</b>, 700 to 1000 words. New in V3.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+        <p>Each option is a range, and every reply finds its own length inside it.</p>
+      </fieldset>
+
+      <div class="grp" id="mod-characters">
+        <h3>Characters and Plot Guidance</h3>
+        <p>How characters are played and how the plot moves. Your character's pronouns come <strong>from your persona first</strong>, then from the character sheets, so the model is less likely to misgender you. Lumiverse also reads the persona's pronoun field.</p>
+      </div>
+
+      <fieldset class="grp" id="mod-narration">
+        <legend><h3>Narration <span class="pick">· pick one</span></h3></legend>
+        <p>The <em>sound</em> of the prose. Each option carries rules against stock body cues and hedged wording.</p>
+        <div class="opts">
+          <label class="opt" data-module="Narration · Cinematic" data-tokens="326"><input type="radio" name="narration" value="cinematic" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Cinematic</b> (default). A camera. Only what an observer could catch from outside the characters, in present-moment frames joined by hard cuts.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Narration · Literary" data-tokens="342"><input type="radio" name="narration" value="literary"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Literary.</b> From inside the focal character's head, in their thoughts and their way of speaking. The tone is neutral. Add the Comedic style for a wry narrator.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Narration · Dry" data-tokens="359"><input type="radio" name="narration" value="dry"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Dry.</b> Cinematic taken further. Direct and objective, with no similes or metaphors.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Narration · Lite" data-tokens="210"><input type="radio" name="narration" value="lite"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Lite.</b> The fewest tokens. Keeps the narration rules and adds no style.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Narration · Phi's Wanderlust" data-tokens="393"><input type="radio" name="narration" value="phis-wanderlust"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Phi's Wanderlust.</b> Phi tells the story in her own voice, warm and curious. One teller's remark and one short digression each turn, exact detail, and wonder told plainly. Costs more tokens than the others.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="grp" id="mod-dialogue">
+        <legend><h3>Dialogue <span class="pick">· pick one</span></h3></legend>
+        <div class="opts">
+          <label class="opt" data-module="Dialogue · Naturalistic" data-tokens="178"><input type="radio" name="dialogue" value="naturalistic" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Naturalistic</b> (default). Lifelike.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Dialogue · Lean" data-tokens="173"><input type="radio" name="dialogue" value="lean"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Lean.</b> Few words, chosen with care.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Dialogue · Theatrical" data-tokens="152"><input type="radio" name="dialogue" value="theatrical"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Theatrical</b>, once called Heightened. Stage-play dialogue, with deliberate cadence and fuller lines when the moment rises.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Dialogue · Anime" data-tokens="225"><input type="radio" name="dialogue" value="anime"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Anime</b>, new in V3. Characters say what they feel, react big and sound like the most vivid version of themselves. Who they are stays the same. Only the delivery turns up.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+        <p class="grp__sub"><b>Dialogue Sounds</b>, off by default, add to any Dialogue option, in any mix. The Scene Plan decides which sounds each character makes that turn.</p>
+        <div class="chips">
+          <label class="chip" data-module="Dialogue Sounds · Drawn-Out Words" data-tokens="67"><input type="checkbox" name="sound-drawn-out"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Drawn-Out Words</b> ("pleaaase")</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Dialogue Sounds · Stammers" data-tokens="68"><input type="checkbox" name="sound-stammers"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Stammers</b> ("I-I didn't")</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Dialogue Sounds · Shouting in Caps" data-tokens="58"><input type="checkbox" name="sound-caps"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Shouting in Caps</b> ("I said STOP.")</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Dialogue Sounds · Vocal Sounds" data-tokens="88"><input type="checkbox" name="sound-vocal"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Vocal Sounds</b> ("huh?", "pfft")</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="grp" id="mod-adult">
+        <legend><h3>Adult Options <span class="pick">· pick one</span></h3></legend>
+        <p>All three are <strong>off by default</strong>.</p>
+        <div class="opts">
+          <label class="opt" data-module="Adult Options · Realistic Smut" data-tokens="197"><input type="radio" name="adult" value="realistic-smut"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Realistic Smut.</b> The realistic one.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Adult Options · Max Lewdness" data-tokens="268"><input type="radio" name="adult" value="max-lewdness"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Max Lewdness.</b> Fantastical and uncensored.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Adult Options · Nothing Explicit" data-tokens="71"><input type="radio" name="adult" value="nothing-explicit"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Nothing Explicit</b>, for stories with no NSFW.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt opt--off" data-tokens="0"><input type="radio" name="adult" value="off" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Off</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+        <p>In Realistic Smut and Max Lewdness, characters act on their own kinks, and on the ones they know you enjoy.</p>
+      </fieldset>
+
+      <fieldset class="grp" id="mod-relationships">
+        <legend><h3><img class="badge" src="../shared/icons/badges/relationships.svg" alt="" width="64" height="64">Relationships <span class="pick">· pick one</span></h3></legend>
+        <p>New in V3, off by default. Relationship arcs, <strong>tracked with a score</strong> in the Characters tab of the tray. <em>Enemies to lovers</em> works too.</p>
+        <div class="chips">
+          <label class="chip" data-module="Relationships · Friendship" data-tokens="391"><input type="radio" name="relationships" value="friendship"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Friendship</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Relationships · Realistic Romance" data-tokens="445"><input type="radio" name="relationships" value="realistic-romance"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Realistic Romance</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Relationships · Bubbly Romance" data-tokens="445"><input type="radio" name="relationships" value="bubbly-romance"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Bubbly Romance</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Relationships · Dark Romance" data-tokens="461"><input type="radio" name="relationships" value="dark-romance"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Dark Romance</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip chip--off" data-tokens="0"><input type="radio" name="relationships" value="off" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Off</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+        <p>A score moves <strong>by the size of the moment</strong>. Everyday warmth barely moves it. A milestone moves it a lot.</p>
+      </fieldset>
+
+      <fieldset class="grp" id="mod-world">
+        <legend><h3>World-Building <span class="pick">· pick one</span></h3></legend>
+        <p>How far the world reaches past the card. It works for <em>slice of life</em> and the real world too.</p>
+        <div class="opts">
+          <label class="opt" data-module="World-Building · Card-Default" data-tokens="0"><input type="radio" name="world" value="card-default" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Card-Default</b> (default). No instructions, only a reminder to follow the card.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="World-Building · Contained" data-tokens="82"><input type="radio" name="world" value="contained"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Contained.</b> Only what the story needs, faithful to the sheet.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="World-Building · Expanded" data-tokens="95"><input type="radio" name="world" value="expanded"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Expanded.</b> Detailed world-building beyond the sheet.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="grp" id="mod-combat">
+        <legend><h3>Combat Writing <span class="pick">· pick one</span></h3></legend>
+        <p>Off by default. Your stated moves play out, foes act and their blows can land, and then the turn ends for your answer. Blocks, dodges, counters and finishing blows are <strong>yours to call</strong>. With Anti-Positivity Bias on, you can be taken down or killed when the fight earns it.</p>
+        <div class="opts">
+          <label class="opt" data-module="Combat Writing · Dynamic" data-tokens="183"><input type="radio" name="combat" value="dynamic"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Dynamic.</b> The fight lasts as long as it needs.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Combat Writing · Rapid" data-tokens="174"><input type="radio" name="combat" value="rapid"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Rapid.</b> Fights end quickly.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Combat Writing · Extended" data-tokens="182"><input type="radio" name="combat" value="extended"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Extended.</b> The battle holds for several turns.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt opt--off" data-tokens="0"><input type="radio" name="combat" value="off" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Off</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </fieldset>
+
+      <div class="grp" id="mod-visuals">
+        <h3>Visuals</h3>
+        <div class="opts">
+          <label class="opt" data-module="Visuals · Dialogue Color" data-tokens="102"><input type="checkbox" name="dialogue-color" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Dialogue Color</b>, on by default. A color for each character, steadier in V3.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Visuals · Visual Storytelling" data-tokens="304"><input type="checkbox" name="visual-storytelling"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Visual Storytelling.</b> HTML and CSS pieces that carry part of the story. It draws one only when the story shows something new.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Visuals · Expressive Dialogue" data-tokens="220"><input type="checkbox" name="expressive-dialogue"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Expressive Dialogue.</b> Animated dialogue tags for a character's feeling or action, so each effect acts the emotion out. They appear on some lines only. How often they appear depends on the model.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </div>
+
+      <div class="grp" id="mod-mode">
+        <h3>Narrative Mode and Formatting</h3>
+        <p>One pick in each row. Response Directives enforces all of them, so <strong>keep it on</strong>.</p>
+        <fieldset class="row">
+          <legend><b>Char POV</b> · pick one. 3rd person (default), or 1st person, which now works.</legend>
+          <div class="chips">
+            <label class="chip" data-module="Char POV · 3rd Person" data-tokens="86"><input type="radio" name="char-pov" value="3rd" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">3rd person</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="Char POV · 1st Person" data-tokens="0"><input type="radio" name="char-pov" value="1st"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">1st person</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="row">
+          <legend><b>{{user}} POV</b> · pick one. 2nd person (default), 3rd or 1st.</legend>
+          <div class="chips">
+            <label class="chip" data-module="{{user}} POV · 2nd Person" data-tokens="43"><input type="radio" name="user-pov" value="2nd" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">2nd person</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="{{user}} POV · 3rd Person" data-tokens="7"><input type="radio" name="user-pov" value="3rd"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">3rd</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="{{user}} POV · 1st Person" data-tokens="43"><input type="radio" name="user-pov" value="1st"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">1st</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="row">
+          <legend><b>Tense</b> · pick one. Present (default) or past.</legend>
+          <div class="chips">
+            <label class="chip" data-module="Tense · Present" data-tokens="13"><input type="radio" name="tense" value="present" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Present</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="Tense · Past" data-tokens="13"><input type="radio" name="tense" value="past"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Past</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="row">
+          <legend><b>Asterisks</b> · pick one. Without (default) or with.</legend>
+          <div class="chips">
+            <label class="chip" data-module="Asterisks · Without Asterisks" data-tokens="53"><input type="radio" name="asterisks" value="without" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Without</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="Asterisks · With Asterisks" data-tokens="68"><input type="radio" name="asterisks" value="with"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">With</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="row">
+          <legend><b>True Thoughts</b> · pick one. Hidden (default) or Visible.</legend>
+          <div class="chips">
+            <label class="chip" data-module="True Thoughts · Hidden" data-tokens="168"><input type="radio" name="thoughts" value="hidden" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Hidden</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="True Thoughts · Visible" data-tokens="202"><input type="radio" name="thoughts" value="visible"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Visible</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <fieldset class="grp" id="mod-styles">
+        <legend><h3>Narrative Styles</h3></legend>
+        <p>The <em>mood</em> of the telling. The card, the characters and the story stay as they are. <strong>Pick as many as you like.</strong></p>
+        <div class="chips">
+          <label class="chip" data-module="Narrative Styles · Comedic" data-tokens="97"><input type="checkbox" name="style-comedic"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Comedic</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Dramatic" data-tokens="74"><input type="checkbox" name="style-dramatic"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Dramatic</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Epic" data-tokens="75"><input type="checkbox" name="style-epic"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Epic</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Gothic" data-tokens="76"><input type="checkbox" name="style-gothic"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Gothic</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Dreamy" data-tokens="77"><input type="checkbox" name="style-dreamy"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Dreamy</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Surrealist" data-tokens="75"><input type="checkbox" name="style-surrealist"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Surrealist</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Eerie" data-tokens="73"><input type="checkbox" name="style-eerie"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Eerie</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Suspenseful" data-tokens="92"><input type="checkbox" name="style-suspenseful"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Suspenseful</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Grimdark" data-tokens="74"><input type="checkbox" name="style-grimdark"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Grimdark</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Lighthearted" data-tokens="73"><input type="checkbox" name="style-lighthearted"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Lighthearted</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Melancholic" data-tokens="92"><input type="checkbox" name="style-melancholic"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Melancholic</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Narrative Styles · Intimate" data-tokens="93"><input type="checkbox" name="style-intimate"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Intimate</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+        <p>Some pairs blend into a new style.</p>
+        <ul class="plain">
+          <li>Comedic and Dramatic make <b>Dramedy</b>.</li>
+          <li>Grimdark and Lighthearted make <b>Grimbright</b>.</li>
+          <li>Melancholic and Comedic make <b>Tragicomedy</b>.</li>
+          <li>Melancholic and Lighthearted make <b>Bittersweet</b>.</li>
+        </ul>
+      </fieldset>
+
+      <div class="grp" id="mod-constraints">
+        <h3>Constraints</h3>
+        <p>Guards against the habits that damage a story. <b>Character Realism, Anti-Omniscience, Anti-Positivity Bias, Anti-Repetition</b> and <b>Banned Terms.</b> They reduce the problems. No prompt controls a model completely.</p>
+        <div class="chips">
+          <label class="chip" data-module="Constraints · Character Realism" data-tokens="168"><input type="checkbox" name="character-realism" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Character Realism</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Constraints · Anti-Omniscience" data-tokens="130"><input type="checkbox" name="anti-omniscience" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Anti-Omniscience</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Constraints · Anti-Positivity Bias" data-tokens="77"><input type="checkbox" name="anti-positivity" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Anti-Positivity Bias</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Constraints · Anti-Repetition" data-tokens="153"><input type="checkbox" name="anti-repetition" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Anti-Repetition</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Constraints · Banned Terms" data-tokens="430"><input type="checkbox" name="banned-terms" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Banned Terms</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+        <div class="opts">
+          <label class="opt" data-module="Constraints · Phi's Scratchpad" data-tokens="264"><input type="checkbox" name="phis-scratchpad"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><img class="badge badge--inline" src="../shared/icons/badges/phi-s-scratchpad.svg" alt="" width="64" height="64"><b>Phi's Scratchpad</b>, off by default, is a craft check. After the story, Phi names her two weakest lines, each from a different module, and the rule each one breaks. Scene Plan, or Thinking, carries the fix into her next reply.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </div>
+
+      <div class="grp" id="mod-addons">
+        <h3>Add-ons</h3>
+        <p>Every add-on draws its own card through the regex, and every card sits in the Active Modules tray. <strong>Keep all the regex on.</strong></p>
+
+        <fieldset class="row">
+          <legend><img class="badge badge--inline" src="../shared/icons/badges/tracker-fallback.svg" alt="" width="64" height="64"><b>Tracker</b> · pick one. Time, date, location and weather, over an animated scene. The location reads as breadcrumbs. <b>Exact Time</b> (default) or <b>Time Window.</b> For °C, edit the template inside the prompt.</legend>
+          <div class="chips">
+            <label class="chip" data-module="Tracker · Exact Time" data-tokens="167"><input type="radio" name="tracker" value="exact-time" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Exact Time</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="Tracker · Time Window" data-tokens="167"><input type="radio" name="tracker" value="time-window"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Time Window</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip chip--off" data-tokens="0"><input type="radio" name="tracker" value="off"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Off</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="row">
+          <legend><b>Tension</b> · pick one. <b>Undercurrents</b> (default), <b>Momentum Engine</b> or <b>Conflict.</b> See the <a href="#mod-pipeline">core pipeline</a> below.</legend>
+          <div class="chips">
+            <label class="chip" data-module="Tension · Undercurrents" data-tokens="523"><input type="radio" name="tension" value="undercurrents" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><img class="badge badge--chip" src="../shared/icons/badges/undercurrents.svg" alt="" width="64" height="64">Undercurrents</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="Tension · Momentum Engine" data-tokens="395"><input type="radio" name="tension" value="momentum-engine"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><img class="badge badge--chip" src="../shared/icons/badges/momentum-engine.svg" alt="" width="64" height="64">Momentum Engine</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="Tension · Conflict" data-tokens="98"><input type="radio" name="tension" value="conflict"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><img class="badge badge--chip" src="../shared/icons/badges/conflict.svg" alt="" width="64" height="64">Conflict</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip chip--off" data-tokens="0"><input type="radio" name="tension" value="off"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Off</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="row">
+          <legend><img class="badge badge--inline" src="../shared/icons/badges/status.svg" alt="" width="64" height="64"><b>Status</b> · pick one. Characters on the scene and off it. <b>All Characters</b> (default) or <b>Present Only</b>, which lists only the characters in the scene, so lorebook entries keyed to a name stop firing every turn. A character who leaves gets one "Departed" row and returns with the last known score.</legend>
+          <div class="chips">
+            <label class="chip" data-module="Status · All Characters" data-tokens="421"><input type="radio" name="status" value="all-characters" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">All Characters</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="Status · Present Only" data-tokens="450"><input type="radio" name="status" value="present-only"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Present Only</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip chip--off" data-tokens="0"><input type="radio" name="status" value="off"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Off</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          </div>
+        </fieldset>
+
+        <div class="opts">
+          <label class="opt" data-module="Add-ons · Story Threads" data-tokens="167"><input type="checkbox" name="story-threads" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><svg class="badge badge--inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="28" cy="54" rx="15" ry="3" fill="#000" opacity=".32"></ellipse><path d="M41 40C50 47 46 57 55 57C61 57 63 53 68 51" fill="none" stroke="#bd97e4" stroke-width="2.2" stroke-linecap="round"></path><circle cx="28" cy="30" r="17" fill="#bd97e4"></circle><path d="M40 18A17 17 0 0 1 16 42A19 19 0 0 0 40 18Z" fill="#7f639d"></path><g fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M13 26Q28 38 43 23" stroke="#d3bfe9"></path><path d="M14 35Q30 45 43 35" stroke="#5e4b7a"></path><path d="M20 15Q15 31 23 45" stroke="#d3bfe9"></path><path d="M31 13Q23 30 34 46" stroke="#5e4b7a"></path><path d="M38 16Q33 30 44 35" stroke="#d3bfe9"></path></g><ellipse cx="21" cy="21" rx="4.2" ry="2.4" transform="rotate(-38 21 21)" fill="#fff" opacity=".5"></ellipse></svg><b>Story Threads.</b> An outline of the open threads of the story.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Add-ons · Psychological States" data-tokens="335"><input type="checkbox" name="psychological-states"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><img class="badge badge--inline" src="../shared/icons/badges/psychological-states.svg" alt="" width="64" height="64"><b>Psychological States</b>, off by default. Each character's psychology, turn by turn. How they read what happened, what they felt, what it made them do. That state carries into the next turn and shapes how they act and speak.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Add-ons · Meanwhile" data-tokens="313"><input type="checkbox" name="meanwhile"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><img class="badge badge--inline" src="../shared/icons/badges/meanwhile.svg" alt="" width="64" height="64"><b>Meanwhile</b>, off by default. What established characters and events are doing off the scene while the story is elsewhere. Entries hide under spoilers.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Add-ons · Hidden Truths" data-tokens="246"><input type="checkbox" name="hidden-truths"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><img class="badge badge--inline" src="../shared/icons/badges/hidden-truths.svg" alt="" width="64" height="64"><b>Hidden Truths</b>, off by default. Who knows what, the secrets each character keeps, and from whom.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Add-ons · Plotlines" data-tokens="255"><input type="checkbox" name="plotlines"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><img class="badge badge--inline" src="../shared/icons/badges/plotlines.svg" alt="" width="64" height="64"><b>Plotlines</b>, off by default. The main plot and the subplots, updated at each phase of the story. It works as a running summary that keeps a long chat consistent, and as a record you can look back on.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+
+        <p>Status and Relationships show how far a score moved since the last turn, as in <span class="num">45/100 −5</span>.</p>
+        <p><img class="badge badge--inline" src="../shared/icons/badges/active-modules.svg" alt="" width="64" height="64"><b>The tray.</b> Every footer sits in one tray that folds away, with a tab for each section. Characters, Phi, Threads, Plotlines, Meanwhile, Truths, Conflict, Momentum. The Characters tab gathers each character's Status, Relationship, Psychology and Undercurrent rows into one block, and the cast row shows one character at a time.</p>
+        <p>Two regex switches, off by default. <b>UI active modules - Collapsed</b> starts the tray folded. <b>Hide @Tracker scene backdrop</b> hides the Tracker scene for settings it doesn't suit.</p>
+        <p>The cards are <strong>drawn on your screen only</strong>. The model never receives their HTML, so the context stays lean. After a few turns (depth 1 to 6), the regex also clears old add-ons and formatting out of the context, keeping only what the story needs. If a module or the dialogue colors go missing from a reply, a notice appears and the next turn enforces the format. If you turned the module on after that reply, just continue.</p>
+      </div>
+
+      <fieldset class="grp" id="mod-companions">
+        <legend><h3><img class="badge" src="../shared/icons/badges/companions.svg" alt="" width="64" height="64">Companions <span class="pick">· pick one mode</span></h3></legend>
+        <p>Off by default. Phi's friends read the story as she writes it and react below it. They see <strong>only the story text</strong>, so their guesses can be wrong.</p>
+        <div class="opts">
+          <label class="opt" data-module="Companions · Notes" data-tokens="284"><input type="radio" name="companions-mode" value="notes"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Notes.</b> A short section from each Companion.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Companions · Chat" data-tokens="364"><input type="radio" name="companions-mode" value="chat"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Chat.</b> A group chat where they answer each other.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt opt--off" data-tokens="0"><input type="radio" name="companions-mode" value="off" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Off</b></span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+        <p>Then turn on the Companions you want.</p>
+        <div class="chips">
+          <label class="chip" data-module="Companions · Chi, The Best Friend" data-tokens="237" data-requires="companions-mode"><input type="checkbox" name="companion-chi"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Chi</b>, The Best Friend</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Companions · Lou, The Detective" data-tokens="205" data-requires="companions-mode"><input type="checkbox" name="companion-lou"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Lou</b>, The Detective</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Companions · Sam, The Gamer" data-tokens="184" data-requires="companions-mode"><input type="checkbox" name="companion-sam"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Sam</b>, The Gamer</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Companions · Grace, The Screenwriter" data-tokens="206" data-requires="companions-mode"><input type="checkbox" name="companion-grace"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Grace</b>, The Screenwriter</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Companions · Layla, The Weeb" data-tokens="257" data-requires="companions-mode"><input type="checkbox" name="companion-layla"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Layla</b>, The Weeb</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Companions · Phi, The Story Master" data-tokens="229" data-requires="companions-mode"><input type="checkbox" name="companion-phi"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Phi</b>, The Story Master</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="chip" data-module="Companions · Sola, The Enthusiast" data-tokens="249" data-requires="companions-mode"><input type="checkbox" name="companion-sola"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text"><b>Sola</b>, The Enthusiast, a guest from Pyropia's Sola preset</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+        <p>To talk to one, write out of character with <code>(Name, ...)</code> or <code>@Name</code>.</p>
+      </fieldset>
+
+      <div class="grp" id="mod-user-utility">
+        <h3>User Utility</h3>
+        <div class="opts">
+          <label class="opt" data-module="User Utility · Fandom" data-tokens="92"><input type="checkbox" name="fandom"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Fandom.</b> For stories set in an existing series. Helps with lore, faithful characters and developments that fit.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="User Utility · Custom Instructions" data-tokens="0"><input type="checkbox" name="custom-instructions"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Custom Instructions.</b> Sends your own instructions more consistently.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="User Utility · Force Formatting" data-tokens="62"><input type="checkbox" name="force-formatting"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Force Formatting.</b> Forces your chosen options on a stubborn model.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="User Utility · Change Language" data-tokens="80"><input type="checkbox" name="change-language"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Change Language.</b> Replies in a language other than English. The cards and trackers keep working.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </div>
+
+      <div class="grp" id="mod-system-utility">
+        <h3>System Utility</h3>
+        <ul class="plain">
+          <li><b>Momentum Engine Router.</b> The second half of Momentum Engine.</li>
+        </ul>
+        <div class="opts">
+          <label class="opt" data-module="System Utility · Post-History Instructions" data-tokens="18"><input type="checkbox" name="post-history"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Post-History Instructions.</b> Turn it on when your card injects instructions you want to keep. Your POV, Tense and Asterisks picks still win over them.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="System Utility · Hard Jailbreak" data-tokens="141"><input type="checkbox" name="hard-jailbreak"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Hard Jailbreak.</b> For a model that keeps refusing. Most models never need it.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+        <fieldset class="row">
+          <legend><b>Reasoning</b> · pick one. Scene Plan, or Thinking (Fallback).</legend>
+          <div class="chips">
+            <label class="chip" data-module="Reasoning · Scene Plan" data-tokens="527"><input type="radio" name="reasoning" value="scene-plan" checked><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Scene Plan</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+            <label class="chip" data-module="Reasoning · Thinking (Fallback)" data-tokens="495"><input type="radio" name="reasoning" value="thinking-fallback"><span class="chip__body"><span class="opt__mark" aria-hidden="true"></span><span class="chip__text">Thinking (Fallback)</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="grp" id="mod-danger">
+        <h3>Danger Zone</h3>
+        <div class="opts">
+          <label class="opt" data-module="Danger Zone · Response Directives" data-tokens="337"><input type="checkbox" name="response-directives" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Response Directives.</b> Sets the format and structure of every reply from the modules you have on. Keep it on.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+          <label class="opt" data-module="Danger Zone · Warning System" data-tokens="0"><input type="checkbox" name="warning-system" checked><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Warning System.</b> Checks your setup and shows a Preset setup card above the reply when something is wrong, naming the entry and the fix. Turn it off only if you mean to run a setup that sets it off.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </div>
+
+      <div class="grp" id="mod-passthrough">
+        <h3>Passthrough</h3>
+        <div class="opts">
+          <label class="opt" data-module="Passthrough · Gemini" data-tokens="96"><input type="checkbox" name="gemini"><span class="opt__body"><span class="opt__mark" aria-hidden="true"></span><span class="opt__text"><b>Gemini</b>, off by default. A note for Gemini 4 Argon, whose safety filter can block safe replies, even in SFW scenes. Turn it on only if your replies get blocked. Other models don't need it.</span><span class="opt__cost" aria-hidden="true"></span></span></label>
+        </div>
+      </div>
+
+      <div class="grp grp--prose" id="mod-pipeline">
+        <h3>The core pipeline</h3>
+        <p>Four modules carry the story <em>between turns</em>.</p>
+        <p><b>True Thoughts</b> give each character an inner voice. Hidden, they sit in the raw text, and you can read them by editing the message. Visible, they show in the reply.</p>
+        <p><b>Status</b> follows every character on the scene and off it. Relationships, state of mind, location, items, body and clothes. The world goes on in places you are not.</p>
+        <p><b>Undercurrents</b>, the default Tension pick, treats character as plot. Each turn it weighs what each character present wants, what presses on the scene, and what you did, then offers five routes, from quiet to scene-changing. They are <em>suggestions</em>. Your turn decides which ones happen. <b>Momentum Engine</b> drives forward instead. It proposes four routes at the end of every reply, draws one at random out of your sight, and the Router steers the next reply toward it, or falls back when your action rules it out. <b>Conflict</b> is the lighter choice. A conflict block at the end of each reply steers the next, at a slower pace and for fewer tokens.</p>
+        <p><b>Story Threads</b> keep an outline of what the story left open, so details come back when they matter. The Tension module pulls on those threads as the story moves.</p>
+      </div>
+    </div>
+  </form>
+</section>
+
+<section id="one-scene" class="enc" data-stone="rose-quartz" aria-labelledby="one-scene-title">
+  <div class="enc__head">
+    <h2 class="enc__title" id="one-scene-title">Sample replies</h2>
+    <p>Replies from three chats with the same character card on GLM 5.2, one chat per setting. Each reply is shown whole, after the player's turn it answers, as Lumiverse displays it.</p>
+    <p data-slot="scene">The card opens on day three in a galley of the Meridian, a ship built for hundreds with two crew awake. Cal, the ship's AI, speaks over the intercom.</p>
+  </div>
+
+  <fieldset class="enc__body scene">
+    <legend class="visually-hidden">Setting</legend>
+    <input class="scene__radio visually-hidden" type="radio" name="scene-setting" id="scene-default" value="default" checked>
+    <input class="scene__radio visually-hidden" type="radio" name="scene-setting" id="scene-literary" value="literary">
+    <input class="scene__radio visually-hidden" type="radio" name="scene-setting" id="scene-wanderlust" value="wanderlust">
+
+    <div class="scene__tabs">
+      <label class="scene__tab" for="scene-default"><span class="opt__mark" aria-hidden="true"></span>Default</label>
+      <label class="scene__tab" for="scene-literary"><span class="opt__mark" aria-hidden="true"></span>Literary</label>
+      <label class="scene__tab" for="scene-wanderlust"><span class="opt__mark" aria-hidden="true"></span>Phi's Wanderlust</label>
+    </div>
+
+    <div class="scene__panels">
+      <div class="scene__panel" data-setting="default">
+        <dl class="scene__spec">
+          <div><dt>Narration</dt><dd>Cinematic. A camera, with hard cuts.</dd></div>
+          <div><dt>Dialogue</dt><dd>Naturalistic. Lifelike.</dd></div>
+        </dl>
+        <div class="scene__screen" data-scene="default">
+          <noscript><iframe src="scene/default.html" title="Default setting: Jules's turn and Cora's reply, as Lumiverse shows them" loading="lazy" height="2000"></iframe></noscript>
+        </div>
+        <p class="scene__credit">Written by <span data-slot="model">GLM 5.2</span> with reasoning off and Scene Plan on, on DEUS EX MACHINA V3.5, <time data-slot="date" datetime="2026-11-12">12 November 2026</time>. Every other option at its default.</p>
+      </div>
+
+      <div class="scene__panel" data-setting="literary">
+        <dl class="scene__spec">
+          <div><dt>Narration</dt><dd>Literary. Inside the focal character's head.</dd></div>
+          <div><dt>Dialogue</dt><dd>Lean. Few words, chosen with care.</dd></div>
+          <div><dt>Style</dt><dd>Comedic</dd></div>
+        </dl>
+        <div class="scene__screen" data-scene="literary">
+          <noscript><iframe src="scene/literary.html" title="Literary setting: Jules's turn and Cora's reply, as Lumiverse shows them" loading="lazy" height="2000"></iframe></noscript>
+        </div>
+        <p class="scene__credit">Written by <span data-slot="model">GLM 5.2</span> with reasoning off and Scene Plan on, on DEUS EX MACHINA V3.5, <time data-slot="date" datetime="2026-11-12">12 November 2026</time>. Every other option at its default.</p>
+      </div>
+
+      <div class="scene__panel" data-setting="wanderlust">
+        <dl class="scene__spec">
+          <div><dt>Narration</dt><dd>Phi's Wanderlust. Phi tells it in her own voice.</dd></div>
+          <div><dt>Dialogue</dt><dd>Theatrical. Cadence for the stage.</dd></div>
+          <div><dt>Style</dt><dd>Eerie</dd></div>
+        </dl>
+        <div class="scene__screen" data-scene="wanderlust">
+          <noscript><iframe src="scene/wanderlust.html" title="Phi's Wanderlust setting: Jules's turn and Cora's reply, as Lumiverse shows them" loading="lazy" height="2000"></iframe></noscript>
+        </div>
+        <p class="scene__credit">Written by <span data-slot="model">GLM 5.2</span> with reasoning off and Scene Plan on, on DEUS EX MACHINA V3.5, <time data-slot="date" datetime="2026-11-12">12 November 2026</time>. Every other option at its default.</p>
+      </div>
+    </div>
+    <script data-scene-frames>
+      (function () {
+        var fs = document.currentScript && document.currentScript.closest(".scene");
+        if (!fs) return;
+        var near = false;
+        var show = function () {
+          if (!near) return;
+          var on = fs.querySelector(".scene__radio:checked");
+          var box = on && fs.querySelector('.scene__screen[data-scene="' + on.value + '"]');
+          var ns = box && box.querySelector("noscript");
+          if (!ns || box.querySelector("iframe")) return;
+          box.insertAdjacentHTML("beforeend", ns.textContent);
+        };
+        fs.addEventListener("change", show);
+        var go = function () { near = true; show(); };
+        if (!("IntersectionObserver" in window)) return go();
+        var io = new IntersectionObserver(function (es) {
+          if (es[0].isIntersecting) { io.disconnect(); go(); }
+        }, { rootMargin: "800px 0px" });
+        io.observe(fs);
+      })();
+    </script>
+  </fieldset>
+
+  <details class="scene__note">
+    <summary><svg class="chev" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 4l4 4-4 4"/></svg><span>About the thoughts in italics</span></summary>
+    <p>The thoughts in italics were hidden when the preset wrote these replies. True Thoughts is set to Hidden by default. The model writes each character's private thoughts into the reply and reads them again on the next turn, while the display keeps them out of your sight. Here they are shown the way the Visible option shows them, in italics and in the speaker's color.</p>
+    <p>To read them in your own chat, edit the reply. Each thought sits in the prose inside its own tag, one or two for each character in the scene, sixty words at most:</p>
+    <pre><code>&lt;true_thoughts character="Cora"&gt;her thoughts, in her own words&lt;/true_thoughts&gt;</code></pre>
+  </details>
+</section>
+
+<section id="installing" class="enc" data-stone="chrysoprase" aria-labelledby="installing-title">
+  <div class="enc__head">
+    <h2 class="enc__title" id="installing-title">Installing</h2>
+  </div>
+
+  <div class="enc__body installs">
+    <div class="install" id="install-st">
+      <h3><span class="drawn install__drawn"><img class="for-day" src="../shared/icons/hosts/sillytavern.day.svg" alt="" width="64" height="64"><img class="for-night" src="../shared/icons/hosts/sillytavern.night.svg" alt="" width="64" height="64"></span>SillyTavern</h3>
+      <ol class="steps">
+        <li>Download <code data-release-text="st">DEUS.<wbr>EX.<wbr>MACHINA.<wbr>V3.<wbr>ST.json</code>.</li>
+        <li>In SillyTavern, click the plug icon on the top bar.</li>
+        <li>Under API, select <b>Chat Completion</b>.</li>
+        <li>Set up your API, if you haven't yet.</li>
+        <li>Click the leftmost icon on the top bar.</li>
+        <li>In the Chat Completion Presets bar, click the second item from the left.</li>
+        <li>Choose the file you downloaded.</li>
+        <li>When SillyTavern asks whether to allow the embedded regex scripts, click <b>Yes</b>.</li>
+      </ol>
+      <p><strong>The regex is required.</strong> If you clicked No, import the preset again and allow it.</p>
+    </div>
+
+    <div class="install" id="install-tavo">
+      <h3><span class="drawn install__drawn"><img class="for-day" src="../shared/icons/hosts/tavo.day.svg" alt="" width="64" height="64"><img class="for-night" src="../shared/icons/hosts/tavo.night.svg" alt="" width="64" height="64"></span>Tavo</h3>
+      <ol class="steps">
+        <li>Download <code data-release-text="tavo">DEUS.<wbr>EX.<wbr>MACHINA.<wbr>V3.<wbr>Tavo.json</code>.</li>
+        <li>Open the left sidebar with the icon at the top left, then <b>More</b> at the bottom &gt; <b>Settings</b> &gt; <b>Presets</b>.</li>
+        <li>Tap <b>Create</b>, then <b>Import Preset</b>, and select the file. Tap it, then set it as default.</li>
+        <li>In your chat, open the right sidebar &gt; Advanced Options &gt; Presets, and select the new preset.</li>
+      </ol>
+      <p><strong>Turn on Advanced Rendering</strong>, so the colored dialogue and the cards render.</p>
+      <ol class="steps">
+        <li>Tap the top left corner of the main screen to open the left sidebar.</li>
+        <li>Tap <b>More</b> at the bottom.</li>
+        <li>Tap <b>Settings</b>.</li>
+        <li>Tap <b>Advanced Rendering</b> and turn it on.</li>
+      </ol>
+      <p>Then make sure your theme <strong>leaves the text alone</strong>.</p>
+      <ol class="steps">
+        <li>Open the left sidebar &gt; <b>More</b> &gt; <b>Themes</b>.</li>
+        <li>Select your theme, or copy an official one to make your own.</li>
+        <li>In the theme editor, under Character message, turn off <b>Tone highlight</b> and <b>Quote highlight</b>.</li>
+        <li>Save the theme and check that the chat uses it.</li>
+      </ol>
+    </div>
+
+    <div class="install" id="install-lumiverse">
+      <h3><span class="drawn install__drawn"><img class="for-day" src="../shared/icons/hosts/lumiverse.day.svg" alt="" width="64" height="64"><img class="for-night" src="../shared/icons/hosts/lumiverse.night.svg" alt="" width="64" height="64"></span>Lumiverse</h3>
+      <ol class="steps">
+        <li>Download <code data-release-text="lumiverse">DEUS.<wbr>EX.<wbr>MACHINA.<wbr>V3.<wbr>Lumiverse.json</code>.</li>
+        <li>In Lumiverse, open Loom.</li>
+        <li>Click the three dots on the top right bar.</li>
+        <li>Select <b>Import Loom JSON</b> and import the preset.</li>
+        <li>Click <b>Configure Prompt Variables</b> at the top of the Loom block list, on the Preset tab, and set the preset up there. Keep the blocks enabled.</li>
+      </ol>
+      <p>If your open chat already holds many DEM modules across several messages, <strong>go back to the home screen before you import</strong>, or the import can slow Lumiverse down.</p>
+    </div>
+  </div>
+</section>
+
+<section id="summaryception" class="enc" data-stone="morganite" aria-labelledby="summaryception-title">
+  <div class="enc__head">
+    <h2 class="enc__title" id="summaryception-title">Summaryception</h2>
+    <p>Summaryception is a SillyTavern extension that summarizes your chat as it grows. DEM comes with <strong>a summarizer prompt</strong> for it. The prompt reads <em>only</em> the story inside <code>&lt;prose&gt;</code> and writes its summary in XML tags.</p>
+  </div>
+
+  <div class="enc__body summ">
+    <div class="summ__file">
+      <p><code data-release-text="summaryception">DEM.<wbr>Summaryception.<wbr>custom.<wbr>prompt.txt</code></p>
+      <p class="shelf__actions">
+        <a class="action" href="https://github.com/lsennn/Deus-ex-machina/releases/download/v3.0/DEM.Summaryception.custom.prompt.txt" data-release-href="summaryception"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8M4.5 6.8 8 10.3l3.5-3.5M3 13.5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Download the prompt</a>
+        <a class="copy-link" href="#summaryception" data-copy-link>Copy link</a>
+      </p>
+    </div>
+    <ol class="steps">
+      <li>Open the <b>Summaryception</b> extension.</li>
+      <li>Open <b>Advanced settings</b>.</li>
+      <li>Scroll to <b>Summarizer Prompts</b> and import the DEM prompt.</li>
+      <li>Scroll to <b>Injection Wrapper Template</b>.</li>
+      <li>Wrap what is there in <code>&lt;past_events&gt;</code> tags, as in <code>&lt;past_events&gt;[Summary of past events: {{summary}}]&lt;/past_events&gt;</code>.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="credits" class="enc" data-stone="moonstone" aria-labelledby="credits-title">
+  <div class="enc__head">
+    <h2 class="enc__title" id="credits-title">Credits and license</h2>
+    <p>DEUS EX MACHINA is written by Fay.</p>
+  </div>
+
+  <div class="enc__body credits">
+    <ul class="ledger">
+      <li><b>Sola, The Enthusiast</b>, the guest Companion, comes from <a href="https://pyrxpia.github.io/sola-hub/">Pyropia's Sola preset</a>.</li>
+      <li><b><a href="https://github.com/Lodactio/Extension-Summaryception">Summaryception</a></b> is a SillyTavern extension.</li>
+      <li>DEM runs in <b>SillyTavern</b>, <b>Tavo</b> and <b>Lumiverse</b>, and leans on SillyTavern's macro engine.</li>
+      <li>The type is Sofia Sans Extra Condensed, Vollkorn and Sofia Sans, under the SIL Open Font License.</li>
+    </ul>
+    <div class="credits__legal">
+      <p>DEUS EX MACHINA is an <strong>independent preset</strong>. It is not affiliated with or endorsed by SillyTavern, Tavo or Lumiverse, and their names appear here only to say where it runs. The drawings of a lantern, a notebook and a shuttle stand in for them.</p>
+      <p>DEUS EX MACHINA is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. You may share it and adapt it, with credit, for <strong>non-commercial use</strong>, under the same license.</p>
+    </div>
+  </div>
+</section>
+
+<p class="visually-hidden" aria-live="polite" data-copy-status></p>
+<!-- enclosures:end -->
+    </div>
+  </div>
+</main>
+</body>
+</html>

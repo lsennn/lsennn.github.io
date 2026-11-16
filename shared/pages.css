@@ -1,0 +1,135 @@
+/* The reading pages (What changed, the 404). Built on folio.css tokens;
+   nothing here restyles the shell. */
+
+/* ---------- Page title ---------- */
+
+.page-title {
+  margin: 36px var(--gutter) 0;
+  font: 900 clamp(56px, 9vw, 96px)/.92 var(--face-title);
+  letter-spacing: -.005em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+/* ---------- What changed: one release per entry ---------- */
+
+.releases { margin: 36px var(--gutter) 0; }
+
+.release {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 38rem);
+  column-gap: 56px;
+  padding: 44px 0 52px;
+  border-top: 1px solid var(--rule);
+}
+.release:first-child { padding-top: 4px; border-top: 0; }
+
+.release__stamp { position: sticky; top: 24px; align-self: start; }
+.release__version {
+  font: 900 72px/.9 var(--face-title);
+  letter-spacing: .005em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.release__date { margin-top: 12px; color: var(--vellum); }
+.release__link { margin-top: 2px; }
+
+.release__notes { --item-rule: color-mix(in srgb, var(--rule) 60%, transparent); font-size: 17px; line-height: 1.6; color: var(--ink); }
+.release__notes > :first-child { margin-top: 0; }
+.release__cover { margin: 0 0 28px; }
+.release__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--slipcase);
+}
+.release__notes p { margin-top: .75em; }
+.release__notes strong { font-weight: 700; }
+.release__notes h3,
+.release__notes h4,
+.release__notes h5 {
+  font: 900 30px/1 var(--face-title);
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  margin: 44px 0 8px;
+}
+.release__notes h4,
+.release__notes h5 { font-size: 24px; margin-top: 32px; }
+.release__notes ul,
+.release__notes ol { list-style: none; padding: 0; margin: 0; }
+.release__notes li { padding: 12px 0; border-top: 1px solid var(--item-rule); }
+.release__notes li:last-child { border-bottom: 1px solid var(--item-rule); }
+.release__notes li > ul,
+.release__notes li > ol { margin-top: 10px; padding-left: 20px; }
+.release__notes li li { padding: 8px 0 0; border: 0; }
+/* a break in the notes is air; the list's own rule above it is the line */
+.release__notes hr { border: 0; height: 0; margin: 0; }
+.release__notes code {
+  font: .88em ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--slipcase);
+}
+.release__notes pre {
+  margin-top: .75em;
+  padding: 12px 14px;
+  overflow-x: auto;
+  border: 1px solid var(--rule-faint);
+  border-radius: var(--radius-control);
+  background: var(--slipcase);
+}
+.release__notes pre code { padding: 0; background: none; }
+
+@media (max-width: 760px) {
+  .release { display: block; padding: 32px 0 40px; }
+  .release:first-child { padding-top: 0; }
+  .release__stamp {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 16px;
+    margin-bottom: 20px;
+  }
+  .release__version { font-size: 56px; flex-basis: 100%; }
+  .release__date,
+  .release__link { margin-top: 0; }
+  .release__notes { font-size: 16.5px; }
+  .release__notes h3 { font-size: 28px; margin-top: 36px; }
+}
+
+/* ---------- The 404: a short letter from Phi ---------- */
+
+.lost {
+  max-width: 34em;
+  margin: 32px var(--gutter) 0;
+}
+.lost__sign {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-top: 28px;
+}
+.lost__sign .action { text-decoration: none; }
+/* her drawn signature, the letter's own, already written */
+.signature {
+  width: 150px;
+  height: 76px;
+  overflow: visible;
+  fill: none;
+  stroke: var(--phi-ink);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.signature path:last-child { stroke-width: 1.6; }
+@media (max-width: 700px) {
+  .lost { margin-top: 24px; }
+  .signature { width: 128px; height: 65px; }
+}

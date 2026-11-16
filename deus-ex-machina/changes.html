@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>What changed · DEUS EX MACHINA</title>
+<meta name="description" content="Release notes for every version of DEUS EX MACHINA, each with a link to its release on GitHub.">
+<script>
+// The folio before the first paint: ?theme=night|day, then the reader's choice, then the OS.
+(function(){var d=document.documentElement,t=null,m=/[?&]theme=(night|day)(?:&|$)/.exec(location.search);if(m)t=m[1];else{try{t=localStorage.getItem("folio.theme")}catch(e){}}if(t!=="night"&&t!=="day")t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"night":"day";d.dataset.theme=t})();
+</script>
+<link rel="preload" href="../shared/fonts/sofia-sans-extra-condensed-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../shared/fonts/sofia-sans-var-400-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared/folio.css">
+<link rel="stylesheet" href="../shared/pages.css">
+<link rel="icon" href="../shared/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../shared/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../shared/icons/apple-touch-icon.png">
+<script src="../shared/folio.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to the page</a>
+
+<header class="season-bar">
+  <nav class="season-bar__inner" aria-label="Seasons">
+    <ul class="season-bar__seasons">
+      <li>
+        <a class="season-tab" href="./">
+          <span class="drawn drawn--mark"><img src="../shared/icons/dem-mark.svg" alt="" width="32" height="32"></span>
+          <span class="season-tab__name">DEUS EX MACHINA</span>
+        </a>
+      </li>
+      <li>
+        <span class="season-tab season-tab--soon" aria-disabled="true" title="Prelude has no page yet.">
+          <span class="drawn"><img src="../shared/icons/prelude-mark.svg" alt="" width="24" height="24"></span>
+          <span class="season-tab__label"><span class="season-tab__name">Prelude</span><span class="season-tab__when">next season</span></span>
+        </span>
+      </li>
+    </ul>
+    <ul class="season-bar__links">
+      <li><a class="season-link" href="changes.html" aria-current="page">What changed</a></li>
+      <li><a class="season-link" href="https://github.com/lsennn/Deus-ex-machina">GitHub</a></li>
+      <li>
+        <button class="theme-switch" type="button" aria-label="Switch the page between day and night" hidden>
+          <span class="drawn drawn--sun">
+            <img class="for-day" src="../shared/icons/sun.day.svg" alt="" width="24" height="24">
+            <img class="for-night" src="../shared/icons/sun.night.svg" alt="" width="24" height="24">
+          </span>
+          <span class="drawn drawn--moon">
+            <img class="for-day" src="../shared/icons/moon.day.svg" alt="" width="24" height="24">
+            <img class="for-night" src="../shared/icons/moon.night.svg" alt="" width="24" height="24">
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" class="folio-page reading">
+  <h1 class="page-title">What changed</h1>
+  <div class="gem-rule" aria-hidden="true">
+    <svg class="gem" viewBox="0 0 12 16"><path d="M6 0 12 8H0Z" fill="currentColor"></path><path d="M0 8h12L6 16Z" fill="currentColor" opacity=".6"></path></svg>
+  </div>
+
+  <div class="releases">
+    <section class="release" id="v3-0" aria-labelledby="v3-0-title">
+      <div class="release__stamp">
+        <h2 class="release__version" id="v3-0-title">V3.0</h2>
+        <p class="release__date"><time datetime="2026-10-26">26 October 2026</time></p>
+        <p class="release__link"><a href="https://github.com/lsennn/Deus-ex-machina/releases/tag/v3.0">Release on GitHub</a></p>
+      </div>
+      <div class="release__notes">
+        <figure class="release__cover"><picture><source type="image/avif" srcset="img/cover-v3-768.avif 768w, img/cover-v3-1536.avif 1536w" sizes="(min-width: 1100px) 760px, 92vw"><img src="img/cover-v3-1536.webp" srcset="img/cover-v3-768.webp 768w, img/cover-v3-1536.webp 1536w" sizes="(min-width: 1100px) 760px, 92vw" width="1536" height="864" decoding="async" alt="The V3 cover. Seven friends at café tables on a terrace above a seaside town at dusk, under the title DEUS EX MACHINA V3."></picture></figure>
+        <h3>New</h3>
+        <ul><li><strong>The Lumiverse config page.</strong> It covers every section, and the whole preset is set up from it, Planning, Content Policy and Phi's Vow included.</li><li><strong>A new look.</strong> Drawn icons and a color for each module. Every footer sits in one Active Modules tray that folds away, with a tab for each section. Characters, Phi, Threads, Plotlines, Meanwhile, Truths, Conflict, Momentum. The Characters tab gathers each character's Status, Relationship, Psychology and Undercurrent rows into one block, and a cast row shows one character at a time. Tracker locations read as breadcrumbs.</li><li><strong>Animated Tracker scenes</strong>, chosen by the setting.</li><li><strong>Two optional switches</strong>, regex, off by default. Start the tray folded, or hide the Tracker scene where it doesn't suit the setting.</li><li><strong>Meanwhile.</strong> What characters and events are doing off the scene.</li><li><strong>Undercurrents.</strong> Tracks what each character wants, what presses on the scene and your own actions, then offers routes from quiet to scene-changing. It replaces Momentum Engine as the default.</li><li><strong>Phi and her vow.</strong> They replace Reinforcement.</li><li><strong>Phi's Scratchpad</strong>, off by default. After the story, Phi names her two weakest lines, each from a different module, and how she'll fix them in her next reply.</li><li><strong>Talk to Phi.</strong> Write out of character, or mention her name, and Phi answers you herself.</li><li><strong>Hidden Truths.</strong> Who knows what, the secrets each character keeps, and from whom.</li><li><strong>Companions.</strong> Phi's friends read the story as she writes it and react below it. Chi, Lou, Sam, Grace, Layla and Phi, with Sola as a guest from Pyropia's Sola preset. Notes mode gives each a short section. Chat mode is a group chat where they answer each other.</li><li><strong>Relationships</strong>, with a score in the tray. Friendship, Realistic Romance, Bubbly Romance and Dark Romance, and arcs like enemies to lovers. Everyday warmth barely moves a score. A milestone moves it a lot.</li><li><strong>Status, Present Only.</strong> Lists only the characters in the scene, so lorebook entries keyed to a name stop firing every turn. A character who leaves gets one "Departed" row and returns with the last known score.</li><li><strong>Score changes.</strong> Status and Relationships show how far a score moved since the last turn, as in 45/100 −5.</li><li><strong>Psychological States, reworked.</strong> Each character's psychology turn by turn. How they read what happened, what they felt, what it made them do. That state carries into the next turn and shapes how they act and speak.</li><li><strong>Phi's Wanderlust.</strong> A Narration option in Phi's own voice, authorial and curious.</li><li><strong>Lite.</strong> A Narration option that keeps the narration rules at the lowest token cost.</li><li><strong>Three Narrative Styles.</strong> Intimate, Melancholic and Suspenseful. Melancholic blends with Comedic into Tragicomedy, and with Lighthearted into Bittersweet.</li><li><strong>Dialogue.</strong> A new Anime option. Heightened is now Theatrical.</li><li><strong>Dialogue Sounds</strong>, off by default. Drawn-Out Words ("pleaaase"), Stammers ("I-I didn't"), Shouting in Caps ("I said STOP.") and Vocal Sounds ("huh?", "pfft"), in any mix, with any Dialogue option. The Scene Plan decides which sounds each character makes that turn.</li><li><strong>Extra Long.</strong> A Length option of 700 to 1000 words.</li><li><strong>Passthrough</strong>, off by default. A note for Gemini 4 Argon, whose safety filter can block safe replies, even in SFW scenes. Turn it on only if your replies get blocked.</li><li><strong>Formatting checks.</strong> If a module or the dialogue colors go missing, a notice appears and the next turn enforces the format. If you turned the module on after that reply, just continue.</li><li><strong>Choices on Lumiverse.</strong> The + buttons combine up to three choices.</li></ul>
+        <h3>Fixed and improved</h3>
+        <ul><li><strong>Dialogue Color</strong> is more consistent.</li><li><strong>Redacted routes</strong> are fixed.</li><li><strong>Expressive Dialogue</strong> acts each emotion out with better animations. On Lumiverse, asterisks and line breaks inside it render correctly.</li><li><strong>Narration.</strong> Cinematic is the camera and Literary is the mind, now kept apart. Literary is neutral in tone, and its wry voice moved to the Comedic style.</li><li><strong>First-person character POV</strong> works.</li><li><strong>Your character's pronouns</strong> come from your persona first, then from the character sheets, so the model is less likely to misgender you. Lumiverse also reads the persona's pronoun field.</li><li><strong>Your agency.</strong> The characters and the world drive each turn. Your stated actions play out in full, and the model never retells or retries them, or adds your dialogue, decisions, thoughts or feelings.</li><li><strong>Combat Writing.</strong> Your stated moves play out, foes act and their blows can land, and then the turn ends for your answer. Blocks, dodges, counters and finishing blows are yours to call. With Anti-Positivity Bias on, you can be taken down or killed when the fight earns it.</li><li><strong>Input Improver.</strong> A turn of several beats, such as talk, act, talk, keeps its order across paragraphs. Your lines stay quoted speech, and an action-only turn gets no added dialogue.</li><li><strong>Choices.</strong> The action you choose plays out in order, spread across the reply.</li><li><strong>Visual Storytelling</strong> draws a visual only when the story shows something new.</li><li><strong>Scene Plan.</strong> Its rows were rewritten, so the model reads each scene better.</li><li><strong>The OOC plan row</strong> appears only when you step out of character.</li><li><strong>Formatting</strong> breaks less often, and the cards still render when the model slips.</li><li><strong>Display.</strong> Messages render faster, with less lag in long chats.</li><li><strong>Post-History Instructions</strong>, off by default. Your POV, Tense and Asterisks picks win over the card's post-history instructions. On Lumiverse they are an option now, and go before the Response Directives instead of at the very end.</li><li><strong>Realistic Smut, consent.</strong> Characters are less likely to hover and hold back when they should act.</li><li><strong>Realistic Smut and Max Lewdness.</strong> Characters act on their own kinks, and on the ones they know you enjoy.</li><li><strong>True Thoughts, Visible,</strong> no longer colors dialogue when Dialogue Color is off.</li><li><strong>Change Language.</strong> Cards and trackers keep working in another language.</li><li><strong>Warning System.</strong> Setup problems show in a Preset setup card that names the entry and the fix. The model no longer has to write the warning.</li><li><strong>SillyTavern.</strong> If the Experimental Macro Engine is off, a card tells you how to turn it on.</li><li><strong>Tavo.</strong> Long replies no longer risk blanking the chat.</li><li><strong>Tooltips</strong> are rewritten in plain words.</li><li><strong>Model setup</strong> has a new section for Gemini 4 Argon.</li></ul>
+      </div>
+    </section>
+    <section class="release" id="v2-5" aria-labelledby="v2-5-title">
+      <div class="release__stamp">
+        <h2 class="release__version" id="v2-5-title">V2.5</h2>
+        <p class="release__date"><time datetime="2026-09-19">19 September 2026</time></p>
+        <p class="release__link"><a href="https://github.com/lsennn/Deus-ex-machina/releases/tag/v2.5">Release on GitHub</a></p>
+      </div>
+      <div class="release__notes">
+        <h3>New</h3>
+        <ul><li><strong>Plotlines</strong>, an add-on.</li><li><strong>Expressive Dialogue</strong>, under Visuals.</li><li><strong>A display for Thinking (Fallback).</strong></li></ul>
+        <h3>Fixed and improved</h3>
+        <ul><li><strong>Momentum Engine</strong> leaves room for calmer moments and routes that let the scene breathe. The model sees only the primary and fallback routes from earlier turns, so it stops offering the same routes in a new order.</li><li><strong>Response order.</strong> The model is told plainly to write every module and the prose in their order, so Scene Plan no longer comes back as the whole reply. DeepSeek V4 0813 was the model it hit hardest.</li><li><strong>The module displays</strong> are tidier and clearer, with less repetition.</li><li><strong>Reinforcement replaces Supersede.</strong> It holds up better against refusals, and the model is less likely to invent a policy it thinks it must follow.</li><li><strong>Status</strong> lets minor characters go sooner.</li><li><strong>Asterisks</strong> have their own option now, apart from POV and tense, and the model follows both more closely.</li><li><strong>Dialogue length.</strong> With Naturalistic dialogue, the default, a line runs longer when the moment needs it.</li><li><strong>The Tracker</strong> leaves out the era in modern settings.</li><li><strong>Banned Terms</strong> covers more of Gemini's stock phrases.</li><li><strong>Laid-Back pacing</strong> is slower, as it was meant to be.</li><li><strong>World-Building and Combat Writing</strong> each have a row in Scene Plan and Thinking (Fallback), so the model weighs them and follows them better.</li><li><strong>Dialogue Color</strong> fails less often. Several safeguards keep the colors steady as the chat grows.</li><li><strong>Module templates</strong> are a little easier for the model, so it makes fewer formatting mistakes, and the fallback displays and plain text turn up less often.</li><li><strong>The Warning System</strong> words its warnings more clearly.</li></ul>
+        <h3>Later updates</h3>
+        <ul><li><strong>Update 1.</strong> DEUS EX MACHINA V2.6 for Lumiverse fixes an import problem V2.5 had on Lumiverse's staging branch.</li><li><strong>Update 2</strong>, for Lumiverse, still named V2.6. The prose spacing is fixed, and the Choices List under Agency has choices you can click.</li><li><strong>Update 2.1</strong>, for Lumiverse. The preset shows a cover image, loaded from the GitHub repository.</li></ul>
+      </div>
+    </section>
+    <section class="release" id="v2-0" aria-labelledby="v2-0-title">
+      <div class="release__stamp">
+        <h2 class="release__version" id="v2-0-title">V2.0</h2>
+        <p class="release__date"><time datetime="2026-08-28">28 August 2026</time></p>
+        <p class="release__link"><a href="https://github.com/lsennn/Deus-ex-machina/releases/tag/v2.0">Release on GitHub</a></p>
+      </div>
+      <div class="release__notes">
+        <h3>New</h3>
+        <ul><li><strong>Scene Plan</strong>, under Reasoning.</li><li><strong>Pacing</strong>, with its own options.</li><li><strong>Combat Writing.</strong></li><li><strong>World-Building.</strong></li><li><strong>Psychological States</strong>, an add-on.</li><li><strong>Nine Narrative Styles.</strong></li><li><strong>Input Improver</strong>, under Agency.</li><li><strong>Fandom</strong>, under User Utility.</li><li><strong>Exact Time</strong>, an add-on.</li><li><strong>Nothing Explicit</strong>, an Adult option.</li></ul>
+        <h3>Fixed and improved</h3>
+        <ul><li><strong>Formatting.</strong> Some models get the format slightly wrong, a missing or an extra comma for example. The regex now accepts more variations, and each module display has a fallback, so plain text turns up far less. The model writes dialogue colors in modern CSS, and the regex turns them back into the older <code>font color</code> tag that SillyTavern recognizes. Tavo reads the CSS as it is.</li><li><strong>Momentum Engine</strong> no longer forces a rhythm. It used to push an event into every moment, quiet ones too, and could never ease off. It follows the Pacing rules now, with new wording.</li><li><strong>The prose</strong>, narration and dialogue alike, is more consistent, and each character's voice is more distinct.</li><li><strong>Length.</strong> New ranges and wording keep it more consistent. Long runs longer and writes several linked actions.</li><li><strong>Visual Storytelling</strong> is more consistent, with firmer checks in Scene Plan and the Response Directives.</li></ul>
+        <h3>Later updates</h3>
+        <ul><li><strong>Update 2.2.</strong> The regex runs faster. With DeepSeek V4 Pro, Scene Plan no longer comes back now and then as the whole reply.</li><li><strong>Update 2.3.</strong> The Status display's regex no longer slows the chat.</li></ul>
+      </div>
+    </section>
+    <section class="release" id="v1-0" aria-labelledby="v1-0-title">
+      <div class="release__stamp">
+        <h2 class="release__version" id="v1-0-title">V1.0</h2>
+        <p class="release__date"><time datetime="2026-08-01">1 August 2026</time></p>
+        <p class="release__link"><a href="https://github.com/lsennn/Deus-ex-machina/releases/tag/v1.0">Release on GitHub</a></p>
+      </div>
+      <div class="release__notes">
+        <p>The first release of DEUS EX MACHINA, together with its prompt for Summaryception.</p>
+      </div>
+    </section>
+  </div>
+</main>
+</body>
+</html>
