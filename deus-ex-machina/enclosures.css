@@ -58,7 +58,7 @@
   margin: 0 0 18px;
   padding-bottom: 16px;
   border-bottom: 1px solid color-mix(in srgb, var(--stone) 75%, var(--rule));
-  font: 900 clamp(40px, 5.2vw, 76px)/.9 var(--face-title);
+  font: 400 clamp(40px, 5.2vw, 76px)/.9 var(--face-display);
   letter-spacing: .005em;
   text-transform: uppercase;
   text-wrap: balance;
@@ -376,7 +376,7 @@ input:checked + * .opt__cost { color: var(--stone-ink); }
   color: var(--vellum);
 }
 .count__n {
-  font: 900 34px/1 var(--face-title);
+  font: 400 34px/1 var(--face-display);
   font-variant-numeric: lining-nums tabular-nums;
   color: var(--ink);
   letter-spacing: .01em;

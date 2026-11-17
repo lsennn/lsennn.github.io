@@ -43,8 +43,9 @@ html { scroll-padding-top: 16px; }
 .letter strong { font-weight: 600; }
 .letter em { font-weight: 400; }
 
-/* the masthead sits a little closer to the bar than the shell's default */
-.folio-page > .masthead { margin-top: 26px; line-height: .8; }
+/* the masthead's breathing room grows with it: 36px above and about as much
+   to the letterhead's seal at 1440, tighter on phones */
+.folio-page > .masthead { margin-top: clamp(26px, 2.5cqw, 36px); margin-bottom: clamp(6px, 2.3cqw, 33px); }
 
 /* the letterhead line: her seal and the dateline, between masthead and gem rule */
 .letterhead {

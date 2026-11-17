@@ -11,6 +11,7 @@
 // The folio before the first paint: ?theme=night|day, then the reader's choice, then the OS.
 (function(){var d=document.documentElement,t=null,m=/[?&]theme=(night|day)(?:&|$)/.exec(location.search);if(m)t=m[1];else{try{t=localStorage.getItem("folio.theme")}catch(e){}}if(t!=="night"&&t!=="day")t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"night":"day";d.dataset.theme=t})();
 </script>
+<link rel="preload" href="/shared/fonts/league-gothic-96.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/shared/fonts/sofia-sans-extra-condensed-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/shared/fonts/vollkorn-var-400-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/shared/fonts/sofia-sans-var-400-700.woff2" as="font" type="font/woff2" crossorigin>

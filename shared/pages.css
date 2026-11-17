@@ -5,7 +5,7 @@
 
 .page-title {
   margin: 36px var(--gutter) 0;
-  font: 900 clamp(56px, 9vw, 96px)/.92 var(--face-title);
+  font: 400 clamp(56px, 9vw, 96px)/.92 var(--face-display);
   letter-spacing: -.005em;
   text-transform: uppercase;
   text-wrap: balance;
@@ -27,7 +27,7 @@
 
 .release__stamp { position: sticky; top: 24px; align-self: start; }
 .release__version {
-  font: 900 72px/.9 var(--face-title);
+  font: 400 72px/.9 var(--face-display);
   letter-spacing: .005em;
   text-transform: uppercase;
   color: var(--ink);

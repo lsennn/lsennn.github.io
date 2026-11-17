@@ -6,6 +6,15 @@
 
 /* ---------- Fonts: OFL, subset to Latin, self-hosted ---------- */
 
+/* League Gothic, fixed at width 96: the closest face to the covers' lettering
+   (specimens/display-type.html). It has one weight, so its rules ask for 400. */
+@font-face {
+  font-family: "League Gothic";
+  src: url("fonts/league-gothic-96.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: "Sofia Sans Extra Condensed";
   src: url("fonts/sofia-sans-extra-condensed-900.woff2") format("woff2");
@@ -207,10 +216,10 @@
   --stone-ink: var(--ink-amethyst);
 
   /* type */
+  --face-display: "League Gothic", "Arial Narrow", sans-serif;   /* large titles, the name in the bar */
   --face-title: "Sofia Sans Extra Condensed", "Arial Narrow", sans-serif;
   --face-letter: "Vollkorn", Georgia, serif;
   --face-text: "Sofia Sans", system-ui, sans-serif;
-  --mast-fit: 0.396;          /* em per character of the masthead (specimen type-2) */
   --size-letter: 21px;
   --size-text: 15.5px;
   --size-bar: 15px;
@@ -392,8 +401,8 @@ a.season-tab:hover,
   font-weight: 600;
 }
 .season-tab__name {
-  font-family: var(--face-title);
-  font-weight: 900;
+  font-family: var(--face-display);
+  font-weight: 400;
   font-size: 20px;
   letter-spacing: .02em;
   line-height: 1;
@@ -503,21 +512,15 @@ a.season-tab:hover,
   container-type: inline-size;
 }
 
-/* the masthead: huge condensed capitals across the measure (specimen type-2) */
+/* the masthead: the covers' own lettering across the measure. The h1 holds the
+   name as hidden text and the drawn words as an inline SVG (tools/build-masthead.py),
+   boxed to the ink, so the margins are the space around the letters. */
 .masthead {
-  --mast-chars: 15;
   margin: 36px var(--gutter) 0;
-  font-family: var(--face-title);
-  font-weight: 900;
-  font-size: calc((100vw - 2 * var(--gutter)) / (var(--mast-chars) * var(--mast-fit)));
-  font-size: calc((100cqw - 2 * var(--gutter)) / (var(--mast-chars) * var(--mast-fit)));
-  line-height: .92;
-  letter-spacing: -.005em;
-  text-transform: uppercase;
-  white-space: nowrap;
   color: var(--ink);
-  font-kerning: normal;
+  line-height: 0;
 }
+.masthead__ink { display: block; width: 100%; height: auto; }
 
 /* the gem rule: Antique Gold hairlines around the cut gem, the only ornament */
 .gem-rule {
