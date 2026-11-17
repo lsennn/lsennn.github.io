@@ -330,6 +330,9 @@ input:checked + * .opt__cost { color: var(--stone-ink); }
 .enc h3 .badge { width: 36px; height: 36px; margin: -6px 10px -6px 0; vertical-align: middle; }
 .badge--inline { width: 26px; height: 26px; margin: -5px 7px -5px 0; vertical-align: middle; }
 .badge--chip { width: 22px; height: 22px; margin: -4px 0; }
+.chip__body > picture { display: contents; }
+.portrait--chip { flex: none; display: block; width: 28px; height: 28px; margin: -6px 0; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px var(--edge); }
+input:checked + .chip__body .portrait--chip { box-shadow: 0 0 0 1.5px var(--stone-ink); }
 
 /* ---------- Every module ---------- */
 
@@ -544,7 +547,7 @@ input:checked + * .opt__cost { color: var(--stone-ink); }
 .scene__spec dt { font: 600 13.5px/1.4 var(--face-text); color: var(--ash); }
 .scene__spec dd { margin: 0; color: var(--ink); }
 
-/* the chat sample: a dark Lumiverse screen set into the letter, the same
+/* the chat sample: a dark chat screen set into the letter, the same
    by day and by night. Its page (scene/<setting>.html) fits the frame's
    height itself; the frame loads only when its setting is shown. */
 .scene__screen {
@@ -564,7 +567,7 @@ input:checked + * .opt__cost { color: var(--stone-ink); }
   width: 100%;
   border: 0;
   border-radius: var(--radius-page);
-  background: #0a0812;  /* Lumiverse's chat ground, before the page paints */
+  background: #11111b;  /* the chat's ground (scene.css), before the page paints */
   color-scheme: dark;
 }
 
