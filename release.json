@@ -1,13 +1,17 @@
 {
-  "version": "3.0",
-  "tag": "v3.0",
-  "date": "2026-10-26",
+  "version": "4.0",
+  "tag": "v4.0",
+  "date": "2026-11-18",
   "repo": "lsennn/Deus-ex-machina",
   "files": {
-    "st": "DEUS.EX.MACHINA.V3.ST.json",
-    "tavo": "DEUS.EX.MACHINA.V3.Tavo.json",
-    "lumiverse": "DEUS.EX.MACHINA.V3.Lumiverse.json",
-    "regex": "DEUS.EX.MACHINA.V3.ST.-.Regex.json",
-    "summaryception": "DEM.Summaryception.custom.prompt.txt"
+    "st": "DEUS.EX.MACHINA.V4.ST.json",
+    "tavo": "DEUS.EX.MACHINA.V4.Tavo.json",
+    "lumiverse": "DEUS.EX.MACHINA.V4.Lumiverse.json",
+    "regex": "DEUS EX MACHINA V4 ST - Regex.json",
+    "summaryception": "DEM-V4-Summaryception-custom-prompt.txt"
+  },
+  "links": {
+    "regex": "https://github.com/lsennn/Deus-ex-machina/blob/main/DEUS%20EX%20MACHINA%20V4%20ST%20-%20Regex.json",
+    "lumiverse": "https://illarin.com/download/b38b3e23-dc28-4c01-b520-94cb27371dda/preset_lumiverse"
   }
 }

@@ -1,4 +1,4 @@
-/* The reading pages (What changed, the 404). Built on folio.css tokens;
+/* The reading pages (Release notes, the 404). Built on folio.css tokens;
    nothing here restyles the shell. */
 
 /* ---------- Page title ---------- */
@@ -12,7 +12,7 @@
   color: var(--ink);
 }
 
-/* ---------- What changed: one release per entry ---------- */
+/* ---------- Release notes: one release per entry ---------- */
 
 .releases { margin: 36px var(--gutter) 0; }
 
@@ -48,6 +48,7 @@
 }
 .release__notes p { margin-top: .75em; }
 .release__notes strong { font-weight: 700; }
+.release__notes .dem-label { white-space: nowrap; color: var(--stone-ink); }
 .release__notes h3,
 .release__notes h4,
 .release__notes h5 {

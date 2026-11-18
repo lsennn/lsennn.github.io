@@ -499,7 +499,8 @@ input:checked + * .opt__cost { color: var(--stone-ink); }
 
 #scene-default:checked ~ .scene__tabs [for="scene-default"],
 #scene-literary:checked ~ .scene__tabs [for="scene-literary"],
-#scene-wanderlust:checked ~ .scene__tabs [for="scene-wanderlust"] {
+#scene-wanderlust:checked ~ .scene__tabs [for="scene-wanderlust"],
+#scene-fate:checked ~ .scene__tabs [for="scene-fate"] {
   border-style: solid;
   border-color: var(--stone-ink);
   background: var(--wash);
@@ -511,13 +512,15 @@ input:checked + * .opt__cost { color: var(--stone-ink); }
 .scene__radio:checked + .scene__tabs .opt__mark::after { content: none; }
 #scene-default:checked ~ .scene__tabs [for="scene-default"] .opt__mark,
 #scene-literary:checked ~ .scene__tabs [for="scene-literary"] .opt__mark,
-#scene-wanderlust:checked ~ .scene__tabs [for="scene-wanderlust"] .opt__mark {
+#scene-wanderlust:checked ~ .scene__tabs [for="scene-wanderlust"] .opt__mark,
+#scene-fate:checked ~ .scene__tabs [for="scene-fate"] .opt__mark {
   border-style: solid;
   border-color: var(--stone-ink);
 }
 #scene-default:checked ~ .scene__tabs [for="scene-default"] .opt__mark::after,
 #scene-literary:checked ~ .scene__tabs [for="scene-literary"] .opt__mark::after,
-#scene-wanderlust:checked ~ .scene__tabs [for="scene-wanderlust"] .opt__mark::after {
+#scene-wanderlust:checked ~ .scene__tabs [for="scene-wanderlust"] .opt__mark::after,
+#scene-fate:checked ~ .scene__tabs [for="scene-fate"] .opt__mark::after {
   content: "";
   position: absolute;
   inset: 2.5px;
@@ -526,7 +529,8 @@ input:checked + * .opt__cost { color: var(--stone-ink); }
 }
 #scene-default:focus-visible ~ .scene__tabs [for="scene-default"],
 #scene-literary:focus-visible ~ .scene__tabs [for="scene-literary"],
-#scene-wanderlust:focus-visible ~ .scene__tabs [for="scene-wanderlust"] {
+#scene-wanderlust:focus-visible ~ .scene__tabs [for="scene-wanderlust"],
+#scene-fate:focus-visible ~ .scene__tabs [for="scene-fate"] {
   outline: 2px solid var(--amethyst);
   outline-offset: 2px;
 }
@@ -535,7 +539,8 @@ input:checked + * .opt__cost { color: var(--stone-ink); }
 .scene__panel { display: none; margin-top: 22px; }
 #scene-default:checked ~ .scene__panels [data-setting="default"],
 #scene-literary:checked ~ .scene__panels [data-setting="literary"],
-#scene-wanderlust:checked ~ .scene__panels [data-setting="wanderlust"] { display: block; }
+#scene-wanderlust:checked ~ .scene__panels [data-setting="wanderlust"],
+#scene-fate:checked ~ .scene__panels [data-setting="fate"] { display: block; }
 
 .scene__spec {
   display: flex;
@@ -835,7 +840,7 @@ details[open] > summary > .chev { rotate: 90deg; }
 }
 .summ__file .shelf__actions { margin-top: 10px; }
 
-/* ---------- What changed ---------- */
+/* ---------- Release notes ---------- */
 
 /* the current version, large: readers come here to learn which one is out */
 .changes__current {
@@ -868,6 +873,9 @@ details[open] > summary > .chev { rotate: 90deg; }
   padding-bottom: 10px;
   border-bottom: 1px solid var(--hair);
 }
+/* DEM's module labels in the notes (「 Option 」, | Module |, ! Utility !):
+   whole on one line, in the sheet's stone ink */
+.dem-label { white-space: nowrap; color: var(--stone-ink); }
 
 /* ---------- Credits ---------- */
 

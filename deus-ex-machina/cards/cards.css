@@ -1,4 +1,4 @@
-/* DEUS EX MACHINA in-chat cards, exported from preset ed2c141 (ST renderer, view stage).
+/* DEUS EX MACHINA in-chat cards, exported from preset 7bd337e (ST renderer, view stage).
    Everything above the host shim is the preset's regex output, unchanged. */
 .mes_text .custom-dem-phi-note {
   --dem-accent: #a6c2e8;
@@ -131,7 +131,7 @@
 }
 
 .mes_text .custom-dem-scene-plan__phase--craft {
-  --dem-phase-accent: #cba6f7;
+  --dem-phase-accent: #bd97e4;
 }
 
 .mes_text .custom-dem-scene-plan__phase--plan {
@@ -193,7 +193,7 @@
 }
 
 .mes_text .custom-dem-scene-plan__step--craft {
-  --dem-accent: #cba6f7;
+  --dem-accent: #bd97e4;
 }
 
 .mes_text .custom-dem-scene-plan__step--plan {
@@ -409,6 +409,7 @@
 .mes_text .custom-dem-truth-tag,
 .mes_text .custom-dem-truth-field__label,
 .mes_text .custom-dem-plotlines__label,
+.mes_text .custom-dem-diary-entry__when,
 .mes_text .custom-dem-psychological-state-row__label,
 .mes_text .custom-dem-bond-meter__label,
 .mes_text .custom-dem-bond-field__label,
@@ -440,7 +441,7 @@
 }
 
 .mes_text .custom-dem-card.custom-dem-threads {
-  --dem-accent: #cba6f7;
+  --dem-accent: #bd97e4;
 }
 
 .mes_text .custom-dem-card.custom-dem-conflict {
@@ -467,12 +468,20 @@
   --dem-accent: #f5c2e7;
 }
 
+.mes_text .custom-dem-card.custom-dem-diaries {
+  --dem-accent: #e8cfa6;
+}
+
 .mes_text .custom-dem-card.custom-dem-meanwhile {
   --dem-accent: #b4befe;
 }
 
 .mes_text .custom-dem-card.custom-dem-hidden-truths {
   --dem-accent: #eba0ac;
+}
+
+.mes_text .custom-dem-card.custom-dem-new-face {
+  --dem-accent: #89dceb;
 }
 
 .mes_text .custom-dem-scratchpad {
@@ -1033,6 +1042,37 @@
   }
 }
 
+.mes_text .custom-dem-fate-die {
+  animation: dem-fate-roll 2.2s linear .3s infinite;
+}
+
+@keyframes dem-fate-roll {
+  0% {
+    transform: none;
+    animation-timing-function: cubic-bezier(.4,0,.6,1);
+  }
+
+  9% {
+    transform: translateY(-.16em) rotate(55deg);
+    animation-timing-function: cubic-bezier(.3,0,.5,1);
+  }
+
+  22% {
+    transform: translateY(0) rotate(128deg);
+    animation-timing-function: ease-out;
+  }
+
+  30%, 100% {
+    transform: rotate(120deg);
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .mes_text .custom-dem-fate-die {
+    animation: none!important;
+  }
+}
+
 .mes_text .custom-dem-track {
   --dem-paper: #33284e;
   --dem-rule: #5a4a76;
@@ -1138,14 +1178,22 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 1px;
+  min-width: 0;
+  max-width: 45cqi;
   text-align: right;
 }
 
+.mes_text .custom-dem-track__wx[data-n=""] .custom-dem-track__temp {
+  display: none;
+}
+
 .mes_text .custom-dem-track__sky {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  display: block;
   color: var(--dem-ink-2);
+}
+
+.mes_text .custom-dem-track__sky>.custom-dem-track__glyph {
+  margin-right: 6px;
 }
 
 .mes_text .custom-dem-track__temp {
@@ -1158,6 +1206,7 @@
 .mes_text .custom-dem-track__tq {
   margin-left: .3em;
   font-weight: 400;
+  white-space: normal;
   color: var(--dem-ink-2);
 }
 
@@ -1185,7 +1234,7 @@
 
 @container (max-width:560px) {
   .mes_text .custom-dem-track__grid {
-    grid-template-columns: minmax(0,1fr) auto;
+    grid-template-columns: auto minmax(0,1fr);
     grid-template-areas: "time wx" "date date" "place place";
     padding: 10px 12px;
     row-gap: 4px;
@@ -1201,9 +1250,11 @@
   }
 
   .mes_text .custom-dem-track__wx {
-    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: flex-end;
     align-items: center;
-    gap: 8px;
+    gap: 2px 8px;
+    max-width: none;
   }
 
   .mes_text .custom-dem-track__place--context {
@@ -1214,7 +1265,7 @@
 @supports not (container-type:inline-size) {
   @media (max-width:600px) {
     .mes_text .custom-dem-track__grid {
-      grid-template-columns: minmax(0,1fr) auto;
+      grid-template-columns: auto minmax(0,1fr);
       grid-template-areas: "time wx" "date date" "place place";
     }
 
@@ -1224,9 +1275,10 @@
     }
 
     .mes_text .custom-dem-track__wx {
-      flex-direction: row;
+      flex-flow: row wrap;
+      justify-content: flex-end;
       align-items: center;
-      gap: 8px;
+      gap: 2px 8px;
     }
   }
 }
@@ -1539,9 +1591,10 @@
 }
 
 .mes_text .custom-dem-track:is([data-w*="❄"],[data-w*="🌨"],[data-w*="☃"],[data-w*="⛄"],[data-w*="snow" i],[data-w*="sleet" i],[data-w*="blizzard" i],[data-w*="flurr" i],[data-w*="hail" i]) {
-  --wx: radial-gradient(circle 1.5px,#f4f1eaa6,#0000) 0 0/41px 64px,radial-gradient(circle 1.2px,#f4f1ea80,#0000) 11px 17px/37px 32px,radial-gradient(circle 1.9px,#f4f1ea59,#0000) 25px 8px/53px 64px,radial-gradient(circle 1px,#f4f1ea66,#0000) 30px 3px/29px 16px;
+  --wx: radial-gradient(circle 2.2px,#f4f1eacc,#0000) 0 0/131px 192px,radial-gradient(circle 1.8px,#f4f1eaa6,#0000) 53px 71px/97px 96px,radial-gradient(circle 1.5px,#f4f1ea8c,#0000) 17px 29px/79px 64px,radial-gradient(circle 1.2px,#f4f1ea73,#0000) 41px 113px/61px 96px,radial-gradient(circle 1px,#f4f1ea5c,#0000) 7px 37px/47px 48px,radial-gradient(circle .8px,#f4f1ea4d,#0000) 29px 5px/43px 32px,radial-gradient(circle 1.3px,#f4f1ea66,#0000) 89px 157px/173px 192px;
+  --wx-in: -200px -64px 0;
   --wx-sk: -7deg;
-  --wx-a: dem-track-snow 4.5s linear infinite;
+  --wx-a: dem-track-snow 13s linear infinite,dem-track-sway 8.3s ease-in-out infinite,dem-track-swell 11s ease-in-out infinite;
   --wx-veil: #2a2c3c3d;
   --orb-o: .65;
   --star-o: 0%;
@@ -1642,7 +1695,29 @@
   }
 
   to {
-    transform: skewX(-7deg) translateY(64px);
+    transform: skewX(-7deg) translateY(192px);
+  }
+}
+
+@keyframes dem-track-sway {
+  0%, 100% {
+    translate: 0;
+  }
+
+  21% {
+    translate: 10px;
+  }
+
+  38% {
+    translate: 5px;
+  }
+
+  59% {
+    translate: -8px;
+  }
+
+  81% {
+    translate: -3px;
   }
 }
 
@@ -1734,6 +1809,138 @@
   }
 }
 
+.mes_text .custom-dem-new-face__body {
+  padding: 2px 14px 14px;
+}
+
+.mes_text .custom-dem-new-face .custom-dem-new-face__keep {
+  margin: 10px 0 12px;
+  font-size: .9em;
+  line-height: 1.5;
+  color: var(--dem-ink-3);
+  text-wrap-style: pretty;
+}
+
+.mes_text .custom-dem-new-face__keep b {
+  font-weight: 600;
+  color: var(--dem-accent-ink);
+}
+
+.mes_text .custom-dem-card.custom-dem-new-face pre {
+  position: relative;
+  margin: 0;
+  padding: 12px 44px 12px 14px;
+  background: var(--dem-tray);
+  border: 1px solid var(--dem-rule-soft);
+  border-radius: 8px;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: 1em;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.mes_text .custom-dem-card.custom-dem-new-face pre code {
+  position: static;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--dem-ink-2);
+  background: none;
+  white-space: pre-wrap;
+  overflow: visible;
+}
+
+@supports (text-indent:1em hanging each-line) {
+  .mes_text .custom-dem-card.custom-dem-new-face pre code {
+    text-indent: 1.2em hanging each-line;
+  }
+}
+
+.mes_text .custom-dem-new-face pre code [class*="hljs"] {
+  color: inherit;
+  background: none;
+  font-style: inherit;
+  font-weight: inherit;
+  opacity: 1;
+}
+
+.mes_text .custom-dem-new-face:not(.custom-dem-new-face--minor) pre code [class*="hljs-attr"] {
+  font-weight: 600;
+  color: color-mix(in srgb,var(--dem-accent) 55%,var(--dem-ink-3));
+}
+
+.mes_text .custom-dem-new-face pre ::selection {
+  background: color-mix(in srgb,var(--dem-accent) 32%,transparent);
+  color: var(--dem-ink);
+}
+
+.mes_text .custom-dem-new-face [class~="code-copy"] {
+  top: 6px;
+  right: 6px;
+  margin: 0;
+  width: 28px;
+  height: 28px;
+  text-indent: 0;
+  opacity: .85;
+  color: var(--dem-accent-ink);
+}
+
+.mes_text .custom-dem-card.custom-dem-new-face [class*="codeBlock"] {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  overflow: visible;
+  backdrop-filter: none;
+}
+
+.mes_text .custom-dem-card.custom-dem-new-face [class*="codeHeader"] {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 1;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.mes_text .custom-dem-card.custom-dem-new-face [class*="codeLang"],
+.mes_text .custom-dem-card.custom-dem-new-face [class*="codeCopy"] span {
+  display: none;
+}
+
+.mes_text .custom-dem-card.custom-dem-new-face [class*="codeCopy"] {
+  width: 28px;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  opacity: .85;
+  color: var(--dem-accent-ink);
+}
+
+@container (max-width:420px) {
+  .mes_text .custom-dem-new-face .custom-dem-card__title::before,
+  .mes_text .custom-dem-new-face .custom-dem-card__title::after {
+    flex-shrink: 1e6;
+    min-width: 0;
+  }
+
+  .mes_text .custom-dem-new-face__body {
+    padding-inline: 12px;
+  }
+
+  .mes_text .custom-dem-card.custom-dem-new-face pre {
+    padding: 10px 40px 10px 12px;
+  }
+}
+
 .mes_text .custom-dem-cyoa__hint {
   margin: 0 0 4px;
   color: var(--dem-ink-2);
@@ -1804,7 +2011,7 @@
 }
 
 .mes_text .custom-dem-modules {
-  --dem-accent: #cba6f7;
+  --dem-accent: #bd97e4;
   position: relative;
   display: block;
   margin: 24px 0 12px;
@@ -1828,7 +2035,7 @@
   right: 40px;
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(90deg,#89dceb,#cba6f7,#f5c2e7,#f9e2af);
+  background: linear-gradient(90deg,#89dceb,#bd97e4,#f5c2e7,#f9e2af);
   pointer-events: none;
 }
 
@@ -1839,7 +2046,7 @@
   right: 14px;
   width: 12px;
   height: 14px;
-  background: linear-gradient(180deg,#89dceb,#cba6f7,#f5c2e7,#f9e2af);
+  background: linear-gradient(180deg,#89dceb,#bd97e4,#f5c2e7,#f9e2af);
   opacity: .65;
   clip-path: polygon(0 0,100% 0,100% 100%,50% 70%,0 100%);
   transition: height .2s ease,opacity .2s ease;
@@ -2058,7 +2265,7 @@
   display: none;
 }
 
-.mes_text .custom-dem-modules:is(:has(>.custom-dem-modules__body>:is(.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents)):has(>.custom-dem-modules__body>:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)),:has(>.custom-dem-modules__body>:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)~:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)))>.custom-dem-tabs>.custom-dem-tabs__rail {
+.mes_text .custom-dem-modules:is(:has(>.custom-dem-modules__body>:is(.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents)):has(>.custom-dem-modules__body>:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)),:has(>.custom-dem-modules__body>:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)~:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)))>.custom-dem-tabs>.custom-dem-tabs__rail {
   display: flex;
 }
 
@@ -2196,8 +2403,8 @@
     left: max(anchor(--dem-tab-open left),calc(anchor(--dem-pill-start left) - var(--pill-pad,12px)));
     right: max(anchor(--dem-tab-open right),calc(anchor(--dem-pill-end right) - var(--pill-pad,12px)));
     border-radius: 999px;
-    background: color-mix(in srgb,var(--pill,#cba6f7) 16%,transparent);
-    box-shadow: inset 0 0 0 1px color-mix(in srgb,var(--pill,#cba6f7) 30%,transparent);
+    background: color-mix(in srgb,var(--pill,#bd97e4) 16%,transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb,var(--pill,#bd97e4) 30%,transparent);
     pointer-events: none;
     transition: left .34s cubic-bezier(.22,1,.36,1),right .34s cubic-bezier(.22,1,.36,1),background-color .34s ease,box-shadow .34s ease;
   }
@@ -2242,12 +2449,12 @@
   .mes_text .custom-dem-tabs__rail {
     --pill-pad: 5px;
     gap: 0;
-    padding: 8px 4px 2px;
+    padding: 8px 2px 2px;
   }
 
   .mes_text .custom-dem-tab {
-    min-width: 28px;
-    padding: 5px 2px;
+    min-width: 25px;
+    padding: 5px 1px;
   }
 }
 
@@ -2309,6 +2516,10 @@
   display: none;
 }
 
+.mes_text .custom-dem-modules:not(:has(>.custom-dem-modules__body>:is(.custom-dem-diaries))) .custom-dem-tab--diary {
+  display: none;
+}
+
 .mes_text .custom-dem-modules:not(:has(>.custom-dem-modules__body>:is(.custom-dem-meanwhile))) .custom-dem-tab--meanwhile {
   display: none;
 }
@@ -2329,7 +2540,7 @@
   --pill: #89dceb;
 }
 
-.mes_text .custom-dem-modules:has(.custom-dem-tab--chars input:checked)>.custom-dem-modules__body>:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
+.mes_text .custom-dem-modules:has(.custom-dem-tab--chars input:checked)>.custom-dem-modules__body>:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
   display: none;
 }
 
@@ -2337,15 +2548,15 @@
   --pill: #a6c2e8;
 }
 
-.mes_text .custom-dem-modules:has(.custom-dem-tab--phi input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
+.mes_text .custom-dem-modules:has(.custom-dem-tab--phi input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
   display: none;
 }
 
 .mes_text .custom-dem-modules:has(.custom-dem-tab--threads input:checked) .custom-dem-tabs__rail {
-  --pill: #cba6f7;
+  --pill: #bd97e4;
 }
 
-.mes_text .custom-dem-modules:has(.custom-dem-tab--threads input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
+.mes_text .custom-dem-modules:has(.custom-dem-tab--threads input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
   display: none;
 }
 
@@ -2353,7 +2564,15 @@
   --pill: #f5c2e7;
 }
 
-.mes_text .custom-dem-modules:has(.custom-dem-tab--plot input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
+.mes_text .custom-dem-modules:has(.custom-dem-tab--diary input:checked) .custom-dem-tabs__rail {
+  --pill: #e8cfa6;
+}
+
+.mes_text .custom-dem-modules:has(.custom-dem-tab--plot input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
+  display: none;
+}
+
+.mes_text .custom-dem-modules:has(.custom-dem-tab--diary input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
   display: none;
 }
 
@@ -2361,7 +2580,7 @@
   --pill: #b4befe;
 }
 
-.mes_text .custom-dem-modules:has(.custom-dem-tab--meanwhile input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
+.mes_text .custom-dem-modules:has(.custom-dem-tab--meanwhile input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine) {
   display: none;
 }
 
@@ -2369,7 +2588,7 @@
   --pill: #eba0ac;
 }
 
-.mes_text .custom-dem-modules:has(.custom-dem-tab--truths input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-conflict,.custom-dem-momentum-engine) {
+.mes_text .custom-dem-modules:has(.custom-dem-tab--truths input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-conflict,.custom-dem-momentum-engine) {
   display: none;
 }
 
@@ -2377,7 +2596,7 @@
   --pill: #f38ba8;
 }
 
-.mes_text .custom-dem-modules:has(.custom-dem-tab--conflict input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-momentum-engine) {
+.mes_text .custom-dem-modules:has(.custom-dem-tab--conflict input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-momentum-engine) {
   display: none;
 }
 
@@ -2385,13 +2604,13 @@
   --pill: #f9e2af;
 }
 
-.mes_text .custom-dem-modules:has(.custom-dem-tab--momentum input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict) {
+.mes_text .custom-dem-modules:has(.custom-dem-tab--momentum input:checked)>.custom-dem-modules__body>:is(.custom-dem-charpage__head,.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents,.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict) {
   display: none;
 }
 
 /* Cast: pick one character; slots come from the character page scripts. */
 
-.mes_text .custom-dem-modules:has(.custom-dem-cast input[value="2"]+span:not(:empty)):is(:has(.custom-dem-tab--chars input:checked),:not(:is(:has(>.custom-dem-modules__body>:is(.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents)):has(>.custom-dem-modules__body>:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)),:has(>.custom-dem-modules__body>:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)~:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)))))>.custom-dem-modules__body>.custom-dem-cast {
+.mes_text .custom-dem-modules:has(.custom-dem-cast input[value="2"]+span:not(:empty)):is(:has(.custom-dem-tab--chars input:checked),:not(:is(:has(>.custom-dem-modules__body>:is(.custom-dem-status,.custom-dem-relationships,.custom-dem-psychological-states,.custom-dem-undercurrents)):has(>.custom-dem-modules__body>:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)),:has(>.custom-dem-modules__body>:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)~:is(.custom-dem-scratchpad,.custom-dem-threads,.custom-dem-plotlines,.custom-dem-diaries,.custom-dem-meanwhile,.custom-dem-hidden-truths,.custom-dem-conflict,.custom-dem-momentum-engine)))))>.custom-dem-modules__body>.custom-dem-cast {
   display: flex;
 }
 
@@ -3880,7 +4099,7 @@
 }
 
 .mes_text .custom-dem-thread-tag[data-tag="seed" i] {
-  --dem-thread-color: #cba6f7;
+  --dem-thread-color: #bd97e4;
 }
 
 @container (max-width:420px) {
@@ -3941,6 +4160,63 @@
   content: "—";
   position: absolute;
   left: 0;
+  color: var(--dem-ink-3);
+}
+
+.mes_text .custom-dem-diaries__body {
+  padding: 2px 14px 10px;
+  white-space: pre-line;
+  color: var(--dem-ink-3);
+  overflow-wrap: anywhere;
+}
+
+.mes_text .custom-dem-diary-book {
+  white-space: normal;
+}
+
+.mes_text .custom-dem-diary-keeper {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--dem-rule-soft);
+  font-family: var(--dem-serif);
+  font-size: 1.1em;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--dem-ink);
+  text-wrap-style: balance;
+}
+
+.mes_text .custom-dem-diary-book:first-child+.custom-dem-diary-book>.custom-dem-diary-keeper {
+  margin-top: 0;
+  padding-top: 8px;
+  border-top: 0;
+}
+
+.mes_text .custom-dem-diary-entries {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.mes_text .custom-dem-diary-entry {
+  padding: 9px 0 3px;
+}
+
+.mes_text .custom-dem-diary-entry__when {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--dem-accent-ink);
+}
+
+.mes_text .custom-dem-diary-entry__text {
+  display: block;
+  font-family: var(--dem-serif);
+  line-height: 1.55;
+  color: var(--dem-ink-2);
+}
+
+.mes_text .custom-dem-diary-none {
+  padding: 8px 0 2px;
+  font-style: italic;
   color: var(--dem-ink-3);
 }
 
@@ -4852,3 +5128,12 @@
 .mes_text.dem-chat p { margin-top: 0; margin-bottom: 10px; }
 .mes_text.dem-chat p:last-child { margin-bottom: 0; }
 .mes_text.dem-chat ol, .mes_text.dem-chat ul { margin-top: 5px; margin-bottom: 5px; }
+.mes_text.dem-chat code {
+  font-family: ui-monospace, 'Noto Sans Mono', monospace;
+  white-space: pre-wrap;
+  border: 1px solid var(--SmartThemeBorderColor);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .7);
+  padding: 0 3px;
+}
+.mes_text.dem-chat pre code { position: relative; display: block; overflow-x: auto; padding: 1em; }
