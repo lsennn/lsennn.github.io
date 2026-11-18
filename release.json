@@ -7,11 +7,10 @@
     "st": "DEUS.EX.MACHINA.V4.ST.json",
     "tavo": "DEUS.EX.MACHINA.V4.Tavo.json",
     "lumiverse": "DEUS.EX.MACHINA.V4.Lumiverse.json",
-    "regex": "DEUS EX MACHINA V4 ST - Regex.json",
+    "regex": "DEUS.EX.MACHINA.V4.ST.-.Regex.json",
     "summaryception": "DEM-V4-Summaryception-custom-prompt.txt"
   },
   "links": {
-    "regex": "https://github.com/lsennn/Deus-ex-machina/blob/main/DEUS%20EX%20MACHINA%20V4%20ST%20-%20Regex.json",
     "lumiverse": "https://illarin.com/download/b38b3e23-dc28-4c01-b520-94cb27371dda/preset_lumiverse"
   }
 }
